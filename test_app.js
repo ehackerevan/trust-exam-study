@@ -49,14 +49,18 @@ if (html.includes('diagram-interactive-card') && html.includes('min-width: 760px
   process.exit(1);
 }
 
-console.log('\n--- 2.5. 驗證題庫載入順序與快取版本 ---');
-if (!html.includes('<script src="exam_bank_data.js?v=20261004-hf2"></script>') || html.includes('exam_bank_data.js" defer')) {
-  console.error('❌ 題庫腳本必須在主程式前同步載入，且帶版本參數避免舊快取');
+console.log('\n--- 2.5. 驗證章節考古題已自 UI 移除 ---');
+if (html.includes('id="quizSection"') || html.includes('本章高頻歷屆真題測驗') || html.includes('精選題</span>') || html.includes('exam_bank_data.js?v=')) {
+  console.error('❌ 章節頁面不得再顯示考古題區塊、精選題提示或載入考古題腳本');
   process.exit(1);
 }
-console.log('✅ 題庫腳本必須在主程式前同步載入，並以版本參數突破舊快取');
+if (/renderConceptQuizzes\(chapter\);/.test(html)) {
+  console.error('❌ loadChapter 不應再渲染章節考古題');
+  process.exit(1);
+}
+console.log('✅ 章節頁面不得再顯示考古題區塊，且不再載入考古題腳本');
 
-console.log('\n--- 3. 驗證題庫資料完整性 ---');
+console.log('\n--- 3. 驗證題庫資料完整性（資料保留供後續校正） ---');
 const bankSandbox = { window: {}, globalThis: {} };
 vm.createContext(bankSandbox);
 vm.runInContext(bankJs, bankSandbox);

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-  <title>臺灣信託業務人員專業測驗：生活圖解重點教材與全真題庫刷題系統</title>
+  <title>臺灣信託業務人員專業測驗：生活圖解重點教材</title>
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,8 +12,6 @@
   
   <!-- Marked.js -->
   <script src="https://cdn.jsdelivr.net/npm/marked@12.0.1/marked.min.js"></script>
-  <!-- 全真題庫資料異步延遲載入 (非阻塞首屏秒開) -->
-  <script src="exam_bank_data.js?v=20261004-hf2"></script>
 
   <style>
     :root {
@@ -1627,9 +1625,6 @@
         </div>
       </div>
       <div class="topbar-right">
-        <div class="progress-pill" id="globalStatsPill">
-          <span>🎯 已練習: 0 題</span>
-        </div>
         <button class="btn-action highlight" id="quickCrunchBtn">⚡ 速查手冊</button>
         <button class="btn-icon" id="themeToggleBtn" title="切換色彩模式">🌓</button>
       </div>
@@ -1642,24 +1637,6 @@
         <article class="markdown-body" id="markdownOutput">
           <!-- Injected via marked -->
         </article>
-
-        <!-- Chapter Quizzes (雙軌模式) -->
-                <section class="quiz-section" id="quizSection">
-          <div class="quiz-section-header" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px; margin-bottom:1.5rem; padding-bottom:0.85rem; border-bottom:1px solid var(--border-color);">
-            <div style="display:flex; align-items:center; gap:8px;">
-              <span style="font-size:1.4rem;">🎯</span>
-              <h3 style="font-size:1.15rem; font-weight:700; color:var(--text-main); margin:0;">本章高頻歷屆真題測驗（嚴選 10 題）</h3>
-            </div>
-            <span style="font-size:0.85rem; color:var(--primary); font-weight:600; background:var(--primary-light); padding:3px 10px; border-radius:12px;">
-              官方正解校對・出題率最高
-            </span>
-          </div>
-
-          <!-- 精選 10 題高頻真題清單 -->
-          <div id="quizList">
-            <!-- 由 JS 自動注入 10 題高頻真題卡片 -->
-          </div>
-        </section>
 
         <!-- Bottom Navigation -->
         <div class="bottom-nav">
@@ -1795,7 +1772,6 @@ const courseData = {"chapters": [{"id": "c00", "filename": "00_信託證照攻�
             <div class="menu-item-title">${chap.title}</div>
             <div class="menu-item-desc">
               <span class="badge badge-subtle">${chap.badge}</span>
-              ${courseData.quizzes[chap.id] ? `<span style="font-size:0.75rem; color:var(--text-subtle);">· ${courseData.quizzes[chap.id].length} 精選題</span>` : ''}
             </div>
           </div>
         `;
@@ -1951,9 +1927,6 @@ const courseData = {"chapters": [{"id": "c00", "filename": "00_信託證照攻�
       // 渲染 Markdown 教材 (秒級渲染)
       const rawHtml = marked.parse(chapter.markdown);
       document.getElementById('markdownOutput').innerHTML = highlightLegalText(rawHtml);
-
-      // 載入精選觀念題目
-      renderConceptQuizzes(chapter);
 
       // 更新考點篩選下拉清單
       updateBankConceptSelect(chapter.id);
