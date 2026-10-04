@@ -50,9 +50,9 @@
     <text x="25" y="145" fill="#34d399" font-size="15" font-weight="700">⭕ 例外許可：共同受益人之一</text>
     <text x="25" y="170" fill="#cbd5e1" font-size="13">受託人「得」為共同受益人之一（如合夥/共同共有）。</text>
     
-    <text x="25" y="215" fill="#fbbf24" font-size="14" font-weight="700">⚠️ 考題必考天條：</text>
-    <text x="25" y="238" fill="#fca5a5" font-size="13">受託人【絕對不得為單獨唯一受益人】！</text>
-    <text x="25" y="258" fill="#cbd5e1" font-size="12">若受託人是唯一受益人，信託實質上等同自有財產，信託無效！</text>
+    <text x="25" y="215" fill="#fbbf24" font-size="14" font-weight="700">⚠️ 第 34 條重點：</text>
+    <text x="25" y="238" fill="#fca5a5" font-size="13">受託人不得單獨享有全部信託利益</text>
+    <text x="25" y="258" fill="#cbd5e1" font-size="12">與他人為共同受益人時，屬法定例外</text>
   </g>
 
   <!-- 右卡片: 第35條 -->
@@ -64,11 +64,11 @@
     <text x="25" y="75" fill="#f87171" font-size="15" font-weight="700">❌ 原則：受託人不得將信託財產轉為自有！</text>
     <text x="25" y="98" fill="#cbd5e1" font-size="13">亦不得於信託財產上設定任何抵押或自身權利。</text>
 
-    <text x="25" y="140" fill="#34d399" font-size="15" font-weight="700">⭕ 法律明定三大豁免例外：</text>
+    <text x="25" y="140" fill="#34d399" font-size="15" font-weight="700">⭕ 第 35 條第 1 項三種例外：</text>
     <text x="25" y="165" fill="#cbd5e1" font-size="13">1. 經受益人【書面同意】，且依【公平市價】進行交易</text>
     <text x="25" y="195" fill="#cbd5e1" font-size="13">2. 由【集中交易市場】競價買入有公開市價者</text>
-    <text x="25" y="225" fill="#cbd5e1" font-size="13">3. 經【法院拍賣】程序公開競標買得者</text>
-    <text x="25" y="255" fill="#a7f3d0" font-size="12">👉 符合上述三者之一，方可將信託財產合法轉為自有！</text>
+    <text x="25" y="225" fill="#cbd5e1" font-size="13">3. 有不得已事由，經【法院許可】者</text>
+    <text x="25" y="255" fill="#a7f3d0" font-size="12">另：繼承、合併等概括承受依第 2 項不適用第 1 項限制</text>
   </g>
 
 </svg>
