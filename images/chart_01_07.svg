@@ -36,7 +36,7 @@
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#f87171"/>
     </marker>
   </defs>
-  <text x="460.0" y="36" fill="#f8fafc" font-size="20" font-weight="700" text-anchor="middle">🏛️ 信託關係消滅時之信託財產終局歸屬法定三順位 (信託法第 65 條)</text>
+  <text x="460.0" y="36" fill="#f8fafc" font-size="20" font-weight="700" text-anchor="middle">🏛️ 信託關係消滅後之信託財產歸屬順序（信託法第 65 條）</text>
 
   <g transform="translate(340, 65)" filter="url(#shadow)">
     <rect width="240" height="45" rx="8" fill="url(#gradRose)"/>
@@ -57,21 +57,21 @@
   <g transform="translate(330, 150)" filter="url(#shadow)">
     <rect width="260" height="160" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
     <rect width="260" height="38" rx="10" fill="url(#gradEmerald)"/>
-    <text x="130" y="25" fill="#fff" font-size="15" font-weight="700" text-anchor="middle">第 2 順位：受益人或其繼承人</text>
+    <text x="130" y="25" fill="#fff" font-size="15" font-weight="700" text-anchor="middle">第 2 順位：享有全部信託利益之受益人</text>
     <text x="20" y="70" fill="#6ee7b7" font-size="14" font-weight="700">契約無約定時</text>
     <text x="20" y="95" fill="#cbd5e1" font-size="13">• 由享有全部信託利益之</text>
-    <text x="20" y="118" fill="#cbd5e1" font-size="13">  【受益人或其繼承人】取得</text>
-    <text x="20" y="140" fill="#cbd5e1" font-size="12">以享有全部信託利益者為限</text>
+    <text x="20" y="118" fill="#cbd5e1" font-size="13">  【受益人】取得</text>
+    <text x="20" y="140" fill="#cbd5e1" font-size="12">依第 65 條第一款辦理</text>
   </g>
 
   <g transform="translate(620, 150)" filter="url(#shadow)">
     <rect width="260" height="160" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
     <rect width="260" height="38" rx="10" fill="url(#gradAmber)"/>
     <text x="130" y="25" fill="#fff" font-size="15" font-weight="700" text-anchor="middle">第 3 順位：委託人或其繼承人</text>
-    <text x="20" y="70" fill="#fde68a" font-size="14" font-weight="700">依第65條法定順位</text>
+    <text x="20" y="70" fill="#fde68a" font-size="14" font-weight="700">前順位不適用時</text>
     <text x="20" y="95" fill="#cbd5e1" font-size="13">• 由【委託人或其繼承人】取得</text>
-    <text x="20" y="118" fill="#cbd5e1" font-size="13">• 回歸最初財產交付源頭</text>
-    <text x="20" y="140" fill="#fbbf24" font-size="12">物歸原主防範成為無主物</text>
+    <text x="20" y="118" fill="#cbd5e1" font-size="13">• 依第 65 條第二款辦理</text>
+    <text x="20" y="140" fill="#fbbf24" font-size="12">不以口訣取代法條要件</text>
   </g>
 
   <!-- 箭頭 -->
