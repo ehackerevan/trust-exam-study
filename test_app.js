@@ -73,6 +73,10 @@ const chart0202 = fs.readFileSync(path.join(studyDir, 'images', 'chart_02_02.svg
 const chart0203 = fs.readFileSync(path.join(studyDir, 'images', 'chart_02_03.svg'), 'utf8');
 const chart0403 = fs.readFileSync(path.join(studyDir, 'images', 'chart_04_03.svg'), 'utf8');
 const chart0603 = fs.readFileSync(path.join(studyDir, 'images', 'chart_06_03.svg'), 'utf8');
+const rootChart0202 = fs.readFileSync(path.join(__dirname, 'images', 'chart_02_02.svg'), 'utf8');
+const rootChart0203 = fs.readFileSync(path.join(__dirname, 'images', 'chart_02_03.svg'), 'utf8');
+const rootChart0403 = fs.readFileSync(path.join(__dirname, 'images', 'chart_04_03.svg'), 'utf8');
+const rootChart0603 = fs.readFileSync(path.join(__dirname, 'images', 'chart_06_03.svg'), 'utf8');
 
 const quickGuideChecks = [
   [c01Md.includes('三大破防例外') && !c01Md.includes('四大破防漏洞'), '第 01 章強制執行例外應為三類'],
@@ -83,7 +87,8 @@ const quickGuideChecks = [
   [chart0202.includes('高頻陷阱：營業保證金') && chart0202.includes('信託業法無此項'), 'chart_02_02 須將營業保證金標示為陷阱'],
   [chart0203.includes('2/3＋3/4 並非第27條一般門檻'), 'chart_02_03 不得把 2/3＋3/4 當作第 27 條一般門檻'],
   [chart0403.includes('實收資本額之 10%') && !chart0403.includes('已發行股份總數之 10%'), 'chart_04_03 雙十原則基準須同步'],
-  [chart0603.includes('6 個月內分配'), 'chart_06_03 REIT 分配期限須同步']
+  [chart0603.includes('6 個月內分配'), 'chart_06_03 REIT 分配期限須同步'],
+  [rootChart0202 === chart0202 && rootChart0203 === chart0203 && rootChart0403 === chart0403 && rootChart0603 === chart0603, 'Pages 根目錄 SVG 必須與教材 SVG 完全同步']
 ];
 
 for (const [ok, message] of quickGuideChecks) {
