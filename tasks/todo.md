@@ -25,3 +25,10 @@
    - 受益人會議召集天數與門檻明確標註為《金融資產證券化條例》第 24, 25, 26 條（開會 20 日前通知、持分 3% 得請求召集、普通決議出席 1/2 與同意 1/2、侵害特定受益權同意 2/3）。
 4. **自動化驗證**：
    - 執行 `node test_app.js`，全部章節資料與測驗互動 100% 通過。
+
+---
+
+## 專案 Review 與部署（2026-10-04）
+- 語法：兩份 index.html 內嵌 JS 通過 node --check；38 張圖片引用皆存在；無亂碼；教材 md / course_data.json / html 同步。
+- 邏輯修正：c08 與他章 5 題重複，已改換為未重複之已驗證題；速查手冊集管辦法條號 17 改 9。
+- 部署：https://github.com/ehackerevan/trust-exam-study ，Pages：https://ehackerevan.github.io/trust-exam-study/ （index.html、exam_bank_data.js、svg 皆 HTTP 200）。
