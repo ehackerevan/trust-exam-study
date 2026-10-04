@@ -36,34 +36,34 @@
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#f87171"/>
     </marker>
   </defs>
-  <text x="460.0" y="36" fill="#f8fafc" font-size="20" font-weight="700" text-anchor="middle">⚖️ 金管會對違法信託業之行政處分階梯 (信託業法第 44 條)</text>
+  <text x="460.0" y="36" fill="#f8fafc" font-size="20" font-weight="700" text-anchor="middle">⚖️ 金管會對違法信託業之處分（信託業法第 44 條）</text>
 
   <g transform="translate(60, 65)" filter="url(#shadow)">
     <rect width="800" height="50" rx="8" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
     <rect width="180" height="50" rx="8" fill="url(#gradBlue)"/>
-    <text x="90" y="32" fill="#fff" font-size="15" font-weight="700" text-anchor="middle">輕度: 糾正限期改善</text>
-    <text x="200" y="32" fill="#cbd5e1" font-size="14">命信託業限期提出具體改善計畫並補正缺失</text>
+    <text x="90" y="32" fill="#fff" font-size="15" font-weight="700" text-anchor="middle">基本處置：糾正、命限期改善</text>
+    <text x="200" y="32" fill="#cbd5e1" font-size="14">主管機關得先予糾正並命限期改善</text>
   </g>
 
   <g transform="translate(60, 125)" filter="url(#shadow)">
     <rect width="800" height="50" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
     <rect width="180" height="50" rx="8" fill="url(#gradAmber)"/>
-    <text x="90" y="32" fill="#fff" font-size="15" font-weight="700" text-anchor="middle">中度: 命令停辦業務</text>
-    <text x="200" y="32" fill="#cbd5e1" font-size="14">限制其業務範圍，命令停止部分信託業務之推廣或開辦</text>
+    <text x="90" y="32" fill="#fff" font-size="15" font-weight="700" text-anchor="middle">處分一：停止一部或全部業務</text>
+    <text x="200" y="32" fill="#cbd5e1" font-size="14">依違規情節停止一部或全部業務</text>
   </g>
 
   <g transform="translate(60, 185)" filter="url(#shadow)">
     <rect width="800" height="50" rx="8" fill="#1e293b" stroke="#8b5cf6" stroke-width="1.5"/>
     <rect width="180" height="50" rx="8" fill="url(#gradPurple)"/>
-    <text x="90" y="32" fill="#fff" font-size="15" font-weight="700" text-anchor="middle">重大: 解除董監職務</text>
-    <text x="200" y="32" fill="#cbd5e1" font-size="14">解除違法之董事、監察人或經理人職務，且列入金融黑名單不得任職</text>
+    <text x="90" y="32" fill="#fff" font-size="15" font-weight="700" text-anchor="middle">處分二：解除或停止負責人職務</text>
+    <text x="200" y="32" fill="#cbd5e1" font-size="14">主管機關得命信託業解除或停止負責人職務</text>
   </g>
 
   <g transform="translate(60, 245)" filter="url(#shadow)">
     <rect width="800" height="50" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="1.5"/>
     <rect width="180" height="50" rx="8" fill="url(#gradRose)"/>
-    <text x="90" y="32" fill="#fff" font-size="15" font-weight="700" text-anchor="middle">極刑: 廢止營業許可</text>
-    <text x="200" y="32" fill="#fca5a5" font-size="14" font-weight="700">撤銷或廢止信託業之營業許可，命其勒令停業並進入清算程序</text>
+    <text x="90" y="32" fill="#fff" font-size="15" font-weight="700" text-anchor="middle">處分三：廢止營業許可／其他必要處置</text>
+    <text x="200" y="32" fill="#fca5a5" font-size="14" font-weight="700">第 44 條另授權主管機關採取其他必要處置</text>
   </g>
 
 </svg>
