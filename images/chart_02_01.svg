@@ -34,12 +34,12 @@
     </marker>
   </defs>
 
-  <text x="460" y="38" fill="#f8fafc" font-size="20" font-weight="700" text-anchor="middle">🏛️ 信託業法金融監理金字塔與四大防線</text>
+  <text x="460" y="38" fill="#f8fafc" font-size="20" font-weight="700" text-anchor="middle">🏛️ 信託業法監理架構與高頻法規重點</text>
 
   <!-- 頂部根節點 -->
   <g transform="translate(320, 65)" filter="url(#shadow)">
     <rect width="280" height="50" rx="10" fill="url(#gradEmerald)"/>
-    <text x="140" y="32" fill="#fff" font-size="17" font-weight="700" text-anchor="middle">信託業法監理金字塔</text>
+    <text x="140" y="32" fill="#fff" font-size="17" font-weight="700" text-anchor="middle">信託業法監理重點</text>
   </g>
 
   <!-- 四大模塊 -->
@@ -52,15 +52,15 @@
     <rect width="200" height="240" rx="8" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
     <text x="16" y="30" fill="#60a5fa" font-size="14" font-weight="700">實收資本額</text>
     <text x="16" y="52" fill="#cbd5e1" font-size="13">• 最低 20 億元</text>
-    <text x="16" y="72" fill="#94a3b8" font-size="12">• 發起時全額認足</text>
+    <text x="16" y="72" fill="#94a3b8" font-size="12">• 一次認足發行股份，至少繳足 20%</text>
     
-    <text x="16" y="110" fill="#60a5fa" font-size="14" font-weight="700">營業保證金</text>
-    <text x="16" y="132" fill="#cbd5e1" font-size="13">• 實收資本額 5%</text>
-    <text x="16" y="152" fill="#94a3b8" font-size="12">• 最少 5,000 萬元</text>
+    <text x="16" y="110" fill="#60a5fa" font-size="14" font-weight="700">賠償準備金</text>
+    <text x="16" y="132" fill="#cbd5e1" font-size="13">• 最低額依主管機關公告</text>
+    <text x="16" y="152" fill="#94a3b8" font-size="12">• 取得執照後 1 個月內存央行</text>
 
-    <text x="16" y="190" fill="#60a5fa" font-size="14" font-weight="700">賠償準備金</text>
-    <text x="16" y="212" fill="#cbd5e1" font-size="13">• 最少 5,000 萬</text>
-    <text x="16" y="232" fill="#38bdf8" font-size="12">⭐ 現金/公債存央行</text>
+    <text x="16" y="190" fill="#60a5fa" font-size="14" font-weight="700">利害關係交易</text>
+    <text x="16" y="212" fill="#cbd5e1" font-size="13">• 第 25、27 條設原則與例外</text>
+    <text x="16" y="232" fill="#38bdf8" font-size="12">⭐ 先判斷有無運用決定權</text>
   </g>
 
   <!-- 模塊 2: 利益衝突防火牆 -->
@@ -70,17 +70,17 @@
   </g>
   <g transform="translate(255, 205)" filter="url(#shadow)">
     <rect width="200" height="240" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="1.5"/>
-    <text x="16" y="30" fill="#fda4af" font-size="14" font-weight="700">第 25 條 絕對禁止</text>
-    <text x="16" y="52" fill="#cbd5e1" font-size="13">• 買自己/利害人證券</text>
-    <text x="16" y="72" fill="#f87171" font-size="12">• ⭐ 書面同意亦無效</text>
+    <text x="16" y="30" fill="#fda4af" font-size="14" font-weight="700">第 25 條 原則限制</text>
+    <text x="16" y="52" fill="#cbd5e1" font-size="13">• 本身／利害關係人交易受限</text>
+    <text x="16" y="72" fill="#f87171" font-size="12">• 不具運用決定權等有法定例外</text>
     
-    <text x="16" y="110" fill="#fda4af" font-size="14" font-weight="700">第 27 條 相對限制</text>
-    <text x="16" y="132" fill="#cbd5e1" font-size="13">• 存放款、外匯業務</text>
-    <text x="16" y="152" fill="#94a3b8" font-size="12">• 契約明訂或書面同意</text>
+    <text x="16" y="110" fill="#fda4af" font-size="14" font-weight="700">第 27 條 其他交易限制</text>
+    <text x="16" y="132" fill="#cbd5e1" font-size="13">• 存款、外匯等列舉交易</text>
+    <text x="16" y="152" fill="#94a3b8" font-size="12">• 契約約定或事前告知＋書面同意</text>
 
-    <text x="16" y="190" fill="#fda4af" font-size="14" font-weight="700">重度決議門檻</text>
-    <text x="16" y="212" fill="#cbd5e1" font-size="13">• 董事 2/3 以上出席</text>
-    <text x="16" y="232" fill="#fca5a5" font-size="12">⭐ 出席 3/4 以上同意</text>
+    <text x="16" y="190" fill="#fda4af" font-size="14" font-weight="700">土地開發信託借款</text>
+    <text x="16" y="212" fill="#cbd5e1" font-size="13">• 受益人會議 2/3 以上出席</text>
+    <text x="16" y="232" fill="#fca5a5" font-size="12">⭐ 出席表決權 1/2 以上同意</text>
   </g>
 
   <!-- 模塊 3: 營運與組織規範 -->
@@ -91,8 +91,8 @@
   <g transform="translate(480, 205)" filter="url(#shadow)">
     <rect width="200" height="240" rx="8" fill="#1e293b" stroke="#8b5cf6" stroke-width="1.5"/>
     <text x="16" y="30" fill="#c084fc" font-size="14" font-weight="700">信託財產評審會</text>
-    <text x="16" y="52" fill="#cbd5e1" font-size="13">• 每 3 個月開會一次</text>
-    <text x="16" y="72" fill="#94a3b8" font-size="12">• 評審資產公允價值</text>
+    <text x="16" y="52" fill="#cbd5e1" font-size="13">• 每 3 個月評審一次</text>
+    <text x="16" y="72" fill="#94a3b8" font-size="12">• 並報告董事會</text>
     
     <text x="16" y="110" fill="#c084fc" font-size="14" font-weight="700">內部控制與稽核</text>
     <text x="16" y="132" fill="#cbd5e1" font-size="13">• 總稽核專任</text>
@@ -116,9 +116,9 @@
     <text x="14" y="92" fill="#fbbf24" font-size="12">⭐ 解除董監經理職務</text>
     <text x="14" y="112" fill="#cbd5e1" font-size="13">• 廢止營業許可</text>
 
-    <text x="14" y="160" fill="#fbbf24" font-size="14" font-weight="700">法定罰鍰級距</text>
-    <text x="14" y="185" fill="#fca5a5" font-size="13">• 180萬~900萬元</text>
-    <text x="14" y="210" fill="#cbd5e1" font-size="13">• 60萬~300萬元</text>
+    <text x="14" y="160" fill="#fbbf24" font-size="14" font-weight="700">其他處置依違規條文</text>
+    <text x="14" y="185" fill="#fca5a5" font-size="13">• 罰則應對照具體違規條款</text>
+    <text x="14" y="210" fill="#cbd5e1" font-size="13">• 不用單一級距概括全部違規</text>
   </g>
 
   <!-- 連線 -->
