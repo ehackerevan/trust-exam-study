@@ -36,30 +36,30 @@
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#f87171"/>
     </marker>
   </defs>
-  <text x="460.0" y="36" fill="#f8fafc" font-size="20" font-weight="700" text-anchor="middle">🗳️ 員工持股信託股東常會表決權法定行使原則 (考題必考陷阱)</text>
+  <text x="460.0" y="36" fill="#f8fafc" font-size="20" font-weight="700" text-anchor="middle">🗳️ 信託股票表決權行使原則（信託業法第 20-1 條）</text>
 
   <g transform="translate(50, 75)" filter="url(#shadow)">
     <rect width="250" height="180" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
-    <text x="125" y="35" fill="#60a5fa" font-size="16" font-weight="700" text-anchor="middle">全體持股會員 (員工)</text>
-    <text x="20" y="75" fill="#cbd5e1" font-size="13">• 召開會員大會</text>
-    <text x="20" y="105" fill="#cbd5e1" font-size="13">• 共同推選代表</text>
-    <text x="20" y="135" fill="#38bdf8" font-size="13">👉 成立持股委員會</text>
+    <text x="125" y="35" fill="#60a5fa" font-size="16" font-weight="700" text-anchor="middle">信託契約</text>
+    <text x="20" y="75" fill="#cbd5e1" font-size="13">• 約定表決權行使方式</text>
+    <text x="20" y="105" fill="#cbd5e1" font-size="13">• 可設計指示或決策機制</text>
+    <text x="20" y="135" fill="#38bdf8" font-size="13">👉 先看契約約定</text>
   </g>
 
   <g transform="translate(340, 75)" filter="url(#shadow)">
     <rect width="240" height="180" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
-    <text x="120" y="35" fill="#34d399" font-size="16" font-weight="700" text-anchor="middle">持股會代表人</text>
-    <text x="20" y="75" fill="#cbd5e1" font-size="13">• 依會員大會決議行使</text>
-    <text x="20" y="105" fill="#cbd5e1" font-size="13">• 出具委託書具體指示</text>
-    <text x="20" y="135" fill="#fbbf24" font-size="14" font-weight="700">⭐ 合法唯一指示來源！</text>
+    <text x="120" y="35" fill="#34d399" font-size="16" font-weight="700" text-anchor="middle">受託人／信託業</text>
+    <text x="20" y="75" fill="#cbd5e1" font-size="13">• 依信託契約約定行使</text>
+    <text x="20" y="105" fill="#cbd5e1" font-size="13">• 可與其他信託／自有財產</text>
+    <text x="20" y="135" fill="#fbbf24" font-size="14" font-weight="700">  分別計算表決權</text>
   </g>
 
   <g transform="translate(620, 75)" filter="url(#shadow)">
     <rect width="250" height="180" rx="10" fill="#3b0f0f" stroke="#ef4444" stroke-width="2"/>
-    <text x="125" y="35" fill="#fca5a5" font-size="16" font-weight="700" text-anchor="middle">受託銀行 (股東名義人)</text>
-    <text x="20" y="75" fill="#fca5a5" font-size="13">• 依指示出席股東會投票</text>
-    <text x="20" y="110" fill="#ef4444" font-size="14" font-weight="700">❌ 絕對禁止！</text>
-    <text x="20" y="135" fill="#cbd5e1" font-size="13">受託銀行自行決定投票意向！</text>
+    <text x="125" y="35" fill="#fca5a5" font-size="16" font-weight="700" text-anchor="middle">表決權判斷</text>
+    <text x="20" y="75" fill="#fca5a5" font-size="13">• 不是一律由銀行自由決定</text>
+    <text x="20" y="110" fill="#ef4444" font-size="14" font-weight="700">• 也不是一律由持股會代表親投</text>
+    <text x="20" y="135" fill="#cbd5e1" font-size="13">⭐ 核心：依信託契約與相關法規辦理</text>
   </g>
 
   <path d="M 300 150 L 340 150" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)"/>
