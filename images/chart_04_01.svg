@@ -46,34 +46,34 @@
   <!-- 左：指定金錢信託 -->
   <g transform="translate(40, 150)" filter="url(#shadow)">
     <rect width="400" height="46" rx="8" fill="url(#gradBlue)"/>
-    <text x="200" y="30" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">指定金錢信託 (委託人具體指明標的)</text>
+    <text x="200" y="30" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">特定金錢信託（信託業不具運用決定權）</text>
   </g>
   <g transform="translate(40, 210)" filter="url(#shadow)">
     <rect width="400" height="100" rx="8" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
-    <text x="20" y="32" fill="#60a5fa" font-size="15" font-weight="700">特定金錢信託（國人最常用！）</text>
-    <text x="20" y="58" fill="#cbd5e1" font-size="13">• 投資決定權：⭐ 委託人完全保留！</text>
-    <text x="20" y="80" fill="#94a3b8" font-size="13">• 典型應用: 臨櫃或網銀指定申購境外基金、海外股票</text>
+    <text x="20" y="32" fill="#60a5fa" font-size="15" font-weight="700">委託人就運用作具體指示</text>
+    <text x="20" y="58" fill="#cbd5e1" font-size="13">• 信託業：不具運用決定權</text>
+    <text x="20" y="80" fill="#94a3b8" font-size="13">• 依委託人具體指示執行投資</text>
   </g>
   <g transform="translate(40, 325)" filter="url(#shadow)">
     <rect width="400" height="90" rx="8" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
-    <text x="20" y="30" fill="#60a5fa" font-size="15" font-weight="700">指定營運範圍金錢信託</text>
-    <text x="20" y="54" fill="#cbd5e1" font-size="13">• 投資決定權：委託人授權受託機構操盤</text>
-    <text x="20" y="74" fill="#94a3b8" font-size="13">• 典型應用: 全權委託投資代操業務</text>
+    <text x="20" y="30" fill="#60a5fa" font-size="15" font-weight="700">指定營運範圍／方法之金錢信託</text>
+    <text x="20" y="54" fill="#cbd5e1" font-size="13">• 信託業在契約約定範圍內具運用決定權</text>
+    <text x="20" y="74" fill="#94a3b8" font-size="13">• 實際運用仍須符合信託契約與法令</text>
   </g>
 
   <!-- 右：非特定金錢信託 -->
   <g transform="translate(480, 150)" filter="url(#shadow)">
     <rect width="400" height="46" rx="8" fill="url(#gradAmber)"/>
-    <text x="200" y="30" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">非特定金錢信託 (未具體指明標的)</text>
+    <text x="200" y="30" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">不指定營運範圍／方法之金錢信託</text>
   </g>
   <g transform="translate(480, 210)" filter="url(#shadow)">
     <rect width="400" height="205" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
-    <text x="20" y="32" fill="#fbbf24" font-size="15" font-weight="700">受託人自由全權決定標的</text>
-    <text x="20" y="60" fill="#cbd5e1" font-size="13">• 投資決定權：受託銀行具有完全裁量權</text>
-    <text x="20" y="88" fill="#cbd5e1" font-size="13">• 法定運用限制：信託業法第 32 條安全標的</text>
-    <text x="20" y="112" fill="#94a3b8" font-size="13">  (銀行存款、國庫券、政府公債、金融債券)</text>
-    <text x="20" y="150" fill="#f87171" font-size="14" font-weight="700">⚠️ 天條：信託業不得承諾擔保本金或保證最低收益！</text>
-    <text x="20" y="174" fill="#cbd5e1" font-size="13">  違反者約定無效，且處行政重罰！</text>
+    <text x="20" y="32" fill="#fbbf24" font-size="15" font-weight="700">信託業具運用決定權，但受第 32 條限制</text>
+    <text x="20" y="60" fill="#cbd5e1" font-size="13">• 營運範圍依法定項目辦理</text>
+    <text x="20" y="88" fill="#cbd5e1" font-size="13">• 現金／銀行存款、債券、短期票券等</text>
+    <text x="20" y="112" fill="#94a3b8" font-size="13">    及其他經主管機關核准之業務</text>
+    <text x="20" y="150" fill="#f87171" font-size="14" font-weight="700">⚠️ 第 31 條：信託業不得承諾擔保本金或最低收益率</text>
+    <text x="20" y="174" fill="#cbd5e1" font-size="13">  違規效果與責任依具體條文及情節判斷</text>
   </g>
 
   <!-- 連線 -->
