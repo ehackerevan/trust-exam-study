@@ -34,7 +34,7 @@
     </marker>
   </defs>
 
-  <text x="460" y="38" fill="#f8fafc" font-size="20" font-weight="700" text-anchor="middle">💧 信託所得稅：透明水管「管道穿透理論 (Conduit Theory)」</text>
+  <text x="460" y="38" fill="#f8fafc" font-size="20" font-weight="700" text-anchor="middle">💧 信託所得課稅：依受益權歸屬判斷</text>
 
   <!-- 收益來源 (左) -->
   <g transform="translate(40, 90)" filter="url(#shadow)">
@@ -47,22 +47,22 @@
   <!-- 中間：透明水管 (信託關係) -->
   <g transform="translate(280, 80)" filter="url(#shadow)">
     <rect width="360" height="130" rx="14" fill="#082f49" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="8,4"/>
-    <text x="180" y="36" fill="#38bdf8" font-size="17" font-weight="700" text-anchor="middle">🚰 信託財產專戶 (如同透明水管)</text>
-    <text x="180" y="66" fill="#93c5fd" font-size="13" text-anchor="middle">信託本身不是獨立納稅法人，只是傳遞所得之導管</text>
-    <text x="180" y="92" fill="#fbbf24" font-size="14" font-weight="700" text-anchor="middle">⭐ 核心原則：水管本身不喝水 (信託專戶不課所得稅)</text>
-    <text x="180" y="114" fill="#e2e8f0" font-size="12" text-anchor="middle">於「所得發生年度」課稅，非分配年度！</text>
+    <text x="180" y="36" fill="#38bdf8" font-size="17" font-weight="700" text-anchor="middle">🚰 一般信託：依受益權歸屬計算所得</text>
+    <text x="180" y="66" fill="#93c5fd" font-size="13" text-anchor="middle">受益人特定且存在時，原則按所得發生年度歸屬</text>
+    <text x="180" y="92" fill="#fbbf24" font-size="14" font-weight="700" text-anchor="middle">⭐ 受益人不特定／尚未存在等情形另有法定處理</text>
+    <text x="180" y="114" fill="#e2e8f0" font-size="12" text-anchor="middle">公益信託等符合要件者，也有特別課稅規定</text>
   </g>
 
   <!-- 右邊：接水者 (實質納稅人) -->
   <g transform="translate(700, 70)" filter="url(#shadow)">
     <rect width="180" height="70" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
     <text x="90" y="28" fill="#34d399" font-size="14" font-weight="700" text-anchor="middle">自益信託</text>
-    <text x="90" y="52" fill="#e2e8f0" font-size="13" text-anchor="middle">👉 委託人 申報繳稅</text>
+    <text x="90" y="52" fill="#e2e8f0" font-size="13" text-anchor="middle">👉 委託人為受益人時，依規定申報</text>
   </g>
   <g transform="translate(700, 155)" filter="url(#shadow)">
     <rect width="180" height="70" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
     <text x="90" y="28" fill="#fbbf24" font-size="14" font-weight="700" text-anchor="middle">他益信託</text>
-    <text x="90" y="52" fill="#e2e8f0" font-size="13" text-anchor="middle">👉 受益人 申報繳稅</text>
+    <text x="90" y="52" fill="#e2e8f0" font-size="13" text-anchor="middle">👉 受益人特定存在時，依規定歸屬所得</text>
   </g>
 
   <!-- 水流動態箭頭 -->
