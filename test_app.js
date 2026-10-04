@@ -63,6 +63,37 @@ if (/renderConceptQuizzes\(chapter\);/.test(html)) {
 }
 console.log('✅ 章節頁面不得再顯示考古題區塊，且不再載入考古題腳本');
 
+console.log('\n--- 2.6. 驗證前七章與速查手冊一致性 ---');
+const studyDir = path.join(__dirname, '信託業務人員重點教材');
+const c01Md = fs.readFileSync(path.join(studyDir, '01_信託法規精粹_生活圖解篇.md'), 'utf8');
+const c02Md = fs.readFileSync(path.join(studyDir, '02_信託業法與監理架構_圖解篇.md'), 'utf8');
+const c04Md = fs.readFileSync(path.join(studyDir, '04_金錢信託與集合管理_實務篇.md'), 'utf8');
+const c06Md = fs.readFileSync(path.join(studyDir, '06_不動產信託與資產證券化_實務篇.md'), 'utf8');
+const chart0202 = fs.readFileSync(path.join(studyDir, 'images', 'chart_02_02.svg'), 'utf8');
+const chart0203 = fs.readFileSync(path.join(studyDir, 'images', 'chart_02_03.svg'), 'utf8');
+const chart0403 = fs.readFileSync(path.join(studyDir, 'images', 'chart_04_03.svg'), 'utf8');
+const chart0603 = fs.readFileSync(path.join(studyDir, 'images', 'chart_06_03.svg'), 'utf8');
+
+const quickGuideChecks = [
+  [c01Md.includes('三大破防例外') && !c01Md.includes('四大破防漏洞'), '第 01 章強制執行例外應為三類'],
+  [!c02Md.includes('| **營業保證金** |') && c02Md.includes('信託業法本身沒有這項營業保證金要求'), '第 02 章不得把營業保證金列為信託業法要求'],
+  [c02Md.includes('2/3 出席、3/4 同意不是第 27 條的一般門檻'), '第 02 章須區分第 27 條與銀行法第 33 條董事會門檻'],
+  [c04Md.includes('該公司**實收資本額的 10%**') && !c04Md.includes('該公司總發行股份的 **10%**'), '第 04 章雙十原則第二基準應為實收資本額 10%'],
+  [c06Md.includes('會計年度結束後 6 個月內') && c06Md.includes('90% 以上'), '第 06 章 REIT 收益分配須含 90% 與 6 個月期限'],
+  [chart0202.includes('高頻陷阱：營業保證金') && chart0202.includes('信託業法無此項'), 'chart_02_02 須將營業保證金標示為陷阱'],
+  [chart0203.includes('2/3＋3/4 並非第27條一般門檻'), 'chart_02_03 不得把 2/3＋3/4 當作第 27 條一般門檻'],
+  [chart0403.includes('實收資本額之 10%') && !chart0403.includes('已發行股份總數之 10%'), 'chart_04_03 雙十原則基準須同步'],
+  [chart0603.includes('6 個月內分配'), 'chart_06_03 REIT 分配期限須同步']
+];
+
+for (const [ok, message] of quickGuideChecks) {
+  if (!ok) {
+    console.error(`❌ ${message}`);
+    process.exit(1);
+  }
+}
+console.log('✅ 前七章與速查手冊重疊考點已一致，文字與 SVG 圖解同步');
+
 console.log('\n--- 3. 驗證題庫資料完整性（資料保留供後續校正） ---');
 const bankSandbox = { window: {}, globalThis: {} };
 vm.createContext(bankSandbox);
