@@ -46,8 +46,8 @@
     <text x="25" y="80" fill="#60a5fa" font-size="15" font-weight="700">1. 單一公司股票或債券總額限制</text>
     <text x="25" y="105" fill="#cbd5e1" font-size="13">• 不得超過該集管帳戶【淨資產價值之 10%】！</text>
     
-    <text x="25" y="145" fill="#60a5fa" font-size="15" font-weight="700">2. 單一上市櫃公司發行股份限制</text>
-    <text x="25" y="170" fill="#cbd5e1" font-size="13">• 不得超過該公司【已發行股份總數之 10%】！</text>
+    <text x="25" y="145" fill="#60a5fa" font-size="15" font-weight="700">2. 全體帳戶投資單一公司上限</text>
+    <text x="25" y="170" fill="#cbd5e1" font-size="13">• 不得超過該公司【實收資本額之 10%】！</text>
 
     <text x="25" y="210" fill="#fbbf24" font-size="13">👉 目的：落實風險高度分散，防範單一倒閉波及全池！</text>
   </g>
