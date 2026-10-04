@@ -1,0 +1,4 @@
+可刪除_*
+node_modules/
+__pycache__/
+*.pyc
