@@ -34,7 +34,7 @@
     </marker>
   </defs>
 
-  <text x="460" y="38" fill="#f8fafc" font-size="20" font-weight="700" text-anchor="middle">⚖️ 信託財產強制執行判斷流程與三大破防例外 (信託法第 12 條)</text>
+  <text x="460" y="38" fill="#f8fafc" font-size="20" font-weight="700" text-anchor="middle">⚖️ 信託財產強制執行原則與三類法定例外（信託法第 12 條）</text>
 
   <!-- 決策起點 -->
   <g transform="translate(310, 65)" filter="url(#shadow)">
@@ -46,18 +46,18 @@
   <g transform="translate(40, 200)" filter="url(#shadow)">
     <rect width="360" height="170" rx="12" fill="#3f1212" stroke="#ef4444" stroke-width="2"/>
     <rect width="360" height="44" rx="12" fill="url(#gradRose)"/>
-    <text x="180" y="28" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">❌ 原則：嚴格禁止強制執行！</text>
+    <text x="180" y="28" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">❌ 原則：不得對信託財產強制執行</text>
     
-    <text x="20" y="75" fill="#fca5a5" font-size="14" font-weight="600">• 委託人自己的普通債權人：不可查封！</text>
-    <text x="20" y="105" fill="#fca5a5" font-size="14" font-weight="600">• 受託人自己的私人債權人：不可查封！</text>
-    <text x="20" y="135" fill="#cbd5e1" font-size="13">👉 違反規定者，受託人/受益人得提起異議之訴！</text>
+    <text x="20" y="75" fill="#fca5a5" font-size="14" font-weight="600">• 委託人一般債權不能直接突破信託財產</text>
+    <text x="20" y="105" fill="#fca5a5" font-size="14" font-weight="600">• 受託人私人債務亦不得逕以信託財產清償</text>
+    <text x="20" y="135" fill="#cbd5e1" font-size="13">👉 違反者，委託人／受益人／受託人得依法提起異議之訴</text>
   </g>
 
   <!-- 例外准許卡片 (右側) -->
   <g transform="translate(460, 180)" filter="url(#shadow)">
     <rect width="420" height="210" rx="12" fill="#064e3b" stroke="#10b981" stroke-width="2"/>
     <rect width="420" height="44" rx="12" fill="url(#gradEmerald)"/>
-    <text x="210" y="28" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">⭕ 但書例外：以下三種情形得強制執行！</text>
+    <text x="210" y="28" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">⭕ 但書例外：以下三類情形不受禁止</text>
     
     <text x="20" y="75" fill="#a7f3d0" font-size="14" font-weight="700">1. 信託前已存在於該財產之權利</text>
     <text x="35" y="98" fill="#cbd5e1" font-size="13">• 例如：信託前房屋已向銀行設定第一順位抵押權</text>
@@ -66,7 +66,7 @@
     <text x="35" y="150" fill="#cbd5e1" font-size="13">• 例如：信託大樓之裝潢修繕工程款、地價稅房屋稅</text>
 
     <text x="20" y="180" fill="#a7f3d0" font-size="14" font-weight="700">3. 其他法律有特別規定者</text>
-    <text x="35" y="200" fill="#cbd5e1" font-size="13">• 例如：稅捐稽徵法之法定優先權</text>
+    <text x="35" y="200" fill="#cbd5e1" font-size="13">• 依其他法律的特別規定逐案判斷</text>
   </g>
 
   <!-- 連線 -->
