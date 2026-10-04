@@ -49,6 +49,13 @@ if (html.includes('diagram-interactive-card') && html.includes('min-width: 760px
   process.exit(1);
 }
 
+console.log('\n--- 2.5. 驗證題庫載入順序與快取版本 ---');
+if (!html.includes('<script src="exam_bank_data.js?v=20261004-hf2"></script>') || html.includes('exam_bank_data.js" defer')) {
+  console.error('❌ 題庫腳本必須在主程式前同步載入，且帶版本參數避免舊快取');
+  process.exit(1);
+}
+console.log('✅ 題庫腳本必須在主程式前同步載入，並以版本參數突破舊快取');
+
 console.log('\n--- 3. 驗證題庫資料完整性 ---');
 const bankSandbox = { window: {}, globalThis: {} };
 vm.createContext(bankSandbox);
