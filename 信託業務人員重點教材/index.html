@@ -1698,6 +1698,7 @@ const courseData = {"chapters": [{"id": "c00", "filename": "00_信託證照攻�
     window.addEventListener('DOMContentLoaded', () => {
       if (window.EXAM_BANK_DATA) {
         courseData.full_bank = window.EXAM_BANK_DATA;
+        courseData.quizzes = window.EXAM_BANK_DATA;
         updateGlobalStats();
       }
     });
@@ -1977,7 +1978,7 @@ const courseData = {"chapters": [{"id": "c00", "filename": "00_信託證照攻�
     // ==================== 1. 精選觀念題目渲染 ====================
     function renderConceptQuizzes(chapter) {
       const quizList = document.getElementById('quizList');
-      const quizzes = courseData.quizzes[chapter.id] || (window.EXAM_BANK_DATA && window.EXAM_BANK_DATA[chapter.id]) || [];
+      const quizzes = (window.EXAM_BANK_DATA && window.EXAM_BANK_DATA[chapter.id]) || courseData.quizzes[chapter.id] || [];
 
       if (!quizzes || quizzes.length === 0) {
         quizList.innerHTML = '<p style="color:var(--text-muted); padding:16px;">本章節為全景導讀與速查單元，請前往其他實務章節演練精選考題。</p>';
@@ -2023,6 +2024,7 @@ const courseData = {"chapters": [{"id": "c00", "filename": "00_信託證照攻�
               ${termLabel}
             </span>
             ${q.topic ? `<span class="topic-badge">💡 ${q.topic}</span>` : ''}
+            ${q.frequency ? `<span class="topic-badge">📊 ${q.frequencyScope || '本章'} ${q.frequency} 題｜#${q.topicRank}</span>` : ''}
             ${isAnswered ? (isCorrect ? '<span style="color:var(--primary); font-size:0.8rem; font-weight:700;">✅ 已掌握</span>' : '<span style="color:var(--danger); font-size:0.8rem; font-weight:700;">❌ 曾答錯</span>') : ''}
           </div>
           <div class="quiz-question" style="font-size:1.02rem; line-height:1.65; margin-bottom:12px; font-weight:600; color:var(--text-main);">
