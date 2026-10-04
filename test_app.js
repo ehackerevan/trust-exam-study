@@ -67,6 +67,36 @@ if (bankSandbox.window && bankSandbox.window.EXAM_BANK_DATA) {
     console.error(`❌ 題目數量非預期之 80 題 (當前為 ${totalQuestions})！`);
     process.exit(1);
   }
+
+  // 高頻精選題回歸檢查：不得再次退化為只挑最新期別。
+  const normalizedStems = new Set();
+  chapters.forEach(ch => {
+    const questions = bank[ch];
+    if (questions.length !== 10) {
+      console.error(`❌ ${ch} 精選題應為 10 題，實際為 ${questions.length} 題`);
+      process.exit(1);
+    }
+    questions.forEach(q => {
+      if (!q.frequency || !q.topicRank || !q.frequencyScope) {
+        console.error(`❌ ${q.id} 缺少高頻統計欄位`);
+        process.exit(1);
+      }
+      const sig = String(q.stem || '').normalize('NFKC').replace(/\\s+/g, '').replace(/[，。；：？！、「」『』（）()【】\\[\\]．,.!?;:'"“”‘’\\-—_]/g, '');
+      if (normalizedStems.has(sig)) {
+        console.error(`❌ 精選題跨章節重複：${q.stem}`);
+        process.exit(1);
+      }
+      normalizedStems.add(sig);
+    });
+    if (ch !== 'c08') {
+      const terms = new Set(questions.map(q => q.term));
+      if (terms.size < 3 || questions.every(q => q.term >= 61)) {
+        console.error(`❌ ${ch} 期別分布過度集中，疑似退回近期題優先邏輯`);
+        process.exit(1);
+      }
+    }
+  });
+  console.log('✅ 高頻精選題：每章 10 題、具頻率標記、跨期分散、全域無重複');
 } else {
   console.error('❌ 題庫腳本未正確定義 window.EXAM_BANK_DATA！');
   process.exit(1);

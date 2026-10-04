@@ -1,1367 +1,1935 @@
 {
   "c01": [
     {
-      "id": "past-60-practice-64",
-      "term": 60,
-      "period": 60,
-      "subject": "信託實務",
-      "number": 64,
-      "stem": "境外華僑及外國人投資國內證券，應向下列何者申請辦理登記？",
-      "options": [
-        "中央銀行",
-        "經濟部",
-        "財政部",
-        "臺灣證券交易所"
-      ],
-      "answer": 4,
-      "topic": "境外基金與國外證券投資",
-      "conceptId": "concept-1",
-      "weight": 260.0,
-      "raw_chap": "c6"
-    },
-    {
-      "id": "past-61-law-3",
-      "term": 61,
-      "period": 61,
+      "id": "past-52-law-2",
+      "term": 52,
+      "period": 52,
       "subject": "信託法規",
-      "number": 3,
-      "stem": "甲為契約信託之委託人，乙為受託人，丙為受益人，丁為信託監察人，下列何者是信託財產對外有管理處分權之人？",
+      "number": 2,
+      "stem": "某甲將公司債交付信託，已依規定辦理信託公示，但未通知該公司債發行公司，則該信託行為之效力為何？",
       "options": [
-        "丁",
-        "丙",
-        "乙",
-        "甲"
+        "(1) 無效",
+        "(2) 有效，但不能對抗第三人",
+        "(3) 無效，但能對抗第三人",
+        "(4) 有效，但不能對抗該發行公司"
       ],
       "answer": 3,
+      "answers": [
+        3
+      ],
+      "note": "【核心觀念定位】成立方式與信託分類",
       "topic": "成立方式與信託分類",
       "conceptId": "concept-2",
-      "weight": 185.5,
-      "raw_chap": "c1"
+      "gradable": true,
+      "chapter": "c01",
+      "source_chapter": "c01",
+      "frequency": 154,
+      "topicRank": 1,
+      "frequencyScope": "本章"
     },
     {
-      "id": "past-62-practice-79",
-      "term": 62,
-      "period": 62,
-      "subject": "信託實務",
-      "number": 79,
-      "stem": "依證券投資信託及顧問法規定，下列何者為證券投資信託契約之受託人？",
-      "options": [
-        "投資人",
-        "基金保管機構",
-        "證券投資信託事業",
-        "證券投資顧問事業"
-      ],
-      "answer": 2,
-      "topic": "基金保管交割與監督責任",
-      "conceptId": "concept-3",
-      "weight": 175.0,
-      "raw_chap": "c10"
-    },
-    {
-      "id": "past-56-practice-13",
+      "id": "past-56-law-26",
       "term": 56,
       "period": 56,
-      "subject": "信託實務",
-      "number": 13,
-      "stem": "江董事長有一筆款項欲信託與信託業管理，雙方簽訂特定金錢信託契約，將信託財產分散運用於股票及債券，有關信託登記事宜，下列敘述何者正確？",
+      "subject": "信託法規",
+      "number": 26,
+      "stem": "信託業收受以公司債為信託財產之信託，經償還後轉化為金錢，併為信託財產運用，係屬於下列何種信託？",
       "options": [
-        "僅股票需辦理信託登記",
-        "僅債券需辦理信託登記",
-        "股票及債券均需辦理信託登記",
-        "特定金錢信託於信託期間無須適用信託登記規定"
+        "(1) 金錢之信託",
+        "(2) 金錢債權之信託",
+        "(3) 有價證券之信託",
+        "(4) 動產之信託"
+      ],
+      "answer": 2,
+      "answers": [
+        2
+      ],
+      "note": "【核心觀念定位】成立方式與信託分類",
+      "topic": "成立方式與信託分類",
+      "conceptId": "concept-2",
+      "gradable": true,
+      "chapter": "c01",
+      "source_chapter": "c01",
+      "frequency": 154,
+      "topicRank": 1,
+      "frequencyScope": "本章"
+    },
+    {
+      "id": "past-60-law-19",
+      "term": 60,
+      "period": 60,
+      "subject": "信託法規",
+      "number": 19,
+      "stem": "下列何種情形為遺囑信託？",
+      "options": [
+        "(1) 甲生前至銀行簽訂信託契約，並交付銀行新臺幣壹仟萬元，約明以甲之死亡為條件，待甲死亡時，該信託契約方生效",
+        "(2) 甲生前至銀行簽訂信託契約，並交付銀行新臺幣壹仟萬元，約明以甲之死亡日為信託期間之起日",
+        "(3) 甲於遺囑中指示其遺囑執行人，自其遺產中提撥伍仟萬元由遺囑執行人信託予一慈善機構",
+        "(4) 甲依法律規定之方式於遺囑中指定將其部份遺產，指定一受託人成立信託"
       ],
       "answer": 3,
-      "topic": "金錢信託分類權限與運用",
-      "conceptId": "concept-5",
-      "weight": 136.0,
-      "raw_chap": "c6"
-    },
-    {
-      "id": "past-62-law-27",
-      "term": 62,
-      "period": 62,
-      "subject": "信託法規",
-      "number": 27,
-      "stem": "信託業辦理下列何種信託業務時，得經全體受益人同意以信託財產借入款項？",
-      "options": [
-        "以開發為目的之土地信託業務",
-        "以投資為目的之金錢信託業務",
-        "以管理為目的之有價證券信託業務",
-        "以處分為目的之動產信託業務"
+      "answers": [
+        3
       ],
-      "answer": 1,
-      "topic": "業務範圍與禁止保本保息",
-      "conceptId": "concept-4",
-      "weight": 149.0,
-      "raw_chap": "c2"
+      "note": "【核心觀念定位】成立方式與信託分類",
+      "topic": "成立方式與信託分類",
+      "conceptId": "concept-2",
+      "gradable": true,
+      "chapter": "c01",
+      "source_chapter": "c01",
+      "frequency": 154,
+      "topicRank": 1,
+      "frequencyScope": "本章"
     },
     {
-      "id": "past-55-law-11",
+      "id": "past-55-law-9",
       "term": 55,
       "period": 55,
       "subject": "信託法規",
-      "number": 11,
-      "stem": "依信託法規定，有關受託人應將信託財產分別管理之敘述，下列何者錯誤？",
+      "number": 9,
+      "stem": "有關受託人之直接管理義務，下列敘述何者錯誤？",
       "options": [
-        "信託財產為金錢者，得以分別記帳方式為之",
-        "信託財產為不動產者，不得以分別記帳為之",
-        "受託人之自有財產與信託財產間，如信託行為訂定得不必分別管理者，從其約定",
-        "受託人收受不同之信託財產間，除信託行為另有訂定外，應分別管理"
+        "(1) 信託行為得另訂第三人代為處理信託事務",
+        "(2) 信託行為有不得已之事由者，得使第三人代為處理信託事務",
+        "(3) 受託人違反信託直接管理義務時，應就第三人之行為負完全責任",
+        "(4) 受託人違反信託直接管理義務，使第三人代為處理信託事務時，該第三人所為法律行為效力可及於信託財產"
       ],
       "answer": 3,
+      "answers": [
+        3
+      ],
+      "note": "【核心觀念定位】受託人義務報酬與責任",
       "topic": "受託人義務報酬與責任",
       "conceptId": "concept-10",
-      "weight": 83.5,
-      "raw_chap": "c1"
+      "gradable": true,
+      "chapter": "c01",
+      "source_chapter": "c01",
+      "frequency": 61,
+      "topicRank": 2,
+      "frequencyScope": "本章"
     },
     {
-      "id": "past-62-practice-47",
-      "term": 62,
-      "period": 62,
-      "subject": "信託實務",
-      "number": 47,
-      "stem": "依金融資產證券化條例規定，受託機構至遲應於每營業年度終了多少時間內，就特殊目的信託之信託財產作成資產負債表、損益表、信託財產管理及運用報告書等書表，向信託監察人報告，並通知受益人？",
+      "id": "past-52-law-13",
+      "term": 52,
+      "period": 52,
+      "subject": "信託法規",
+      "number": 13,
+      "stem": "公益信託之受託人有為違背其職務之行為時，委託人得向下列何機關申請將其解任？",
       "options": [
-        "十五日",
-        "一個月",
-        "二個月",
-        "四個月"
+        "(1) 法院",
+        "(2) 檢察機關",
+        "(3) 警察機關",
+        "(4) 目的事業主管機關"
       ],
-      "answer": 4,
-      "topic": "特殊目的信託公司與參與機構",
-      "conceptId": "concept-7",
-      "weight": 122.0,
-      "raw_chap": "c9"
+      "answer": 3,
+      "answers": [
+        3
+      ],
+      "note": "【核心觀念定位】公益信託與監督機關",
+      "topic": "公益信託與監督機關",
+      "conceptId": "concept-20",
+      "gradable": true,
+      "chapter": "c01",
+      "source_chapter": "c01",
+      "frequency": 46,
+      "topicRank": 3,
+      "frequencyScope": "本章"
     },
     {
-      "id": "past-61-practice-37",
-      "term": 61,
-      "period": 61,
-      "subject": "信託實務",
-      "number": 37,
-      "stem": "下列何者係為釐清信託財產與受託人自有財產之關係以確保交易之安全？",
+      "id": "past-51-law-6",
+      "term": 51,
+      "period": 51,
+      "subject": "信託法規",
+      "number": 6,
+      "stem": "以應登記或註冊之財產權為信託者，有關信託財產登記之規定，下列敘述何者錯誤？",
       "options": [
-        "信託申報",
-        "信託公示",
-        "信託憑證",
-        "信託聲明"
+        "(1) 非經信託登記，不得對抗第三人",
+        "(2) 土地權利登記得以遺囑為之",
+        "(3) 以股票為信託者，應向臺灣證券交易所辦理登記",
+        "(4) 以有價證券為信託者，應於證券上或其他表彰權利之文件上載明為信託財產"
       ],
       "answer": 2,
+      "answers": [
+        2
+      ],
+      "note": "【核心觀念定位】登記公示與對抗效力",
       "topic": "登記公示與對抗效力",
       "conceptId": "concept-27",
-      "weight": 64.5,
-      "raw_chap": "c1"
+      "gradable": true,
+      "chapter": "c01",
+      "source_chapter": "c01",
+      "frequency": 33,
+      "topicRank": 4,
+      "frequencyScope": "本章"
     },
     {
-      "id": "past-59-practice-25",
-      "term": 59,
-      "period": 59,
-      "subject": "信託實務",
-      "number": 25,
-      "stem": "有關企業員工持股信託之信託財產獨立性與安全性之敘述，下列何者正確？ A.信託財產不屬於受託人之自有財產 B. 委託人之債權人原則上不得對信託財產聲請強制執行 C.受託人之債權人不得對信託財產聲請強制執行 D.受益人之債權人不得對信託受益權聲請強制執行",
+      "id": "past-52-law-32",
+      "term": 52,
+      "period": 52,
+      "subject": "信託法規",
+      "number": 32,
+      "stem": "信託財產運用所生之收益及損失應由下列何者享受與承擔？",
       "options": [
-        "ABCD",
-        "僅ABC",
-        "僅ABD",
-        "僅ACD"
+        "(1) 受託人",
+        "(2) 委託人",
+        "(3) 受益人",
+        "(4) 從信託契約之約定"
       ],
       "answer": 2,
-      "topic": "持股會組織協議與當事人",
-      "conceptId": "concept-12",
-      "weight": 87.5,
-      "raw_chap": "c6"
+      "answers": [
+        2
+      ],
+      "note": "【核心觀念定位】委託人權利與信託標的",
+      "topic": "委託人權利與信託標的",
+      "conceptId": "concept-29",
+      "gradable": true,
+      "chapter": "c01",
+      "source_chapter": "c01",
+      "frequency": 30,
+      "topicRank": 5,
+      "frequencyScope": "本章"
     },
     {
-      "id": "past-60-practice-57",
-      "term": 60,
-      "period": 60,
-      "subject": "信託實務",
-      "number": 57,
-      "stem": "全權委託投資資產，如遭法院扣押或強制執行時，除可歸責於受任人之情形外，下列何者應履行交割義務？",
+      "id": "past-52-law-5",
+      "term": 52,
+      "period": 52,
+      "subject": "信託法規",
+      "number": 5,
+      "stem": "信託關係消滅時，於受託人移轉信託財產於歸屬權利人前，信託關係視為存續，該信託關係屬下列何者？",
       "options": [
-        "保管機構",
-        "委任人（客戶）",
-        "受任人",
-        "交易對象"
+        "(1) 契約信託",
+        "(2) 遺囑信託",
+        "(3) 宣言信託",
+        "(4) 法定信託"
+      ],
+      "answer": 3,
+      "answers": [
+        3
+      ],
+      "note": "【核心觀念定位】終止變更與剩餘財產歸屬",
+      "topic": "終止變更與剩餘財產歸屬",
+      "conceptId": "concept-30",
+      "gradable": true,
+      "chapter": "c01",
+      "source_chapter": "c01",
+      "frequency": 30,
+      "topicRank": 6,
+      "frequencyScope": "本章"
+    },
+    {
+      "id": "past-54-law-10",
+      "term": 54,
+      "period": 54,
+      "subject": "信託法規",
+      "number": 10,
+      "stem": "依信託法規定，受託人違反信託本旨處分信託財產時，下列何者得聲請法院撤銷其處分？",
+      "options": [
+        "(1) 委託人",
+        "(2) 受益人",
+        "(3) 信託業主管機關",
+        "(4) 法院依職權行使撤銷"
+      ],
+      "answer": 1,
+      "answers": [
+        1
+      ],
+      "note": "【核心觀念定位】受益人權利與撤銷救濟",
+      "topic": "受益人權利與撤銷救濟",
+      "conceptId": "concept-32",
+      "gradable": true,
+      "chapter": "c01",
+      "source_chapter": "c01",
+      "frequency": 29,
+      "topicRank": 7,
+      "frequencyScope": "本章"
+    },
+    {
+      "id": "past-55-law-13",
+      "term": 55,
+      "period": 55,
+      "subject": "信託法規",
+      "number": 13,
+      "stem": "下列何者為信託監察人不得行使之權利？",
+      "options": [
+        "(1) 請求閱覽受託人所作成之信託財產目錄及收支計算表",
+        "(2) 對違反規定所為強制執行提起異議之訴權利",
+        "(3) 享有信託利益及拋棄信託利益",
+        "(4) 對不當管理信託財產之受託人，請求損害賠償"
       ],
       "answer": 2,
-      "topic": "全權委託保管與越權交易",
-      "conceptId": "concept-6",
-      "weight": 130.0,
-      "raw_chap": "c10"
+      "answers": [
+        2
+      ],
+      "note": "【核心觀念定位】信託監察人",
+      "topic": "信託監察人",
+      "conceptId": "concept-34",
+      "gradable": true,
+      "chapter": "c01",
+      "source_chapter": "c01",
+      "frequency": 26,
+      "topicRank": 8,
+      "frequencyScope": "本章"
     }
   ],
   "c02": [
     {
-      "id": "past-62-practice-2",
-      "term": 62,
-      "period": 62,
-      "subject": "信託實務",
-      "number": 2,
-      "stem": "有關信託業推介外國有價證券之行為，須經委託人書面同意，下列敘述何者正確？",
-      "options": [
-        "每次交易時，須另行徵收",
-        "每次推介時，須再次徵取",
-        "推介特定投資標的，須逐一同意推介",
-        "委託人得隨時終止該推介行為，並於書面指示送達信託業後生效"
-      ],
-      "answer": 4,
-      "topic": "境外基金與國外證券投資",
-      "conceptId": "concept-1",
-      "weight": 263.0,
-      "raw_chap": "c6"
-    },
-    {
-      "id": "past-58-law-5",
-      "term": 58,
-      "period": 58,
+      "id": "past-57-law-24",
+      "term": 57,
+      "period": 57,
       "subject": "信託法規",
-      "number": 5,
-      "stem": "依信託業法分類，所稱「金融資產證券化」屬下列何種信託？",
+      "number": 24,
+      "stem": "下列何者不屬於信託業得經營之業務或附屬業務？",
       "options": [
-        "金錢信託",
-        "不動產信託",
-        "有價證券信託",
-        "金錢債權及其擔保物權信託"
+        "(1) 著作權之信託",
+        "(2) 擔任信託監察人",
+        "(3) 擔任遺囑執行人及遺產管理人",
+        "(4) 辦理有價證券買賣融資融券業務"
       ],
-      "answer": 4,
-      "topic": "成立方式與信託分類",
-      "conceptId": "concept-2",
-      "weight": 181.0,
-      "raw_chap": "c1"
-    },
-    {
-      "id": "past-52-practice-66",
-      "term": 52,
-      "period": 52,
-      "subject": "信託實務",
-      "number": 66,
-      "stem": "信託業兼營證券投資信託業務，如因故意或過失致生損害於經核准自行保管之基金資產者，下列何者依規定應為基金受益人之權益向該信託業追償？",
-      "options": [
-        "信託受託人",
-        "信託監察人",
-        "信託受益人",
-        "信託委託人"
+      "answer": 3,
+      "answers": [
+        3
       ],
-      "answer": 2,
-      "topic": "基金保管交割與監督責任",
-      "conceptId": "concept-3",
-      "weight": 160.0,
-      "raw_chap": "c10"
-    },
-    {
-      "id": "past-55-practice-79",
-      "term": 55,
-      "period": 55,
-      "subject": "信託實務",
-      "number": 79,
-      "stem": "甲銀行兼營信託業務，辦理金錢信託、有價證券信託及保管銀行業務，其金錢信託中並無保本保息之代為確定用途信託資金，今該銀行有指撥營運資金新台幣五千萬元，請問甲銀行至少應再提存信託賠償準備金為多少元？",
-      "options": [
-        "二千萬元",
-        "三千萬元",
-        "四千萬元",
-        "得以指撥營運資金充當賠償準備金"
-      ],
-      "answer": 4,
-      "topic": "金錢信託分類權限與運用",
-      "conceptId": "concept-5",
-      "weight": 134.5,
-      "raw_chap": "c6"
-    },
-    {
-      "id": "past-62-law-36",
-      "term": 62,
-      "period": 62,
-      "subject": "信託法規",
-      "number": 36,
-      "stem": "兼營信託業務之銀行辦理委託人不指定營運範圍或方法之金錢信託，其營運範圍有無限制？",
-      "options": [
-        "信託業法中就此無任何限制之規定",
-        "其營運範圍以信託業法所定者為限",
-        "信託業法中就其營運範圍雖未為具體之限制規定，但主管機關於必要時得隨時限制其投資標的",
-        "其營運範圍以投資不動產及上市、上櫃股票為限"
-      ],
-      "answer": 2,
+      "note": "【核心觀念定位】業務範圍與禁止保本保息",
       "topic": "業務範圍與禁止保本保息",
       "conceptId": "concept-4",
-      "weight": 149.0,
-      "raw_chap": "c2"
+      "gradable": true,
+      "chapter": "c02",
+      "source_chapter": "c02",
+      "frequency": 116,
+      "topicRank": 1,
+      "frequencyScope": "本章"
     },
     {
-      "id": "past-53-law-33",
-      "term": 53,
-      "period": 53,
-      "subject": "信託法規",
-      "number": 33,
-      "stem": "某兼營信託業務之銀行實收資本額為100 億元，其受託之金錢信託共50 億元，不動產信託10 億元，有價證券信託5 億元，有關該信託業應提存之賠償準備金，下列敘述何者正確？",
-      "options": [
-        "資本額之1%",
-        "其所受託之信託財產合計之15.125%",
-        "新臺幣五千萬元",
-        "新臺幣一億五千萬元"
-      ],
-      "answer": 3,
-      "topic": "設立標準與分支機構",
-      "conceptId": "concept-19",
-      "weight": 66.5,
-      "raw_chap": "c5"
-    },
-    {
-      "id": "past-58-practice-62",
-      "term": 58,
-      "period": 58,
-      "subject": "信託實務",
-      "number": 62,
-      "stem": "信託業兼營全權委託投資業務者，下列何項正確？ A.得自行保管信託財產 B.若自行保管信託財產，則受委託之資產操作應委外 C.若自行保管信託財產，應指定專責人員辦理",
-      "options": [
-        "僅A",
-        "僅AB",
-        "僅AC",
-        "ABC"
-      ],
-      "answer": 3,
-      "topic": "全權委託保管與越權交易",
-      "conceptId": "concept-6",
-      "weight": 127.0,
-      "raw_chap": "c10"
-    },
-    {
-      "id": "past-55-practice-77",
+      "id": "past-55-law-44",
       "term": 55,
       "period": 55,
-      "subject": "信託實務",
-      "number": 77,
-      "stem": "依現行法令規定，除銀行兼營信託業外，僅擔任不動產投資信託之受託機構，其最低實收資本額為新台幣多少元？",
-      "options": [
-        "億",
-        "5 億",
-        "10 億",
-        "20 億"
-      ],
-      "answer": 3,
-      "topic": "REIT募集投資標的與限制",
-      "conceptId": "concept-8",
-      "weight": 109.5,
-      "raw_chap": "c7"
-    },
-    {
-      "id": "past-62-law-29",
-      "term": 62,
-      "period": 62,
       "subject": "信託法規",
-      "number": 29,
-      "stem": "依信託業法規定，下列何者為兼營信託業務銀行之利害關係人？",
+      "number": 44,
+      "stem": "依信託法及信託業法規定，有關信託業辦理定期會計報告之敘述，下列何者錯誤？",
       "options": [
-        "銀行之董事長",
-        "持有銀行股份百分之三者",
-        "銀行經理之四親等血親",
-        "銀行轉投資且持有股份百分之三之企業"
+        "(1) 應依信託契約及主管機關規定為之",
+        "(2) 信託財產評審報告每三個月應報告委託人及受益人",
+        "(3) 信託契約約定設有信託監察人者，亦應向信託監察人報告",
+        "(4) 受託人每年至少定期一次作成信託財產目錄，並編製收支計算表，送交委託人及受益人"
       ],
       "answer": 1,
-      "topic": "利害關係人與利益衝突",
-      "conceptId": "concept-23",
-      "weight": 76.0,
-      "raw_chap": "c2"
+      "answers": [
+        1
+      ],
+      "note": "【核心觀念定位】財產評審報告與會計公告",
+      "topic": "財產評審報告與會計公告",
+      "conceptId": "concept-11",
+      "gradable": true,
+      "chapter": "c02",
+      "source_chapter": "c02",
+      "frequency": 59,
+      "topicRank": 2,
+      "frequencyScope": "本章"
     },
     {
-      "id": "past-62-law-21",
-      "term": 62,
-      "period": 62,
+      "id": "past-54-law-43",
+      "term": 54,
+      "period": 54,
       "subject": "信託法規",
-      "number": 21,
-      "stem": "信託業之組織，除經主管機關許可兼營信託業務之銀行外，以下列何者型態為限？",
+      "number": 43,
+      "stem": "下列敘述何者正確？",
       "options": [
-        "有限公司為限",
-        "股份有限公司為限",
-        "無限公司為限",
-        "兩合公司為限"
+        "(1) 非信託業得辦理不特定多數人委託經營信託業法第十六條之信託業務",
+        "(2) 信託業得辦理承諾擔保本金或最低收益率之信託業務",
+        "(3) 非信託業不得使用信託業或易使人誤認為信託業之名稱",
+        "(4) 證券投資信託事業優先適用信託業法之規定"
       ],
       "answer": 2,
+      "answers": [
+        2
+      ],
+      "note": "【核心觀念定位】經營組織與兼營獨立",
       "topic": "經營組織與兼營獨立",
       "conceptId": "concept-16",
-      "weight": 83.0,
-      "raw_chap": "c2"
+      "gradable": true,
+      "chapter": "c02",
+      "source_chapter": "c02",
+      "frequency": 50,
+      "topicRank": 3,
+      "frequencyScope": "本章"
+    },
+    {
+      "id": "past-57-law-23",
+      "term": 57,
+      "period": 57,
+      "subject": "信託法規",
+      "number": 23,
+      "stem": "原則上信託公司之發起人及股東，同一人或同一關係人持有同一信託公司之股份，分別不得超過其已發行股份總數多少比例？",
+      "options": [
+        "(1) 百分之三十五",
+        "(2) 百分之二十五",
+        "(3) 百分之十五",
+        "(4) 百分之十"
+      ],
+      "answer": 1,
+      "answers": [
+        1
+      ],
+      "note": "【核心觀念定位】設立標準與分支機構",
+      "topic": "設立標準與分支機構",
+      "conceptId": "concept-19",
+      "gradable": true,
+      "chapter": "c02",
+      "source_chapter": "c02",
+      "frequency": 47,
+      "topicRank": 4,
+      "frequencyScope": "本章"
+    },
+    {
+      "id": "past-54-law-39",
+      "term": 54,
+      "period": 54,
+      "subject": "信託法規",
+      "number": 39,
+      "stem": "下列何者情事發生時，信託業須於事實發生之翌日起二個營業日內向主管機關申報？",
+      "options": [
+        "(1) 因印鑑錯誤而被退票",
+        "(2) 更換分支機構經理",
+        "(3) 編製營業報告書及財務報告",
+        "(4) 簽訂重要契約"
+      ],
+      "answer": 3,
+      "answers": [
+        3
+      ],
+      "note": "【核心觀念定位】監理處分罰則與損害賠償",
+      "topic": "監理處分罰則與損害賠償",
+      "conceptId": "concept-21",
+      "gradable": true,
+      "chapter": "c02",
+      "source_chapter": "c02",
+      "frequency": 45,
+      "topicRank": 5,
+      "frequencyScope": "本章"
+    },
+    {
+      "id": "past-55-law-27",
+      "term": 55,
+      "period": 55,
+      "subject": "信託法規",
+      "number": 27,
+      "stem": "依信託業法規定，信託業之利害關係人，指持有信託業或兼營信託業務之銀行已發行股份總數或資本總額多少比例以上者？",
+      "options": [
+        "(1) 百分之三",
+        "(2) 百分之四",
+        "(3) 百分之五",
+        "(4) 百分之七"
+      ],
+      "answer": 2,
+      "answers": [
+        2
+      ],
+      "note": "【核心觀念定位】利害關係人與利益衝突",
+      "topic": "利害關係人與利益衝突",
+      "conceptId": "concept-23",
+      "gradable": true,
+      "chapter": "c02",
+      "source_chapter": "c02",
+      "frequency": 43,
+      "topicRank": 6,
+      "frequencyScope": "本章"
+    },
+    {
+      "id": "past-52-law-30",
+      "term": 52,
+      "period": 52,
+      "subject": "信託法規",
+      "number": 30,
+      "stem": "信託業應提存之賠償準備金，得以下列何者繳存於中央銀行？ A.現金 B.金融債券 C.政府債券 D. 公司債",
+      "options": [
+        "(1) 僅A、B",
+        "(2) 僅A、C",
+        "(3) 僅A、D",
+        "(4) 僅B、C"
+      ],
+      "answer": 1,
+      "answers": [
+        1
+      ],
+      "note": "【核心觀念定位】賠償準備金與盈餘分配",
+      "topic": "賠償準備金與盈餘分配",
+      "conceptId": "concept-28",
+      "gradable": true,
+      "chapter": "c02",
+      "source_chapter": "c02",
+      "frequency": 33,
+      "topicRank": 7,
+      "frequencyScope": "本章"
+    },
+    {
+      "id": "past-54-law-20",
+      "term": 54,
+      "period": 54,
+      "subject": "信託法規",
+      "number": 20,
+      "stem": "呂美與甲銀行簽訂信託契約，由呂美交付新臺幣壹千萬元，指示甲銀行投資於國內上市公司股票，約明信託期間全部信託利益由其姐呂麗享有，則信託關係消滅時，下列敘述何者正確？",
+      "options": [
+        "(1) 信託財產歸屬之順序，信託契約所定者優先於呂美，呂美優先於呂麗",
+        "(2) 信託財產歸屬之順序，信託契約所定者優先於呂麗，呂麗優先於呂美或呂美之繼承人",
+        "(3) 信託財產歸屬之順序，信託契約未約定時，呂美與呂麗之順序相同",
+        "(4) 信託關係消滅時，受託人所製作之結算書及報告書不須取得呂麗之承認"
+      ],
+      "answer": 1,
+      "answers": [
+        1
+      ],
+      "note": "【核心觀念定位】基本義務與契約記載事項",
+      "topic": "基本義務與契約記載事項",
+      "conceptId": "concept-33",
+      "gradable": true,
+      "chapter": "c02",
+      "source_chapter": "c02",
+      "frequency": 28,
+      "topicRank": 8,
+      "frequencyScope": "本章"
+    },
+    {
+      "id": "past-54-law-37",
+      "term": 54,
+      "period": 54,
+      "subject": "信託法規",
+      "number": 37,
+      "stem": "有關共同信託基金受益證券之說明，下列何者正確？",
+      "options": [
+        "(1) 法律未規定其形式",
+        "(2) 法律規定應為不記名式",
+        "(3) 法律規定應為記名式",
+        "(4) 原則為記名式，經委託人要求可改為不記名式"
+      ],
+      "answer": 2,
+      "answers": [
+        2
+      ],
+      "note": "【核心觀念定位】共同信託基金募集與運用",
+      "topic": "共同信託基金募集與運用",
+      "conceptId": "concept-36",
+      "gradable": true,
+      "chapter": "c02",
+      "source_chapter": "c02",
+      "frequency": 26,
+      "topicRank": 9,
+      "frequencyScope": "本章"
+    },
+    {
+      "id": "past-56-practice-14",
+      "term": 56,
+      "period": 56,
+      "subject": "信託實務",
+      "number": 14,
+      "stem": "有關非專業投資人特定金錢信託投資國外有價證券業務項下所能投資之標的，下列何者錯誤？",
+      "options": [
+        "(1) 經金管會核准之境外基金",
+        "(2) 向金管會申報生效之境外基金",
+        "(3) 大陸企業赴海外發行之公司債",
+        "(4) 符合一定信用評等以上之美國公司債券"
+      ],
+      "answer": 2,
+      "answers": [
+        2
+      ],
+      "note": "【核心觀念定位】客戶認識商品適合度與投資人分類",
+      "topic": "客戶認識商品適合度與投資人分類",
+      "conceptId": "concept-39",
+      "gradable": true,
+      "chapter": "c02",
+      "source_chapter": "c02",
+      "frequency": 25,
+      "topicRank": 10,
+      "frequencyScope": "本章"
     }
   ],
   "c03": [
     {
-      "id": "past-60-law-47",
-      "term": 60,
-      "period": 60,
-      "subject": "信託法規",
-      "number": 47,
-      "stem": "受託人以信託財產投資於依所得稅法規定應設置股東可扣抵稅額帳戶之營利事業者，該營利事業應以下列何者為納稅義務人填發股利憑單？",
+      "id": "past-52-practice-31",
+      "term": 52,
+      "period": 52,
+      "subject": "信託實務",
+      "number": 31,
+      "stem": "有關企業員工持股信託，下列敘述何者正確？ A.員工中途退出領回信託財產時，應予課所得稅 B.於契約終止時，信託財產僅得折算為金錢方式返還",
       "options": [
-        "受託人",
-        "委託人",
-        "受益人",
-        "信託監察人"
+        "(1) 僅A",
+        "(2) 僅B",
+        "(3) AB 皆對",
+        "(4) AB 皆錯"
       ],
-      "answer": 1,
+      "answer": 3,
+      "answers": [
+        3
+      ],
+      "note": "【核心觀念定位】所得稅與扣繳",
       "topic": "所得稅與扣繳",
       "conceptId": "concept-14",
-      "weight": 85.0,
-      "raw_chap": "c4"
+      "gradable": true,
+      "chapter": "c03",
+      "source_chapter": "c03",
+      "frequency": 55,
+      "topicRank": 1,
+      "frequencyScope": "本章"
     },
     {
-      "id": "past-57-law-48",
+      "id": "past-55-practice-26",
+      "term": 55,
+      "period": 55,
+      "subject": "信託實務",
+      "number": 26,
+      "stem": "企業員工持股信託投資股票所孳生之股利，最終應納入下列何者之綜合所得課稅？",
+      "options": [
+        "(1) 企業員工持股信託專戶",
+        "(2) 受託人",
+        "(3) 委託人",
+        "(4) 員工持股會"
+      ],
+      "answer": 2,
+      "answers": [
+        2
+      ],
+      "note": "【核心觀念定位】所得稅與扣繳",
+      "topic": "所得稅與扣繳",
+      "conceptId": "concept-14",
+      "gradable": true,
+      "chapter": "c03",
+      "source_chapter": "c03",
+      "frequency": 55,
+      "topicRank": 1,
+      "frequencyScope": "本章"
+    },
+    {
+      "id": "past-57-practice-49",
+      "term": 57,
+      "period": 57,
+      "subject": "信託實務",
+      "number": 49,
+      "stem": "投資人持有金融資產證券化受益證券之利息所得，係採下列何種課稅方式？",
+      "options": [
+        "(1) 併入綜合所得稅計算",
+        "(2) 採分離課稅",
+        "(3) 併入營利事業所得稅計算",
+        "(4) 不用課稅"
+      ],
+      "answer": 1,
+      "answers": [
+        1
+      ],
+      "note": "【核心觀念定位】所得稅與扣繳",
+      "topic": "所得稅與扣繳",
+      "conceptId": "concept-14",
+      "gradable": true,
+      "chapter": "c03",
+      "source_chapter": "c03",
+      "frequency": 55,
+      "topicRank": 1,
+      "frequencyScope": "本章"
+    },
+    {
+      "id": "past-56-practice-76",
+      "term": 56,
+      "period": 56,
+      "subject": "信託實務",
+      "number": 76,
+      "stem": "委託人羅小姐與甲銀行簽訂信託契約，約定受益人為李小明，後因故受託銀行變更為乙銀行，則信託財產由甲銀行移轉至乙銀行時，必須課徵何種稅捐？",
+      "options": [
+        "(1) 贈與稅",
+        "(2) 營業稅",
+        "(3) 契稅",
+        "(4) 無須課徵稅捐"
+      ],
+      "answer": 3,
+      "answers": [
+        3
+      ],
+      "note": "【核心觀念定位】信託課稅原則與形式移轉",
+      "topic": "信託課稅原則與形式移轉",
+      "conceptId": "concept-43",
+      "gradable": true,
+      "chapter": "c03",
+      "source_chapter": "c03",
+      "frequency": 22,
+      "topicRank": 2,
+      "frequencyScope": "本章"
+    },
+    {
+      "id": "past-55-law-46",
+      "term": 55,
+      "period": 55,
+      "subject": "信託法規",
+      "number": 46,
+      "stem": "依遺產及贈與稅法規定，他益信託契約如應課徵贈與稅時，其課稅時點，下列何者正確？",
+      "options": [
+        "(1) 移轉信託財產予受託人之日",
+        "(2) 實際享有信託利益之日",
+        "(3) 訂定、變更信託契約之日",
+        "(4) 移轉信託財產予受益人之日"
+      ],
+      "answer": 2,
+      "answers": [
+        2
+      ],
+      "note": "【核心觀念定位】遺產及贈與稅",
+      "topic": "遺產及贈與稅",
+      "conceptId": "concept-46",
+      "gradable": true,
+      "chapter": "c03",
+      "source_chapter": "c03",
+      "frequency": 21,
+      "topicRank": 3,
+      "frequencyScope": "本章"
+    },
+    {
+      "id": "past-54-law-6",
+      "term": 54,
+      "period": 54,
+      "subject": "信託法規",
+      "number": 6,
+      "stem": "因信託關係存續中信託財產所生之地價稅，下列敘述何者錯誤？",
+      "options": [
+        "(1) 以受託人為納稅義務人",
+        "(2) 稅捐機關得逕對欠稅之信託財產強制執行",
+        "(3) 受託人不繳納時，稅捐機關不得執行受託人之自有財產",
+        "(4) 受託人得逕由信託財產中抵充之"
+      ],
+      "answer": 2,
+      "answers": [
+        2
+      ],
+      "note": "【核心觀念定位】土地稅與土地增值稅",
+      "topic": "土地稅與土地增值稅",
+      "conceptId": "concept-50",
+      "gradable": true,
+      "chapter": "c03",
+      "source_chapter": "c03",
+      "frequency": 19,
+      "topicRank": 4,
+      "frequencyScope": "本章"
+    },
+    {
+      "id": "past-56-law-50",
+      "term": 56,
+      "period": 56,
+      "subject": "信託法規",
+      "number": 50,
+      "stem": "受託人依信託本旨移轉信託不動產於委託人以外之歸屬權利人時，應由歸屬權利人估價立契，申報繳納下列何者稅負？",
+      "options": [
+        "(1) 買賣契稅",
+        "(2) 交換契稅",
+        "(3) 贈與契稅",
+        "(4) 分割契稅"
+      ],
+      "answer": 2,
+      "answers": [
+        2
+      ],
+      "note": "【核心觀念定位】房屋稅與契稅",
+      "topic": "房屋稅與契稅",
+      "conceptId": "concept-57",
+      "gradable": true,
+      "chapter": "c03",
+      "source_chapter": "c03",
+      "frequency": 12,
+      "topicRank": 5,
+      "frequencyScope": "本章"
+    },
+    {
+      "id": "past-56-practice-31",
+      "term": 56,
+      "period": 56,
+      "subject": "信託實務",
+      "number": 31,
+      "stem": "員工持股信託之委託人中途退會或信託終了，受託人返還信託財產，依目前相關稅制，委託人需繳納何種稅捐？",
+      "options": [
+        "(1) 證券交易所得稅",
+        "(2) 贈與稅",
+        "(3) 遺產稅",
+        "(4) 不予課稅"
+      ],
+      "answer": 3,
+      "answers": [
+        3
+      ],
+      "note": "【核心觀念定位】員工持股信託的課稅與返還",
+      "topic": "員工持股信託的課稅與返還",
+      "conceptId": "concept-56",
+      "gradable": true,
+      "chapter": "c03",
+      "source_chapter": "c03",
+      "frequency": 12,
+      "topicRank": 6,
+      "frequencyScope": "本章"
+    },
+    {
+      "id": "past-57-law-46",
       "term": 57,
       "period": 57,
       "subject": "信託法規",
-      "number": 48,
-      "stem": "以土地為信託財產者，於信託期間依土地稅法之規定，以下列何者為地價稅之納稅義務人？",
+      "number": 46,
+      "stem": "甲以20 萬股上市公司股票成立一信託，信託期間五年，期間孳息歸乙，期滿股票歸甲，假設贈與時中華郵政儲金一年期定期儲金固定利率為1%，契約日當天收盤價每股新臺幣50 元，則甲贈與乙之權利價值為何？ 〔1/(1+1%)5 =0.9515〕",
       "options": [
-        "委託人",
-        "受託人",
-        "受益人",
-        "依信託契約內所訂之人為納稅義務人"
+        "(1) 新臺幣1,000 萬元",
+        "(2) 新臺幣 951.5 萬元",
+        "(3) 新臺幣48.5 萬元",
+        "(4) 零"
       ],
       "answer": 2,
-      "topic": "土地稅與土地增值稅",
-      "conceptId": "concept-50",
-      "weight": 44.5,
-      "raw_chap": "c4"
-    },
-    {
-      "id": "past-61-law-49",
-      "term": 61,
-      "period": 61,
-      "subject": "信託法規",
-      "number": 49,
-      "stem": "委託人為營利事業之私益信託契約，信託成立時，明定信託利益之全部非由委託人享有者，當其約定之受益人為尚未存在或為不特定之人時，依所得稅法之規定，應以下列何者為納稅義務人，就信託成立年度受益人享有信託利益之權利價值課徵所得稅？",
-      "options": [
-        "委託人",
-        "受託人",
-        "不課徵所得稅",
-        "信託監察人"
+      "answers": [
+        2
       ],
-      "answer": 2,
+      "note": "【核心觀念定位】贈與權利價值與折現計算",
       "topic": "贈與權利價值與折現計算",
       "conceptId": "concept-58",
-      "weight": 41.5,
-      "raw_chap": "c4"
+      "gradable": true,
+      "chapter": "c03",
+      "source_chapter": "c03",
+      "frequency": 10,
+      "topicRank": 7,
+      "frequencyScope": "本章"
     },
     {
-      "id": "past-58-law-49",
-      "term": 58,
-      "period": 58,
-      "subject": "信託法規",
-      "number": 49,
-      "stem": "委託人（自然人）以新臺幣一千萬元成立他益信託，逾期未申報繳納贈與稅，且在中華民國境內亦無財產可供執行者，應以下列何者為納稅義務人課徵贈與稅？",
-      "options": [
-        "委託人",
-        "受益人",
-        "信託監察人",
-        "受託人"
-      ],
-      "answer": 4,
-      "topic": "遺產及贈與稅",
-      "conceptId": "concept-46",
-      "weight": 48.0,
-      "raw_chap": "c4"
-    },
-    {
-      "id": "past-59-law-46",
-      "term": 59,
-      "period": 59,
-      "subject": "信託法規",
-      "number": 46,
-      "stem": "信託導管理論係以下列何者為課稅主體？",
-      "options": [
-        "信託財產",
-        "信託財產之所有權人",
-        "信託原始委託人",
-        "信託利益或財產之實質權利人"
-      ],
-      "answer": 4,
-      "topic": "信託課稅原則與形式移轉",
-      "conceptId": "concept-43",
-      "weight": 50.5,
-      "raw_chap": "c4"
-    },
-    {
-      "id": "past-58-law-8",
-      "term": 58,
-      "period": 58,
-      "subject": "信託法規",
-      "number": 8,
-      "stem": "受託人得逕自信託財產扣除其因處理信託事務所支出之稅捐及費用，為受託人之何種權利？",
-      "options": [
-        "請求報酬之權利",
-        "行使抵充之權利",
-        "請求補償或賠償之權利",
-        "拒絕交付或留置信託財產之權利"
-      ],
-      "answer": 2,
-      "topic": "受託人義務報酬與責任",
-      "conceptId": "concept-10",
-      "weight": 88.0,
-      "raw_chap": "c1"
-    },
-    {
-      "id": "past-62-law-49",
-      "term": 62,
-      "period": 62,
-      "subject": "信託法規",
-      "number": 49,
-      "stem": "信託財產為房屋者，該房屋稅之納稅義務人為下列何者？",
-      "options": [
-        "受益人",
-        "受託人",
-        "委託人",
-        "歸屬權利人"
-      ],
-      "answer": 2,
-      "topic": "房屋稅與契稅",
-      "conceptId": "concept-57",
-      "weight": 45.0,
-      "raw_chap": "c4"
-    },
-    {
-      "id": "past-62-practice-27",
-      "term": 62,
-      "period": 62,
+      "id": "past-51-practice-78",
+      "term": 51,
+      "period": 51,
       "subject": "信託實務",
-      "number": 27,
-      "stem": "有關企業員工持股信託業務之稅負，下列敘述何者錯誤？",
-      "options": [
-        "公司獎助金應納入員工當年度綜合所得",
-        "信託財產購入公司股票所孳生之股票股利應納入各受益人當年度綜合所得",
-        "信託財產購入公司股票所孳生之現金股利應納入各受益人當年度綜合所得",
-        "信託終了，受託人以信託財產現狀返還，因屬財產實質移轉行為，應納入受益人當年度綜合所得"
-      ],
-      "answer": 4,
-      "topic": "員工持股信託的課稅與返還",
-      "conceptId": "concept-56",
-      "weight": 45.0,
-      "raw_chap": "c4"
-    },
-    {
-      "id": "past-62-practice-77",
-      "term": 62,
-      "period": 62,
-      "subject": "信託實務",
-      "number": 77,
+      "number": 78,
       "stem": "有關信託相關稅負之敘述，下列何者正確？",
       "options": [
-        "個人經由特定金錢信託投資國內基金，分配所得之收益均免納所得稅",
-        "參加企業員工持股信託，投資標的除權後所配得之股利，免納所得稅",
-        "投資不動產投資信託受益證券分配所得之孳息，於次年需申報所得稅",
-        "投資金融資產證券化受益證券之利息所得，採分離課稅方式"
+        "(1) 個人經由特定金錢信託投資國內基金，分配所得之收益均免納所得稅",
+        "(2) 參加企業員工持股信託，投資標的除權後所配得之股利，免納所得稅",
+        "(3) 投資不動產投資信託受益證券分配所得之孳息，於次年需申報所得稅",
+        "(4) 投資金融資產證券化受益證券之利息所得，採分離課稅方式"
       ],
-      "answer": 4,
+      "answer": 3,
+      "answers": [
+        3
+      ],
+      "note": "【核心觀念定位】證券化商品分離課稅與交易稅",
       "topic": "證券化商品分離課稅與交易稅",
       "conceptId": "concept-61",
-      "weight": 42.0,
-      "raw_chap": "c4"
-    },
-    {
-      "id": "past-58-practice-27",
-      "term": 58,
-      "period": 58,
-      "subject": "信託實務",
-      "number": 27,
-      "stem": "假定員工持股信託每月投資金額為3,600 元，其三個月之買入股價分別為18 元、20 元、22.5 元，投資方法採滾入平均成本法，則平均成本為多少？（不考慮手續費及稅捐，取最接近數）",
-      "options": [
-        "20 元",
-        "20.17 元",
-        "19.83 元",
-        "20.33 元"
-      ],
-      "answer": 1,
-      "topic": "投資運用與分別管理",
-      "conceptId": "concept-24",
-      "weight": 66.0,
-      "raw_chap": "c6"
+      "gradable": true,
+      "chapter": "c03",
+      "source_chapter": "c03",
+      "frequency": 9,
+      "topicRank": 8,
+      "frequencyScope": "本章"
     }
   ],
   "c04": [
     {
-      "id": "past-60-practice-20",
-      "term": 60,
-      "period": 60,
+      "id": "past-52-practice-9",
+      "term": 52,
+      "period": 52,
       "subject": "信託實務",
-      "number": 20,
-      "stem": "信託業辦理特定金錢信託投資國外有價證券業務，該信託資金之委託期限最少需為多久？",
+      "number": 9,
+      "stem": "有關銀行辦理特定金錢信託投資境外基金業務與客戶簽訂之信託契約，下列敘述何者正確？",
       "options": [
-        "一個月",
-        "六個月",
-        "一年",
-        "無限制"
+        "(1) 期限至少須一個月",
+        "(2) 應載明委託人之責任",
+        "(3) 應載明受託人之責任",
+        "(4) 應載明投資標的之報酬"
       ],
-      "answer": 4,
+      "answer": 2,
+      "answers": [
+        2
+      ],
+      "note": "【核心觀念定位】境外基金與國外證券投資",
       "topic": "境外基金與國外證券投資",
       "conceptId": "concept-1",
-      "weight": 260.0,
-      "raw_chap": "c6"
+      "gradable": true,
+      "chapter": "c04",
+      "source_chapter": "c04",
+      "frequency": 230,
+      "topicRank": 1,
+      "frequencyScope": "本章"
     },
     {
-      "id": "past-61-practice-2",
-      "term": 61,
-      "period": 61,
+      "id": "past-54-practice-18",
+      "term": 54,
+      "period": 54,
       "subject": "信託實務",
-      "number": 2,
-      "stem": "銀行辦理特定金錢信託業務，於運用該信託資金向證券市場買賣下單，係以下列何者名義為之？",
+      "number": 18,
+      "stem": "客戶經由特定金錢信託以定期定額方式投資境外基金，如因主管機關修改規定致投資標的不符時，銀行應以下列何種方式處理？",
       "options": [
-        "委託人",
-        "受託人",
-        "受益人",
-        "信託監察人"
+        "(1) 應辦理基金轉換",
+        "(2) 應於三年內調整至符合規定",
+        "(3) 原則上得按原契約金額繼續投資，至委託人全數贖回為止",
+        "(4) 應停止定期定額投資，但原基金可持有至信託契約屆滿或委託人全數贖回為止"
       ],
       "answer": 2,
-      "topic": "金錢信託分類權限與運用",
-      "conceptId": "concept-5",
-      "weight": 143.5,
-      "raw_chap": "c6"
+      "answers": [
+        2
+      ],
+      "note": "【核心觀念定位】境外基金與國外證券投資",
+      "topic": "境外基金與國外證券投資",
+      "conceptId": "concept-1",
+      "gradable": true,
+      "chapter": "c04",
+      "source_chapter": "c04",
+      "frequency": 230,
+      "topicRank": 1,
+      "frequencyScope": "本章"
     },
     {
-      "id": "past-61-law-26",
-      "term": 61,
-      "period": 61,
-      "subject": "信託法規",
-      "number": 26,
-      "stem": "下列何種信託之委託人保留對信託資金之運用決定權？",
+      "id": "past-55-practice-12",
+      "term": 55,
+      "period": 55,
+      "subject": "信託實務",
+      "number": 12,
+      "stem": "銀行辦理特定金錢信託投資境外基金時，所投資之基金原則上至少必須成立滿幾年？",
       "options": [
-        "特定單獨管理運用金錢信託",
-        "指定營運範圍或方法之集合管理運用金錢信託",
-        "不指定營運範圍或方法之金錢信託",
-        "指定營運範圍或方法之單獨管理運用金錢信託"
+        "(1) 半年",
+        "(2) 一年",
+        "(3) 二年",
+        "(4) 三年"
       ],
       "answer": 1,
-      "topic": "成立方式與信託分類",
-      "conceptId": "concept-2",
-      "weight": 185.5,
-      "raw_chap": "c1"
-    },
-    {
-      "id": "past-62-law-39",
-      "term": 62,
-      "period": 62,
-      "subject": "信託法規",
-      "number": 39,
-      "stem": "有關銀行辦理特定金錢信託業務之規定，下列敘述何者錯誤？",
-      "options": [
-        "信託部門的營業及會計必須獨立",
-        "應指撥營運資金專款經營",
-        "經營信託業務人員需對客戶之往來交易資料應保守秘密",
-        "營運範圍及風險管理規定由信託業商業同業公會自行訂定"
+      "answers": [
+        1
       ],
-      "answer": 4,
-      "topic": "業務範圍與禁止保本保息",
-      "conceptId": "concept-4",
-      "weight": 149.0,
-      "raw_chap": "c2"
+      "note": "【核心觀念定位】境外基金與國外證券投資",
+      "topic": "境外基金與國外證券投資",
+      "conceptId": "concept-1",
+      "gradable": true,
+      "chapter": "c04",
+      "source_chapter": "c04",
+      "frequency": 230,
+      "topicRank": 1,
+      "frequencyScope": "本章"
     },
     {
-      "id": "past-49-practice-10",
-      "term": 49,
-      "period": 49,
+      "id": "past-58-practice-77",
+      "term": 58,
+      "period": 58,
       "subject": "信託實務",
-      "number": 10,
-      "stem": "客戶與銀行簽訂信託契約，交付新臺幣一百萬元信託資金，指定投資於國內證券投資信託基金時，係屬於下列何種信託？",
+      "number": 77,
+      "stem": "許先生與乙銀行簽訂信託契約辦理金錢信託，指定將新臺幣一百萬元投資於ABC 境外基金，下列敘述何者錯誤？",
       "options": [
-        "金錢債權之信託",
-        "金錢之信託",
-        "有價證券之信託",
-        "其他財產權之信託"
+        "(1) 就乙銀行而言，新臺幣一百萬元為信託資金",
+        "(2) 就該基金公司而言，乙銀行為信託委託人",
+        "(3) 就許先生而言，乙銀行為受託人",
+        "(4) 就乙銀行而言，其持有之ABC 境外基金受益權單位為信託財產"
+      ],
+      "answer": 1,
+      "answers": [
+        1
+      ],
+      "note": "【核心觀念定位】境外基金與國外證券投資",
+      "topic": "境外基金與國外證券投資",
+      "conceptId": "concept-1",
+      "gradable": true,
+      "chapter": "c04",
+      "source_chapter": "c04",
+      "frequency": 230,
+      "topicRank": 1,
+      "frequencyScope": "本章"
+    },
+    {
+      "id": "past-52-practice-4",
+      "term": 52,
+      "period": 52,
+      "subject": "信託實務",
+      "number": 4,
+      "stem": "有關特定金錢信託業務，下列敘述何者錯誤？",
+      "options": [
+        "(1) 委託人應交付金錢做為信託財產",
+        "(2) 目前為信託業最主要之信託業務",
+        "(3) 受託人對信託財產具運用決定權",
+        "(4) 信託業毋須申請兼營證券投資顧問業務"
       ],
       "answer": 2,
-      "topic": "基金保管交割與監督責任",
-      "conceptId": "concept-3",
-      "weight": 155.5,
-      "raw_chap": "c10"
-    },
-    {
-      "id": "past-61-practice-74",
-      "term": 61,
-      "period": 61,
-      "subject": "信託實務",
-      "number": 74,
-      "stem": "有關信託資金集合管理運用帳戶之運用範圍及限制，下列敘述何者正確？",
-      "options": [
-        "得以信託資金辦理放款",
-        "不得投資於上櫃之次順位公司債",
-        "可投資於櫃檯買賣第二類股票",
-        "運用範圍以具有次級交易市場之投資標的為原則"
+      "answers": [
+        2
       ],
-      "answer": 4,
-      "topic": "單獨及集合管理分類與權限",
-      "conceptId": "concept-13",
-      "weight": 90.5,
-      "raw_chap": "c11"
+      "note": "【核心觀念定位】金錢信託分類權限與運用",
+      "topic": "金錢信託分類權限與運用",
+      "conceptId": "concept-5",
+      "gradable": true,
+      "chapter": "c04",
+      "source_chapter": "c04",
+      "frequency": 112,
+      "topicRank": 2,
+      "frequencyScope": "本章"
     },
     {
-      "id": "past-51-practice-8",
-      "term": 51,
-      "period": 51,
+      "id": "past-55-practice-6",
+      "term": 55,
+      "period": 55,
       "subject": "信託實務",
-      "number": 8,
-      "stem": "委託人辦理特定金錢信託投資國內外基金時，依受託機構之受理規定，可採下列何種交易方式？ A.臨櫃 B.電話 C.語音 D.網路",
+      "number": 6,
+      "stem": "銀行辦理特定金錢信託投資國內外共同基金業務，下列敘述何者錯誤？",
       "options": [
-        "僅AB",
-        "僅ACD",
-        "僅ABC",
-        "ABCD"
+        "(1) 委託人應負擔基金之申購、轉換、贖回等各項費用",
+        "(2) 委託人得委託受託銀行以定期定額方式投資",
+        "(3) 受託銀行應以委託人名義向國外相關機構辦理投資手續",
+        "(4) 受託銀行於委託人交付信託資金後，應發給信託憑證或對帳單或基金存摺以資為憑"
       ],
-      "answer": 4,
-      "topic": "特殊目的信託公司與參與機構",
-      "conceptId": "concept-7",
-      "weight": 105.5,
-      "raw_chap": "c9"
+      "answer": 2,
+      "answers": [
+        2
+      ],
+      "note": "【核心觀念定位】金錢信託分類權限與運用",
+      "topic": "金錢信託分類權限與運用",
+      "conceptId": "concept-5",
+      "gradable": true,
+      "chapter": "c04",
+      "source_chapter": "c04",
+      "frequency": 112,
+      "topicRank": 2,
+      "frequencyScope": "本章"
     },
     {
-      "id": "past-61-practice-17",
-      "term": 61,
-      "period": 61,
+      "id": "past-57-practice-17",
+      "term": 57,
+      "period": 57,
       "subject": "信託實務",
       "number": 17,
-      "stem": "信託業辦理特定金錢信託業務，應設置信託財產評審委員會，至少每三個月對信託財產運用狀況予以評審，並向下列何者報告？",
+      "stem": "特定金錢信託投資國內證券投資信託基金業務之投資指定，應由下列何者為之？",
       "options": [
-        "公平交易委員會",
-        "信託業商業同業公會",
-        "董事會",
-        "金管會"
+        "(1) 受託人",
+        "(2) 委託人",
+        "(3) 受託人或委託人皆可",
+        "(4) 得概括授權受託人代為操作"
       ],
-      "answer": 3,
-      "topic": "財產評審報告與會計公告",
-      "conceptId": "concept-11",
-      "weight": 90.5,
-      "raw_chap": "c2"
+      "answer": 1,
+      "answers": [
+        1
+      ],
+      "note": "【核心觀念定位】金錢信託分類權限與運用",
+      "topic": "金錢信託分類權限與運用",
+      "conceptId": "concept-5",
+      "gradable": true,
+      "chapter": "c04",
+      "source_chapter": "c04",
+      "frequency": 112,
+      "topicRank": 2,
+      "frequencyScope": "本章"
     },
     {
-      "id": "past-59-practice-14",
-      "term": 59,
-      "period": 59,
+      "id": "past-52-practice-24",
+      "term": 52,
+      "period": 52,
       "subject": "信託實務",
-      "number": 14,
-      "stem": "甲公司係總機構在我國境內之營利事業，以特定金錢信託投資國外有價證券，有關其投資國外債券利息收入之稅負，下列敘述何者正確？",
+      "number": 24,
+      "stem": "採行企業員工持股信託之公司辦理現金增資發行新股時，下列敘述何者錯誤？",
       "options": [
-        "利息收入全部免稅",
-        "委託人須申報營利事業所得稅",
-        "利息收入在新臺幣二百萬元內免稅",
-        "利息收入適用百分之二十分離課稅"
+        "(1) 享有認購權利之名義人為受託人（信託專戶）本身",
+        "(2) 信託專戶應依參與認購新股者之認購權益比例計算暨分配",
+        "(3) 委託人得以股東身分直接參與認購",
+        "(4) 受託人接獲現金增資通知時，應轉通知委託人"
       ],
       "answer": 2,
-      "topic": "所得稅與扣繳",
-      "conceptId": "concept-14",
-      "weight": 83.5,
-      "raw_chap": "c4"
+      "answers": [
+        2
+      ],
+      "note": "【核心觀念定位】員工福利信託特性與制度",
+      "topic": "員工福利信託特性與制度",
+      "conceptId": "concept-9",
+      "gradable": true,
+      "chapter": "c04",
+      "source_chapter": "c04",
+      "frequency": 69,
+      "topicRank": 3,
+      "frequencyScope": "本章"
     },
     {
-      "id": "past-61-law-45",
-      "term": 61,
-      "period": 61,
-      "subject": "信託法規",
-      "number": 45,
-      "stem": "王蓮交付新臺幣五百萬元與乙銀行成立信託，王蓮並保留運用決定權，指定該信託資金五百萬限購買特定國內固定收益型基金，約定信託期間一年，並與他人之信託資金於營運範圍或方法相同之部分設置集合管理運用帳戶，明定受益人為本人，且其受益權不得轉讓於第三人，而下列敘述何者正確？",
+      "id": "past-53-practice-29",
+      "term": 53,
+      "period": 53,
+      "subject": "信託實務",
+      "number": 29,
+      "stem": "企業員工持股信託之受託人將信託財產以公司股票返還委託人時，該項業務係屬信託業法中所規定之何種信託？",
       "options": [
-        "該信託屬特定單獨管理運用信託",
-        "該信託屬特定集合管理運用信託",
-        "該信託屬指定集合管理運用信託",
-        "王蓮之受益權因其約定不得轉讓，因此不得拋棄"
+        "(1) 有價證券之信託",
+        "(2) 金錢之信託",
+        "(3) 金錢債權及其擔保物權之信託",
+        "(4) 其他財產權之信託"
       ],
-      "answer": 2,
-      "topic": "集合帳戶投資限制與流動性",
-      "conceptId": "concept-17",
-      "weight": 81.5,
-      "raw_chap": "c11"
+      "answer": 1,
+      "answers": [
+        1
+      ],
+      "note": "【核心觀念定位】持股會組織協議與當事人",
+      "topic": "持股會組織協議與當事人",
+      "conceptId": "concept-12",
+      "gradable": true,
+      "chapter": "c04",
+      "source_chapter": "c04",
+      "frequency": 59,
+      "topicRank": 4,
+      "frequencyScope": "本章"
+    },
+    {
+      "id": "past-57-practice-29",
+      "term": 57,
+      "period": 57,
+      "subject": "信託實務",
+      "number": 29,
+      "stem": "企業員工持股信託信託財產之運用方式為何？",
+      "options": [
+        "(1) 集合運用集合管理",
+        "(2) 集合運用分別管理",
+        "(3) 分別運用分別管理",
+        "(4) 分別運用集合管理"
+      ],
+      "answer": 1,
+      "answers": [
+        1
+      ],
+      "note": "【核心觀念定位】投資運用與分別管理",
+      "topic": "投資運用與分別管理",
+      "conceptId": "concept-24",
+      "gradable": true,
+      "chapter": "c04",
+      "source_chapter": "c04",
+      "frequency": 39,
+      "topicRank": 5,
+      "frequencyScope": "本章"
     }
   ],
   "c05": [
     {
-      "id": "past-62-practice-36",
-      "term": 62,
-      "period": 62,
+      "id": "past-52-practice-36",
+      "term": 52,
+      "period": 52,
       "subject": "信託實務",
       "number": 36,
-      "stem": "楊先生投資累積了不少的股票和債券，但旅居國外且平日的工作十分忙碌，以致每到配息、開股東會的時候，沒有時間去處理相關事宜。楊先生想把手中的有價證券交付信託，下列何者最適合楊先生的需求？",
+      "stem": "有價證券信託之信託公示相關規定，下列何者錯誤？",
       "options": [
-        "管理型有價證券信託",
-        "處分型有價證券信託",
-        "運用型有價證券信託",
-        "金錢信託"
+        "(1) 應於證券上載明為信託財產",
+        "(2) 應向主管機關核備登載",
+        "(3) 應於其他表彰權利文件上載明為信託財產",
+        "(4) 信託財產登載，應依目的事業主管機關之規定，否則不得對抗第三人"
       ],
       "answer": 1,
-      "topic": "境外基金與國外證券投資",
-      "conceptId": "concept-1",
-      "weight": 263.0,
-      "raw_chap": "c6"
-    },
-    {
-      "id": "past-54-law-4",
-      "term": 54,
-      "period": 54,
-      "subject": "信託法規",
-      "number": 4,
-      "stem": "錢先生交付一千萬元成立金錢信託，希望銀行幫他投資在股票型基金並代為操作，係屬下列何種信託？",
-      "options": [
-        "指定單獨金錢信託",
-        "特定單獨金錢信託",
-        "不指定單獨金錢信託",
-        "不特定單獨金錢信託"
+      "answers": [
+        1
       ],
-      "answer": 1,
-      "topic": "成立方式與信託分類",
-      "conceptId": "concept-2",
-      "weight": 175.0,
-      "raw_chap": "c1"
+      "note": "【核心觀念定位】證券信託種類與保管差異",
+      "topic": "證券信託種類與保管差異",
+      "conceptId": "concept-15",
+      "gradable": true,
+      "chapter": "c05",
+      "source_chapter": "c05",
+      "frequency": 51,
+      "topicRank": 1,
+      "frequencyScope": "本章"
     },
     {
-      "id": "past-62-practice-67",
-      "term": 62,
-      "period": 62,
-      "subject": "信託實務",
-      "number": 67,
-      "stem": "證券投資信託基金保管機構在上市股票買賣部份，係以下列何種方式辦理交割？",
-      "options": [
-        "保管條",
-        "實體股",
-        "帳簿劃撥",
-        "向台灣集中保管結算所借券"
-      ],
-      "answer": 3,
-      "topic": "基金保管交割與監督責任",
-      "conceptId": "concept-3",
-      "weight": 175.0,
-      "raw_chap": "c10"
-    },
-    {
-      "id": "past-60-practice-61",
-      "term": 60,
-      "period": 60,
-      "subject": "信託實務",
-      "number": 61,
-      "stem": "全權委託投資保管業務以委任關係辦理者，其投資買賣帳戶所持有國內發行公司股票之出席股東會及行使表決權，應由下列何者為之？",
-      "options": [
-        "保管機構",
-        "委任人（客戶）",
-        "證券投資顧問事業",
-        "證券商"
-      ],
-      "answer": 2,
-      "topic": "全權委託保管與越權交易",
-      "conceptId": "concept-6",
-      "weight": 130.0,
-      "raw_chap": "c10"
-    },
-    {
-      "id": "past-61-law-36",
-      "term": 61,
-      "period": 61,
-      "subject": "信託法規",
-      "number": 36,
-      "stem": "A 銀行國際金融業務分行經核准辦理「外幣特定金錢信託投資國外有價證券業務」時，該項業務應於下列何者列帳登載？",
-      "options": [
-        "國際金融業務分行",
-        "國外業務部",
-        "國內業務部",
-        "信託業務專責部門"
-      ],
-      "answer": 1,
-      "topic": "業務範圍與禁止保本保息",
-      "conceptId": "concept-4",
-      "weight": 147.5,
-      "raw_chap": "c2"
-    },
-    {
-      "id": "past-56-practice-13",
-      "term": 56,
-      "period": 56,
-      "subject": "信託實務",
-      "number": 13,
-      "stem": "江董事長有一筆款項欲信託與信託業管理，雙方簽訂特定金錢信託契約，將信託財產分散運用於股票及債券，有關信託登記事宜，下列敘述何者正確？",
-      "options": [
-        "僅股票需辦理信託登記",
-        "僅債券需辦理信託登記",
-        "股票及債券均需辦理信託登記",
-        "特定金錢信託於信託期間無須適用信託登記規定"
-      ],
-      "answer": 3,
-      "topic": "金錢信託分類權限與運用",
-      "conceptId": "concept-5",
-      "weight": 136.0,
-      "raw_chap": "c6"
-    },
-    {
-      "id": "past-54-practice-28",
+      "id": "past-54-practice-5",
       "term": 54,
       "period": 54,
       "subject": "信託實務",
-      "number": 28,
-      "stem": "企業員工持股信託於投資標的公司股東會議決權之行使，下列何者正確？ A.議決權可分割行使 B.受託人應依員工持股會代表人書面指示辦理 C.委託人得以股票持有人之身分要求出席並行使議決權",
+      "number": 5,
+      "stem": "證券商申請主管機關許可兼營金錢之信託及有價證券之信託，得辦理之特定項目，下列敘述何者錯誤？",
       "options": [
-        "僅AB",
-        "僅B",
-        "僅AC",
-        "ABC 皆錯誤"
+        "(1) 以信託方式辦理財富管理業務",
+        "(2) 以信託方式辦理公益之信託",
+        "(3) 以信託方式辦理全權委託投資業務",
+        "(4) 以信託方式辦理客戶委託保管及運用其款項業務"
       ],
-      "answer": 2,
-      "topic": "持股會組織協議與當事人",
-      "conceptId": "concept-12",
-      "weight": 80.0,
-      "raw_chap": "c6"
+      "answer": 1,
+      "answers": [
+        1
+      ],
+      "note": "【核心觀念定位】證券信託種類與保管差異",
+      "topic": "證券信託種類與保管差異",
+      "conceptId": "concept-15",
+      "gradable": true,
+      "chapter": "c05",
+      "source_chapter": "c05",
+      "frequency": 51,
+      "topicRank": 1,
+      "frequencyScope": "本章"
     },
     {
-      "id": "past-61-practice-29",
-      "term": 61,
-      "period": 61,
+      "id": "past-55-practice-18",
+      "term": 55,
+      "period": 55,
       "subject": "信託實務",
-      "number": 29,
-      "stem": "按企業員工持股信託業務之運作架構，對公司行使股東表決權者為下列何者？",
+      "number": 18,
+      "stem": "管理型有價證券信託與保管業務相比較，下列何者錯誤？",
       "options": [
-        "委託人",
-        "受託人",
-        "受益人",
-        "員工持股會代表人"
+        "(1) 兩者均須移轉有價證券之占有",
+        "(2) 採信託方式時，名義上應由受託人行使股東權利",
+        "(3) 兩者均須移轉有價證券之所有權",
+        "(4) 採保管方式時，得約定由受任人領取股息"
       ],
       "answer": 2,
-      "topic": "員工福利信託特性與制度",
-      "conceptId": "concept-9",
-      "weight": 100.5,
-      "raw_chap": "c6"
-    },
-    {
-      "id": "past-56-practice-36",
-      "term": 56,
-      "period": 56,
-      "subject": "信託實務",
-      "number": 36,
-      "stem": "張小姐將持有股票交付受託機構成立信託，當受託機構將該信託財產之股票全部處分完畢，股款完全存入存款中，一個月後再用該筆存款購入一棟房子，依信託業法規定，該信託之類別為下列何者？",
-      "options": [
-        "金錢信託",
-        "有價證券信託",
-        "不動產信託",
-        "股款信託"
+      "answers": [
+        2
       ],
-      "answer": 2,
-      "topic": "特殊目的信託公司與參與機構",
-      "conceptId": "concept-7",
-      "weight": 113.0,
-      "raw_chap": "c9"
+      "note": "【核心觀念定位】證券信託種類與保管差異",
+      "topic": "證券信託種類與保管差異",
+      "conceptId": "concept-15",
+      "gradable": true,
+      "chapter": "c05",
+      "source_chapter": "c05",
+      "frequency": 51,
+      "topicRank": 1,
+      "frequencyScope": "本章"
     },
     {
-      "id": "past-59-practice-35",
+      "id": "past-59-practice-33",
       "term": 59,
       "period": 59,
       "subject": "信託實務",
-      "number": 35,
-      "stem": "信託業辦理有價證券信託，如委託人係所交付信託股票發行公司之經理人，且委託人保留運用決定權，則交付信託股份之嗣後變動，應由下列何者辦理股權申報？",
+      "number": 33,
+      "stem": "有關有價證券信託之敘述，下列何者正確？",
       "options": [
-        "信託業",
-        "委託人",
-        "發行公司",
-        "集保公司"
+        "(1) 無記名式之有價證券不得成為信託之標的",
+        "(2) 信託終了時亦必須以有價證券之型態返還剩餘財產",
+        "(3) 委託人成立信託時，須交付有價證券予受託人",
+        "(4) 信託期間信託財產均須維持有價證券型態，不得變更"
       ],
       "answer": 2,
+      "answers": [
+        2
+      ],
+      "note": "【核心觀念定位】證券信託種類與保管差異",
+      "topic": "證券信託種類與保管差異",
+      "conceptId": "concept-15",
+      "gradable": true,
+      "chapter": "c05",
+      "source_chapter": "c05",
+      "frequency": 51,
+      "topicRank": 1,
+      "frequencyScope": "本章"
+    },
+    {
+      "id": "past-52-practice-33",
+      "term": 52,
+      "period": 52,
+      "subject": "信託實務",
+      "number": 33,
+      "stem": "依證交所規定，有價證券借貸之定價交易相關費率，下列何者正確？ A.依證交所公告之固定借券費率，採逐筆撮合成交 B.證券商向借貸雙方收取之手續費為借券費用0.2% C.證交所向借貸雙方收取之借貸服務費為借券費用1.6%",
+      "options": [
+        "(1) 僅A",
+        "(2) 僅B",
+        "(3) 僅C",
+        "(4) 僅AC"
+      ],
+      "answer": 3,
+      "answers": [
+        3
+      ],
+      "note": "【核心觀念定位】有價證券借貸交易與擔保",
+      "topic": "有價證券借貸交易與擔保",
+      "conceptId": "concept-22",
+      "gradable": true,
+      "chapter": "c05",
+      "source_chapter": "c05",
+      "frequency": 44,
+      "topicRank": 2,
+      "frequencyScope": "本章"
+    },
+    {
+      "id": "past-54-practice-32",
+      "term": 54,
+      "period": 54,
+      "subject": "信託實務",
+      "number": 32,
+      "stem": "依臺灣證券交易所股份有限公司有價證券借貸辦法規定，有關有價證券借券之敘述，下列何者正確？",
+      "options": [
+        "(1) 借券人不需付費用",
+        "(2) 不得延長借貸期間",
+        "(3) 借券人得於約定期限內隨時返還借券",
+        "(4) 借貸期間自借貸交易成交日起算，最長不得超過三個月"
+      ],
+      "answer": 2,
+      "answers": [
+        2
+      ],
+      "note": "【核心觀念定位】有價證券借貸交易與擔保",
+      "topic": "有價證券借貸交易與擔保",
+      "conceptId": "concept-22",
+      "gradable": true,
+      "chapter": "c05",
+      "source_chapter": "c05",
+      "frequency": 44,
+      "topicRank": 2,
+      "frequencyScope": "本章"
+    },
+    {
+      "id": "past-60-practice-37",
+      "term": 60,
+      "period": 60,
+      "subject": "信託實務",
+      "number": 37,
+      "stem": "依臺灣證券交易所股份有限公司有價證券借貸辦法規定，除經主管機關核准者外，下列何者得擔任有價證券借貸交易需求之借券人？",
+      "options": [
+        "(1) 保險公司",
+        "(2) 期貨商",
+        "(3) 信託業（特定信託契約）",
+        "(4) 政府基金"
+      ],
+      "answer": 1,
+      "answers": [
+        1
+      ],
+      "note": "【核心觀念定位】有價證券借貸交易與擔保",
+      "topic": "有價證券借貸交易與擔保",
+      "conceptId": "concept-22",
+      "gradable": true,
+      "chapter": "c05",
+      "source_chapter": "c05",
+      "frequency": 44,
+      "topicRank": 2,
+      "frequencyScope": "本章"
+    },
+    {
+      "id": "past-52-practice-32",
+      "term": 52,
+      "period": 52,
+      "subject": "信託實務",
+      "number": 32,
+      "stem": "委託人交付新股認購權利證書為信託財產時，屬於下列何種信託業務？",
+      "options": [
+        "(1) 金錢之信託",
+        "(2) 動產之信託",
+        "(3) 有價證券之信託",
+        "(4) 金錢債權及其擔保物權之信託"
+      ],
+      "answer": 2,
+      "answers": [
+        2
+      ],
+      "note": "【核心觀念定位】內部人持股申報與權益行使",
       "topic": "內部人持股申報與權益行使",
       "conceptId": "concept-25",
-      "weight": 66.5,
-      "raw_chap": "c8"
+      "gradable": true,
+      "chapter": "c05",
+      "source_chapter": "c05",
+      "frequency": 38,
+      "topicRank": 3,
+      "frequencyScope": "本章"
+    },
+    {
+      "id": "past-54-practice-36",
+      "term": 54,
+      "period": 54,
+      "subject": "信託實務",
+      "number": 36,
+      "stem": "非信託業者受託有價證券信託之信託財產，其對外未以信託財產名義表彰者，如該受託人為內部人時，其自有財產與信託財產應以下列何種原則申報？",
+      "options": [
+        "(1) 各自申報原則",
+        "(2) 合併申報原則",
+        "(3) 信託財產申報原則",
+        "(4) 自有財產申報原則"
+      ],
+      "answer": 1,
+      "answers": [
+        1
+      ],
+      "note": "【核心觀念定位】內部人持股申報與權益行使",
+      "topic": "內部人持股申報與權益行使",
+      "conceptId": "concept-25",
+      "gradable": true,
+      "chapter": "c05",
+      "source_chapter": "c05",
+      "frequency": 38,
+      "topicRank": 3,
+      "frequencyScope": "本章"
+    },
+    {
+      "id": "past-56-practice-37",
+      "term": 56,
+      "period": 56,
+      "subject": "信託實務",
+      "number": 37,
+      "stem": "信託業具運用決定權之信託，信託財產如取得任一公開發行公司股份超過其已發行股份總額多少比例時，應辦理股權申報？",
+      "options": [
+        "(1) 百分之一",
+        "(2) 百分之三",
+        "(3) 百分之五",
+        "(4) 百分之十"
+      ],
+      "answer": 3,
+      "answers": [
+        3
+      ],
+      "note": "【核心觀念定位】內部人持股申報與權益行使",
+      "topic": "內部人持股申報與權益行使",
+      "conceptId": "concept-25",
+      "gradable": true,
+      "chapter": "c05",
+      "source_chapter": "c05",
+      "frequency": 38,
+      "topicRank": 3,
+      "frequencyScope": "本章"
     }
   ],
   "c06": [
     {
-      "id": "past-52-practice-8",
+      "id": "past-52-practice-49",
       "term": 52,
       "period": 52,
       "subject": "信託實務",
-      "number": 8,
-      "stem": "信託業依據境外基金管理辦法，對於投資私募之境外基金規定，下列何者正確？",
+      "number": 49,
+      "stem": "依金融資產證券化條例規定，若特殊目的信託契約並未另有約定，則受益人會議決議指定新受託機構，應以下列何種決議方式為之？",
       "options": [
-        "信託業得複委託其他機構辦理",
-        "信託業得與相關機構簽訂合作銷售契約",
-        "投資標的限境外已發行成立二年以上，基金規模達等值美金二億以上之基金",
-        "國內投資人投資金額占個別私募境外基金比率，不得超過基金淨資產價值之90%"
-      ],
-      "answer": 4,
-      "topic": "境外基金與國外證券投資",
-      "conceptId": "concept-1",
-      "weight": 248.0,
-      "raw_chap": "c6"
-    },
-    {
-      "id": "past-58-practice-43",
-      "term": 58,
-      "period": 58,
-      "subject": "信託實務",
-      "number": 43,
-      "stem": "依不動產證券化條例規定，受託機構如係對於符合主管機關所訂條件之自然人、法人或基金進行不動產投資信託受益證券之私募時，其應募人總數，下列何者正確？",
-      "options": [
-        "不得低於五十人",
-        "不得低於三十五人",
-        "不得超過五十人",
-        "不得超過三十五人"
-      ],
-      "answer": 4,
-      "topic": "REIT募集投資標的與限制",
-      "conceptId": "concept-8",
-      "weight": 114.0,
-      "raw_chap": "c7"
-    },
-    {
-      "id": "past-55-law-22",
-      "term": 55,
-      "period": 55,
-      "subject": "信託法規",
-      "number": 22,
-      "stem": "依我國之「不動產證券化條例」開辦之「不動產投資信託」，係屬下列何種信託？",
-      "options": [
-        "金錢信託",
-        "動產信託",
-        "有價證券信託",
-        "金錢債權信託"
-      ],
-      "answer": 1,
-      "topic": "成立方式與信託分類",
-      "conceptId": "concept-2",
-      "weight": 176.5,
-      "raw_chap": "c1"
-    },
-    {
-      "id": "past-49-practice-40",
-      "term": 49,
-      "period": 49,
-      "subject": "信託實務",
-      "number": 40,
-      "stem": "由受託機構依不動產證券化條例募集發行或私募交付受益證券，以投資不動產、不動產相關權利、不動產相關有價證券等而成立之信託業務名稱，下列何者正確？",
-      "options": [
-        "有價證券信託",
-        "地上權信託",
-        "不動產資產信託",
-        "不動產投資信託"
-      ],
-      "answer": 4,
-      "topic": "不動產證券化共通規定",
-      "conceptId": "concept-18",
-      "weight": 62.5,
-      "raw_chap": "c7"
-    },
-    {
-      "id": "past-61-practice-48",
-      "term": 61,
-      "period": 61,
-      "subject": "信託實務",
-      "number": 48,
-      "stem": "受託機構依資產信託證券化計畫，發行各種種類及期間之受益證券，受益證券清償後，資產池之賸餘財產應依資產信託證券化計畫，分配予下列何者？",
-      "options": [
-        "本金受益人",
-        "次順位受益人",
-        "殘值受益人",
-        "受託機構"
+        "(1) 應有表決權總數三分之二以上受益人之出席，出席受益人表決權過半數之同意行之",
+        "(2) 應有表決權總數二分之一以上受益人之出席，出席受益人表決權三分之二之同意行之",
+        "(3) 應由全體受益人同意為之",
+        "(4) 應有表決權總數二分之一以上受益人之出席，出席受益人表決權過半數之同意行之"
       ],
       "answer": 3,
+      "answers": [
+        3
+      ],
+      "note": "【核心觀念定位】特殊目的信託公司與參與機構",
       "topic": "特殊目的信託公司與參與機構",
       "conceptId": "concept-7",
-      "weight": 120.5,
-      "raw_chap": "c9"
+      "gradable": true,
+      "chapter": "c06",
+      "source_chapter": "c06",
+      "frequency": 89,
+      "topicRank": 1,
+      "frequencyScope": "本章"
     },
     {
-      "id": "past-61-practice-79",
-      "term": 61,
-      "period": 61,
+      "id": "past-55-practice-47",
+      "term": 55,
+      "period": 55,
       "subject": "信託實務",
-      "number": 79,
-      "stem": "投資下列何種證券之孳息收益係採分離課稅？ A.不動產投資信託受益證券 B.不動產資產信託受益證券 C.金融資產證券化受益證券",
+      "number": 47,
+      "stem": "下列何者無法使創始機構之金融資產移轉，取得對抗債務人之效力？",
       "options": [
-        "僅AB",
-        "僅BC",
-        "僅AC",
-        "ABC"
+        "(1) 依民法第二百九十七條之規定，通知債務人",
+        "(2) 向債務人寄發已依法公告之證明書者",
+        "(3) 創始機構受受託機構之委任而擔任服務機構，負責向債務人收取債權，並已依規定公告",
+        "(4) 受託機構與債務人於契約約定寄發依金融資產證券化條例所定公告之證明書者"
       ],
-      "answer": 4,
-      "topic": "所得稅與扣繳",
-      "conceptId": "concept-14",
-      "weight": 86.5,
-      "raw_chap": "c4"
+      "answer": 3,
+      "answers": [
+        3
+      ],
+      "note": "【核心觀念定位】特殊目的信託公司與參與機構",
+      "topic": "特殊目的信託公司與參與機構",
+      "conceptId": "concept-7",
+      "gradable": true,
+      "chapter": "c06",
+      "source_chapter": "c06",
+      "frequency": 89,
+      "topicRank": 1,
+      "frequencyScope": "本章"
     },
     {
-      "id": "past-59-practice-19",
+      "id": "past-59-practice-47",
       "term": 59,
       "period": 59,
       "subject": "信託實務",
-      "number": 19,
-      "stem": "與信託業簽定信託契約之法人委託人，其最近一期經會計師查核或核閱之財務報告總資產至少應超過新臺幣多少元，該信託業得投資不動產證券化條例私募之受益證券？",
+      "number": 47,
+      "stem": "依金融資產證券化條例規定，下列何者非屬特殊目的公司得辦理之業務？",
       "options": [
-        "一千萬元",
-        "二千萬元",
-        "三千萬元",
-        "五千萬元"
-      ],
-      "answer": 4,
-      "topic": "內控稽核與風險管理",
-      "conceptId": "concept-47",
-      "weight": 49.5,
-      "raw_chap": "c5"
-    },
-    {
-      "id": "past-57-law-21",
-      "term": 57,
-      "period": 57,
-      "subject": "信託法規",
-      "number": 21,
-      "stem": "依信託業設立標準規定，僅辦理不動產證券化條例所列不動產投資信託及不動產資產信託業務之信託公司，其最低實收資本額為多少？",
-      "options": [
-        "新台幣三億元",
-        "新台幣五億元",
-        "新台幣十億元",
-        "新台幣二十億元"
+        "(1) 特定資產之管理處分",
+        "(2) 發行資產基礎證券",
+        "(3) 受讓金融資產等特定資產",
+        "(4) 兼營其他非資產證券化業務"
       ],
       "answer": 3,
-      "topic": "設立標準與分支機構",
-      "conceptId": "concept-19",
-      "weight": 72.5,
-      "raw_chap": "c5"
-    },
-    {
-      "id": "past-61-practice-51",
-      "term": 61,
-      "period": 61,
-      "subject": "信託實務",
-      "number": 51,
-      "stem": "以私募方式發行金融資產證券化之受益證券時，有關該受益證券持有人轉讓該受益證券之敘述，下列何者錯誤？",
-      "options": [
-        "得轉讓與銀行業",
-        "得轉讓與票券業",
-        "得轉讓與信託業",
-        "其轉讓對象不受任何限制"
+      "answers": [
+        3
       ],
-      "answer": 4,
-      "topic": "受益證券募集發行與受益人會議",
-      "conceptId": "concept-37",
-      "weight": 57.5,
-      "raw_chap": "c9"
+      "note": "【核心觀念定位】特殊目的信託公司與參與機構",
+      "topic": "特殊目的信託公司與參與機構",
+      "conceptId": "concept-7",
+      "gradable": true,
+      "chapter": "c06",
+      "source_chapter": "c06",
+      "frequency": 89,
+      "topicRank": 1,
+      "frequencyScope": "本章"
     },
     {
-      "id": "past-53-practice-74",
+      "id": "past-53-practice-46",
       "term": 53,
       "period": 53,
       "subject": "信託實務",
-      "number": 74,
-      "stem": "同一信託業所設置之全體集合管理運用帳戶，投資於任一資產證券化計畫所發行之受益證券之金額，合計至多不得超過投資當日該資產證券化計畫所發行之受益證券總額百分之多少？",
+      "number": 46,
+      "stem": "受託機構依規定對不動產投資信託基金之淨資產價值計算，下列敘述何者錯誤？",
       "options": [
-        "五",
-        "十",
-        "十五",
-        "二十"
+        "(1) 應依主管機關核定標準計算淨資產價值",
+        "(2) 應每日公告每受益權單位之淨資產價值",
+        "(3) 無論不動產價值變動與否均須每日重估",
+        "(4) 得依約定以附註揭露方式替代重新估價"
       ],
       "answer": 2,
-      "topic": "集合帳戶投資限制與流動性",
-      "conceptId": "concept-17",
-      "weight": 69.5,
-      "raw_chap": "c11"
+      "answers": [
+        2
+      ],
+      "note": "【核心觀念定位】REIT募集投資標的與限制",
+      "topic": "REIT募集投資標的與限制",
+      "conceptId": "concept-8",
+      "gradable": true,
+      "chapter": "c06",
+      "source_chapter": "c06",
+      "frequency": 87,
+      "topicRank": 2,
+      "frequencyScope": "本章"
+    },
+    {
+      "id": "past-56-practice-32",
+      "term": 56,
+      "period": 56,
+      "subject": "信託實務",
+      "number": 32,
+      "stem": "不動產投資信託係向不特定人募集資金投資於不動產，屬下列何種信託？",
+      "options": [
+        "(1) 有價證券信託",
+        "(2) 動產信託",
+        "(3) 金錢債權信託",
+        "(4) 金錢信託"
+      ],
+      "answer": 3,
+      "answers": [
+        3
+      ],
+      "note": "【核心觀念定位】REIT募集投資標的與限制",
+      "topic": "REIT募集投資標的與限制",
+      "conceptId": "concept-8",
+      "gradable": true,
+      "chapter": "c06",
+      "source_chapter": "c06",
+      "frequency": 87,
+      "topicRank": 2,
+      "frequencyScope": "本章"
+    },
+    {
+      "id": "past-55-practice-41",
+      "term": 55,
+      "period": 55,
+      "subject": "信託實務",
+      "number": 41,
+      "stem": "下列何者非屬不動產證券化之特性？",
+      "options": [
+        "(1) 投資金額較低",
+        "(2) 權益可分割性",
+        "(3) 經營專業化",
+        "(4) 投資單位以分棟分層分戶方式銷售"
+      ],
+      "answer": 3,
+      "answers": [
+        3
+      ],
+      "note": "【核心觀念定位】不動產證券化共通規定",
+      "topic": "不動產證券化共通規定",
+      "conceptId": "concept-18",
+      "gradable": true,
+      "chapter": "c06",
+      "source_chapter": "c06",
+      "frequency": 49,
+      "topicRank": 3,
+      "frequencyScope": "本章"
+    },
+    {
+      "id": "past-57-practice-54",
+      "term": 57,
+      "period": 57,
+      "subject": "信託實務",
+      "number": 54,
+      "stem": "有關金融資產證券化受益權與受益證券之敘述，下列何者錯誤？",
+      "options": [
+        "(1) 可設計為權利層次不同之受益權",
+        "(2) 殘值受益人無需藉由受益證券表彰所享有之受益權",
+        "(3) 實體受益證券得設計為無記名式",
+        "(4) 實體受益證券應由受託機構之代表人簽名、蓋章，並經簽證"
+      ],
+      "answer": 2,
+      "answers": [
+        2
+      ],
+      "note": "【核心觀念定位】受益證券募集發行與受益人會議",
+      "topic": "受益證券募集發行與受益人會議",
+      "conceptId": "concept-37",
+      "gradable": true,
+      "chapter": "c06",
+      "source_chapter": "c06",
+      "frequency": 26,
+      "topicRank": 4,
+      "frequencyScope": "本章"
+    },
+    {
+      "id": "past-50-practice-80",
+      "term": 50,
+      "period": 50,
+      "subject": "信託實務",
+      "number": 80,
+      "stem": "有關金融資產證券化之特性，下列敘述何者正確？",
+      "options": [
+        "(1) 由創始機構發行有價證券",
+        "(2) 信用評等之基礎為特殊目的機構之信用評等",
+        "(3) 投資人之收益來自特定金融資產之現金流量",
+        "(4) 得採提供超額資產、利差帳戶、現金準備帳戶等外部信用增強機制"
+      ],
+      "answer": 2,
+      "answers": [
+        2
+      ],
+      "note": "【核心觀念定位】證券化特性與經濟效益",
+      "topic": "證券化特性與經濟效益",
+      "conceptId": "concept-38",
+      "gradable": true,
+      "chapter": "c06",
+      "source_chapter": "c06",
+      "frequency": 26,
+      "topicRank": 5,
+      "frequencyScope": "本章"
+    },
+    {
+      "id": "past-54-practice-9",
+      "term": 54,
+      "period": 54,
+      "subject": "信託實務",
+      "number": 9,
+      "stem": "張三將現金一千萬元交付甲銀行成立信託，並約定五百萬元購買不動產，三百萬元購買股票，二百萬元存放於定期存款，該信託屬信託業法中之下列何種信託？",
+      "options": [
+        "(1) 不動產信託",
+        "(2) 有價證券信託",
+        "(3) 金錢信託",
+        "(4) 其他財產權信託"
+      ],
+      "answer": 2,
+      "answers": [
+        2
+      ],
+      "note": "【核心觀念定位】土地開發與不動產管理信託",
+      "topic": "土地開發與不動產管理信託",
+      "conceptId": "concept-45",
+      "gradable": true,
+      "chapter": "c06",
+      "source_chapter": "c06",
+      "frequency": 21,
+      "topicRank": 6,
+      "frequencyScope": "本章"
+    },
+    {
+      "id": "past-52-practice-44",
+      "term": 52,
+      "period": 52,
+      "subject": "信託實務",
+      "number": 44,
+      "stem": "下列何者非屬不動產證券化條例所規定之不動產資產信託契約得移轉之財產權？",
+      "options": [
+        "(1) 已有穩定收入之不動產",
+        "(2) 已有穩定收入之不動產相關權利",
+        "(3) 已有穩定收入之地上權權利",
+        "(4) 依不動產證券化條例發行之受益證券"
+      ],
+      "answer": 3,
+      "answers": [
+        3
+      ],
+      "note": "【核心觀念定位】資產移轉債權與債務人通知",
+      "topic": "資產移轉債權與債務人通知",
+      "conceptId": "concept-51",
+      "gradable": true,
+      "chapter": "c06",
+      "source_chapter": "c06",
+      "frequency": 18,
+      "topicRank": 7,
+      "frequencyScope": "本章"
     }
   ],
   "c07": [
     {
-      "id": "past-62-practice-20",
-      "term": 62,
-      "period": 62,
+      "id": "past-53-practice-68",
+      "term": 53,
+      "period": 53,
       "subject": "信託實務",
-      "number": 20,
-      "stem": "客戶經由特定金錢信託以定期定額方式投資境外基金，如因主管機關修改規定致投資標的不符時，銀行應以下列何種方式處理？",
+      "number": 68,
+      "stem": "依我國法令規定，下列何者不須指定保管機構？",
       "options": [
-        "應辦理基金轉換",
-        "應於三年內調整至符合規定",
-        "原則上得按原契約金額繼續投資，至委託人全數贖回為止",
-        "應停止定期定額投資，但原基金可持有至信託契約屆滿或委託人全數贖回為止"
+        "(1) 境外華僑及外國人與大陸地區投資人所投資之國內有價證券",
+        "(2) 信託資金集合管理運用帳戶之資產",
+        "(3) 證券商提存之營業保證金",
+        "(4) 保險公司銷售之投資型保險商品專設帳簿之資產"
       ],
-      "answer": 3,
-      "topic": "境外基金與國外證券投資",
-      "conceptId": "concept-1",
-      "weight": 263.0,
-      "raw_chap": "c6"
-    },
-    {
-      "id": "past-61-law-3",
-      "term": 61,
-      "period": 61,
-      "subject": "信託法規",
-      "number": 3,
-      "stem": "甲為契約信託之委託人，乙為受託人，丙為受益人，丁為信託監察人，下列何者是信託財產對外有管理處分權之人？",
-      "options": [
-        "丁",
-        "丙",
-        "乙",
-        "甲"
+      "answer": 1,
+      "answers": [
+        1
       ],
-      "answer": 3,
-      "topic": "成立方式與信託分類",
-      "conceptId": "concept-2",
-      "weight": 185.5,
-      "raw_chap": "c1"
-    },
-    {
-      "id": "past-60-practice-67",
-      "term": 60,
-      "period": 60,
-      "subject": "信託實務",
-      "number": 67,
-      "stem": "證券投資信託基金存續期間屆滿或發生符合證券投資信託契約終止情事必須清算時，由保管機構擔任清算人，若無正當理由，保管機構應於主管機關核准清算後幾個月內完成基金清算？",
-      "options": [
-        "一個月",
-        "三個月",
-        "六個月",
-        "九個月"
-      ],
-      "answer": 2,
+      "note": "【核心觀念定位】基金保管交割與監督責任",
       "topic": "基金保管交割與監督責任",
       "conceptId": "concept-3",
-      "weight": 172.0,
-      "raw_chap": "c10"
+      "gradable": true,
+      "chapter": "c07",
+      "source_chapter": "c07",
+      "frequency": 142,
+      "topicRank": 1,
+      "frequencyScope": "本章"
     },
     {
-      "id": "past-60-law-1",
-      "term": 60,
-      "period": 60,
-      "subject": "信託法規",
-      "number": 1,
-      "stem": "依信託法規定，法人為下列何種目的，經目的事業主管機關許可，得經決議對外宣言自為委託人及受託人成立宣言信託？",
+      "id": "past-54-practice-60",
+      "term": 54,
+      "period": 54,
+      "subject": "信託實務",
+      "number": 60,
+      "stem": "甲證券投資信託公司於運用基金持有資產前，應先指示乙保管銀行以何者名義開設資產運用帳戶？",
       "options": [
-        "為增資之目的",
-        "為財產管理之目的",
-        "為風險管理之目的",
-        "為增進公共利益之目的"
+        "(1) 甲證券投資信託公司",
+        "(2) 乙銀行總行名義",
+        "(3) 乙銀行受託經管甲證券投資信託基金專戶",
+        "(4) 甲證券投資信託公司負責人"
       ],
-      "answer": 4,
-      "topic": "公益信託與監督機關",
-      "conceptId": "concept-20",
-      "weight": 76.0,
-      "raw_chap": "c1"
+      "answer": 2,
+      "answers": [
+        2
+      ],
+      "note": "【核心觀念定位】基金保管交割與監督責任",
+      "topic": "基金保管交割與監督責任",
+      "conceptId": "concept-3",
+      "gradable": true,
+      "chapter": "c07",
+      "source_chapter": "c07",
+      "frequency": 142,
+      "topicRank": 1,
+      "frequencyScope": "本章"
     },
     {
-      "id": "past-59-law-39",
-      "term": 59,
-      "period": 59,
-      "subject": "信託法規",
-      "number": 39,
-      "stem": "不指定營運範圍或方法之金錢信託，除經主管機關核准外，其營運範圍不包括下列何者？",
+      "id": "past-56-practice-68",
+      "term": 56,
+      "period": 56,
+      "subject": "信託實務",
+      "number": 68,
+      "stem": "有關證券投資信託基金之保管機構，下列敘述何者正確？",
       "options": [
-        "銀行存款",
-        "金融債券",
-        "受益憑證",
-        "短期票券"
+        "(1) 應由其他之證券投資信託公司擔任",
+        "(2) 得由募集基金之證券投資信託公司本身擔任",
+        "(3) 得經受益人大會決議由證券投資顧問公司擔任",
+        "(4) 主要由信託業或銀行信託部擔任"
       ],
       "answer": 3,
-      "topic": "業務範圍與禁止保本保息",
-      "conceptId": "concept-4",
-      "weight": 144.5,
-      "raw_chap": "c2"
+      "answers": [
+        3
+      ],
+      "note": "【核心觀念定位】基金保管交割與監督責任",
+      "topic": "基金保管交割與監督責任",
+      "conceptId": "concept-3",
+      "gradable": true,
+      "chapter": "c07",
+      "source_chapter": "c07",
+      "frequency": 142,
+      "topicRank": 1,
+      "frequencyScope": "本章"
     },
     {
-      "id": "past-62-practice-56",
-      "term": 62,
-      "period": 62,
+      "id": "past-57-practice-65",
+      "term": 57,
+      "period": 57,
+      "subject": "信託實務",
+      "number": 65,
+      "stem": "保管機構保管證券投資信託基金應與委任之證券投資信託公司簽署下列何種契約？",
+      "options": [
+        "(1) 保管契約",
+        "(2) 委任契約",
+        "(3) 委託投資契約",
+        "(4) 證券投資信託契約"
+      ],
+      "answer": 3,
+      "answers": [
+        3
+      ],
+      "note": "【核心觀念定位】基金保管交割與監督責任",
+      "topic": "基金保管交割與監督責任",
+      "conceptId": "concept-3",
+      "gradable": true,
+      "chapter": "c07",
+      "source_chapter": "c07",
+      "frequency": 142,
+      "topicRank": 1,
+      "frequencyScope": "本章"
+    },
+    {
+      "id": "past-52-practice-56",
+      "term": 52,
+      "period": 52,
       "subject": "信託實務",
       "number": 56,
-      "stem": "除法令或金管會另有規定外，全權委託投資之資金應由「保管機構」保管，此保管機構是指經主管機關核准得辦理保管或信託業務，信用評等並達一定等級以上之下列何種機構？",
+      "stem": "有關全權委託投資業務之三方權義協定書，下列何者不屬於簽約當事人？",
       "options": [
-        "證券公司",
-        "保險公司",
-        "證券投資信託事業",
-        "銀行或信託業"
+        "(1) 保管銀行",
+        "(2) 委任人",
+        "(3) 證券商",
+        "(4) 證券投資顧問事業或證券投資信託事業"
       ],
-      "answer": 4,
+      "answer": 2,
+      "answers": [
+        2
+      ],
+      "note": "【核心觀念定位】全權委託保管與越權交易",
       "topic": "全權委託保管與越權交易",
       "conceptId": "concept-6",
-      "weight": 133.0,
-      "raw_chap": "c10"
+      "gradable": true,
+      "chapter": "c07",
+      "source_chapter": "c07",
+      "frequency": 100,
+      "topicRank": 2,
+      "frequencyScope": "本章"
     },
     {
-      "id": "past-62-practice-47",
-      "term": 62,
-      "period": 62,
+      "id": "past-55-practice-64",
+      "term": 55,
+      "period": 55,
       "subject": "信託實務",
-      "number": 47,
-      "stem": "依金融資產證券化條例規定，受託機構至遲應於每營業年度終了多少時間內，就特殊目的信託之信託財產作成資產負債表、損益表、信託財產管理及運用報告書等書表，向信託監察人報告，並通知受益人？",
+      "number": 64,
+      "stem": "全權委託投資業務以委任關係辦理者，下列何者錯誤？",
       "options": [
-        "十五日",
-        "一個月",
-        "二個月",
-        "四個月"
+        "(1) 委任人將資產委託保管機構保管時，應於保管機構開立投資保管帳戶",
+        "(2) 原則上每一全權委託投資帳戶之保管銀行以一家為限",
+        "(3) 越權交易所需交割之款券，原則上應由委任人負責撥入保管帳戶",
+        "(4) 除法令或主管機關另有規定外，原則上不得接受共同之委任"
       ],
-      "answer": 4,
-      "topic": "特殊目的信託公司與參與機構",
-      "conceptId": "concept-7",
-      "weight": 122.0,
-      "raw_chap": "c9"
+      "answer": 2,
+      "answers": [
+        2
+      ],
+      "note": "【核心觀念定位】全權委託保管與越權交易",
+      "topic": "全權委託保管與越權交易",
+      "conceptId": "concept-6",
+      "gradable": true,
+      "chapter": "c07",
+      "source_chapter": "c07",
+      "frequency": 100,
+      "topicRank": 2,
+      "frequencyScope": "本章"
     },
     {
-      "id": "past-62-practice-39",
-      "term": 62,
-      "period": 62,
+      "id": "past-56-practice-77",
+      "term": 56,
+      "period": 56,
       "subject": "信託實務",
-      "number": 39,
-      "stem": "受託機構運用不動產投資信託基金進行達新臺幣一億元以上之不動產交易前，除先洽請專業估價者依規定出具估價報告書外，並應於下列何日起二日內依主管機關規定之方式辦理公告？",
+      "number": 77,
+      "stem": "信託業應於會計年度終了後至遲幾個月內，就各集合管理運用帳戶分別編具集合管理運用信託財產年度決算報告？",
       "options": [
-        "契約生效日",
-        "專業估價者進行估價日",
-        "受託機構撥款日",
-        "受託機構進行不動產過戶日"
+        "(1) 一個月",
+        "(2) 二個月",
+        "(3) 三個月",
+        "(4) 四個月"
       ],
-      "answer": 1,
-      "topic": "REIT募集投資標的與限制",
-      "conceptId": "concept-8",
-      "weight": 120.0,
-      "raw_chap": "c7"
+      "answer": 3,
+      "answers": [
+        3
+      ],
+      "note": "【核心觀念定位】單獨及集合管理分類與權限",
+      "topic": "單獨及集合管理分類與權限",
+      "conceptId": "concept-13",
+      "gradable": true,
+      "chapter": "c07",
+      "source_chapter": "c07",
+      "frequency": 59,
+      "topicRank": 3,
+      "frequencyScope": "本章"
     },
     {
-      "id": "past-45-practice-15",
-      "term": 45,
-      "period": 45,
+      "id": "past-53-practice-75",
+      "term": 53,
+      "period": 53,
       "subject": "信託實務",
-      "number": 15,
-      "stem": "主管機關規定銀行辦理特定金錢信託業務應於各分支機構明確標示之風險規範，下列何者錯誤？",
+      "number": 75,
+      "stem": "信託資金集合管理運用帳戶流動性資產占淨資產價值之最低比率為何？",
       "options": [
-        "基金投資非屬存款保險承保範圍",
-        "基金並非存款，投資人須自負盈虧",
-        "最低收益風險，亦即在最差狀況下，將損失所有本金及利息",
-        "基金過去之績效可以推論未來投資之表現"
+        "(1) 百分之二",
+        "(2) 百分之三",
+        "(3) 百分之五",
+        "(4) 百分之十"
       ],
-      "answer": 4,
-      "topic": "金錢信託分類權限與運用",
-      "conceptId": "concept-5",
-      "weight": 119.5,
-      "raw_chap": "c6"
+      "answer": 2,
+      "answers": [
+        2
+      ],
+      "note": "【核心觀念定位】集合帳戶投資限制與流動性",
+      "topic": "集合帳戶投資限制與流動性",
+      "conceptId": "concept-17",
+      "gradable": true,
+      "chapter": "c07",
+      "source_chapter": "c07",
+      "frequency": 50,
+      "topicRank": 4,
+      "frequencyScope": "本章"
     },
     {
-      "id": "past-61-law-35",
-      "term": 61,
-      "period": 61,
-      "subject": "信託法規",
-      "number": 35,
-      "stem": "信託業三分之一以上董（理）事發生變動時，應於事實發生之翌日起多久時間內，向主管機關申報，並應於本公司所在地之日報或依主管機關指定之方式公告？",
+      "id": "past-53-practice-72",
+      "term": 53,
+      "period": 53,
+      "subject": "信託實務",
+      "number": 72,
+      "stem": "信託業辦理集合管理運用帳戶發生下列何事項時，信託業應即辦理公告？",
       "options": [
-        "二個營業日",
-        "三個營業日",
-        "五個營業日",
-        "無須申報及公告"
+        "(1) 淨資產價值跌幅達10%",
+        "(2) 淨資產價值跌幅達20%",
+        "(3) 帳戶約定條款變更",
+        "(4) 受益人不特定"
       ],
-      "answer": 1,
-      "topic": "財產評審報告與會計公告",
-      "conceptId": "concept-11",
-      "weight": 90.5,
-      "raw_chap": "c2"
+      "answer": 2,
+      "answers": [
+        2
+      ],
+      "note": "【核心觀念定位】集合帳戶申請設置與合併",
+      "topic": "集合帳戶申請設置與合併",
+      "conceptId": "concept-26",
+      "gradable": true,
+      "chapter": "c07",
+      "source_chapter": "c07",
+      "frequency": 34,
+      "topicRank": 5,
+      "frequencyScope": "本章"
+    },
+    {
+      "id": "past-52-practice-59",
+      "term": 52,
+      "period": 52,
+      "subject": "信託實務",
+      "number": 59,
+      "stem": "甲外國機構投資人來台投資，委任乙銀行擔任其保管機構，實務上應以下列何者名義開設新臺幣活期存款帳戶？",
+      "options": [
+        "(1) 甲",
+        "(2) 甲之國外保管機構",
+        "(3) 乙銀行",
+        "(4) 乙銀行受託保管甲外國機構投資專戶"
+      ],
+      "answer": 3,
+      "answers": [
+        3
+      ],
+      "note": "【核心觀念定位】外資全球保管與代理登記",
+      "topic": "外資全球保管與代理登記",
+      "conceptId": "concept-31",
+      "gradable": true,
+      "chapter": "c07",
+      "source_chapter": "c07",
+      "frequency": 29,
+      "topicRank": 6,
+      "frequencyScope": "本章"
     }
   ],
   "c08": [
     {
-      "id": "past-62-practice-9",
-      "term": 62,
-      "period": 62,
+      "id": "past-54-practice-19",
+      "term": 54,
+      "period": 54,
       "subject": "信託實務",
-      "number": 9,
-      "stem": "銀行辦理特定金錢信託投資國外有價證券業務，如投資境外基金，則該境外基金之管理機構及基金本身原則上應至少分別成立滿幾年以上？",
+      "number": 19,
+      "stem": "特定金錢信託業務項下所能投資之境外基金，除經專案核准或基金註冊地經我國承認並公告者外，其成立時間應至少達多久以上？",
       "options": [
-        "均為一年",
-        "均為二年",
-        "分別為一年及二年",
-        "分別為二年及一年"
+        "(1) 六個月",
+        "(2) 一年",
+        "(3) 二年",
+        "(4) 三年"
       ],
-      "answer": 4,
+      "answer": 1,
+      "answers": [
+        1
+      ],
+      "note": "【核心觀念定位】境外基金與國外證券投資",
       "topic": "境外基金與國外證券投資",
       "conceptId": "concept-1",
-      "weight": 263.0,
-      "raw_chap": "c6"
+      "gradable": true,
+      "chapter": "c04",
+      "source_chapter": "c04",
+      "frequency": 230,
+      "topicRank": 1,
+      "frequencyScope": "全題庫"
     },
     {
       "id": "past-57-law-2",
@@ -1371,35 +1939,78 @@
       "number": 2,
       "stem": "依信託法規定，委託人於信託成立後六個月內，有下列何種情形者，得推定其行為有害及債權？",
       "options": [
-        "死亡",
-        "失蹤",
-        "受破產之宣告",
-        "受禁治產之宣告"
-      ],
-      "answer": 3,
-      "topic": "成立方式與信託分類",
-      "conceptId": "concept-2",
-      "weight": 179.5,
-      "raw_chap": "c1"
-    },
-    {
-      "id": "past-60-practice-67",
-      "term": 60,
-      "period": 60,
-      "subject": "信託實務",
-      "number": 67,
-      "stem": "證券投資信託基金存續期間屆滿或發生符合證券投資信託契約終止情事必須清算時，由保管機構擔任清算人，若無正當理由，保管機構應於主管機關核准清算後幾個月內完成基金清算？",
-      "options": [
-        "一個月",
-        "三個月",
-        "六個月",
-        "九個月"
+        "(1) 死亡",
+        "(2) 失蹤",
+        "(3) 受破產之宣告",
+        "(4) 受禁治產之宣告"
       ],
       "answer": 2,
+      "answers": [
+        2
+      ],
+      "note": "【核心觀念定位】成立方式與信託分類",
+      "topic": "成立方式與信託分類",
+      "conceptId": "concept-2",
+      "gradable": true,
+      "chapter": "c01",
+      "source_chapter": "c01",
+      "frequency": 154,
+      "topicRank": 2,
+      "frequencyScope": "全題庫"
+    },
+    {
+      "id": "past-54-practice-79",
+      "term": 54,
+      "period": 54,
+      "subject": "信託實務",
+      "number": 79,
+      "stem": "證券投資信託基金受益人之收益分配請求權，自收益發放日起之消滅時效期間為何？",
+      "options": [
+        "(1) 一年",
+        "(2) 三年",
+        "(3) 五年",
+        "(4) 十五年"
+      ],
+      "answer": 2,
+      "answers": [
+        2
+      ],
+      "note": "【核心觀念定位】基金保管交割與監督責任",
       "topic": "基金保管交割與監督責任",
       "conceptId": "concept-3",
-      "weight": 172.0,
-      "raw_chap": "c10"
+      "gradable": true,
+      "chapter": "c07",
+      "source_chapter": "c07",
+      "frequency": 142,
+      "topicRank": 3,
+      "frequencyScope": "全題庫"
+    },
+    {
+      "id": "past-57-law-41",
+      "term": 57,
+      "period": 57,
+      "subject": "信託法規",
+      "number": 41,
+      "stem": "依證券投資信託事業證券投資顧問事業證券商兼營信託業務管理辦法規定，證券投資信託事業以信託方式經營全權委託投資業務，其接受委託人原始信託財產達新臺幣多少元以上者，符合應申請主管機關許可之一定條件？",
+      "options": [
+        "(1) 五百萬元",
+        "(2) 一千萬元",
+        "(3) 一千五百萬元",
+        "(4) 二千萬元"
+      ],
+      "answer": 1,
+      "answers": [
+        1
+      ],
+      "note": "【核心觀念定位】業務範圍與禁止保本保息",
+      "topic": "業務範圍與禁止保本保息",
+      "conceptId": "concept-4",
+      "gradable": true,
+      "chapter": "c02",
+      "source_chapter": "c02",
+      "frequency": 116,
+      "topicRank": 4,
+      "frequencyScope": "全題庫"
     },
     {
       "id": "past-55-practice-79",
@@ -1409,35 +2020,24 @@
       "number": 79,
       "stem": "甲銀行兼營信託業務，辦理金錢信託、有價證券信託及保管銀行業務，其金錢信託中並無保本保息之代為確定用途信託資金，今該銀行有指撥營運資金新台幣五千萬元，請問甲銀行至少應再提存信託賠償準備金為多少元？",
       "options": [
-        "二千萬元",
-        "三千萬元",
-        "四千萬元",
-        "得以指撥營運資金充當賠償準備金"
+        "(1) 二千萬元",
+        "(2) 三千萬元",
+        "(3) 四千萬元",
+        "(4) 得以指撥營運資金充當賠償準備金"
       ],
-      "answer": 4,
+      "answer": 3,
+      "answers": [
+        3
+      ],
+      "note": "【核心觀念定位】金錢信託分類權限與運用",
       "topic": "金錢信託分類權限與運用",
       "conceptId": "concept-5",
-      "weight": 134.5,
-      "raw_chap": "c6"
-    },
-    {
-      "id": "past-60-practice-44",
-      "term": 60,
-      "period": 60,
-      "subject": "信託實務",
-      "number": 44,
-      "stem": "受託機構應於不動產投資信託基金募集完成後幾個營業日內報請主管機關備查？",
-      "options": [
-        "五個營業日",
-        "十個營業日",
-        "十五個營業日",
-        "二十個營業日"
-      ],
-      "answer": 1,
-      "topic": "REIT募集投資標的與限制",
-      "conceptId": "concept-8",
-      "weight": 117.0,
-      "raw_chap": "c7"
+      "gradable": true,
+      "chapter": "c04",
+      "source_chapter": "c04",
+      "frequency": 112,
+      "topicRank": 5,
+      "frequencyScope": "全題庫"
     },
     {
       "id": "past-59-practice-64",
@@ -1447,73 +2047,78 @@
       "number": 64,
       "stem": "保管機構辦理全權委託投資之保管業務時，應將其每月最後營業日製作之委任人投資保管帳戶有價證券明細表，至遲於次月幾日內交付委任人？",
       "options": [
-        "三個營業日",
-        "五個營業日",
-        "七個營業日",
-        "十個營業日"
-      ],
-      "answer": 2,
-      "topic": "全權委託保管與越權交易",
-      "conceptId": "concept-6",
-      "weight": 128.5,
-      "raw_chap": "c10"
-    },
-    {
-      "id": "past-56-practice-36",
-      "term": 56,
-      "period": 56,
-      "subject": "信託實務",
-      "number": 36,
-      "stem": "張小姐將持有股票交付受託機構成立信託，當受託機構將該信託財產之股票全部處分完畢，股款完全存入存款中，一個月後再用該筆存款購入一棟房子，依信託業法規定，該信託之類別為下列何者？",
-      "options": [
-        "金錢信託",
-        "有價證券信託",
-        "不動產信託",
-        "股款信託"
-      ],
-      "answer": 2,
-      "topic": "特殊目的信託公司與參與機構",
-      "conceptId": "concept-7",
-      "weight": 113.0,
-      "raw_chap": "c9"
-    },
-    {
-      "id": "past-59-law-33",
-      "term": 59,
-      "period": 59,
-      "subject": "信託法規",
-      "number": 33,
-      "stem": "信託業法所定之罰鍰，經限期繳納而受罰人逾期不繳者，自逾期之日起，每日加收之滯納金為何？",
-      "options": [
-        "罰鍰之1%",
-        "罰鍰之2%",
-        "罰鍰之3%",
-        "罰鍰之5%"
+        "(1) 三個營業日",
+        "(2) 五個營業日",
+        "(3) 七個營業日",
+        "(4) 十個營業日"
       ],
       "answer": 1,
-      "topic": "監理處分罰則與損害賠償",
-      "conceptId": "concept-21",
-      "weight": 73.5,
-      "raw_chap": "c2"
+      "answers": [
+        1
+      ],
+      "note": "【核心觀念定位】全權委託保管與越權交易",
+      "topic": "全權委託保管與越權交易",
+      "conceptId": "concept-6",
+      "gradable": true,
+      "chapter": "c07",
+      "source_chapter": "c07",
+      "frequency": 100,
+      "topicRank": 6,
+      "frequencyScope": "全題庫"
     },
     {
-      "id": "past-54-law-45",
+      "id": "past-55-practice-65",
+      "term": 55,
+      "period": 55,
+      "subject": "信託實務",
+      "number": 65,
+      "stem": "受託機構應分別於每營業年度終了及資產信託證券化計畫執行完成後四個月內，作成下列何種書表，向信託監察人報告， 並通知各受益人？ A.資產負債表 B.損益表 C.資產信託證券化計畫書 D.信託財產管理及運用之報告書",
+      "options": [
+        "(1) A、B、C",
+        "(2) A、B、D",
+        "(3) A、C、D",
+        "(4) B、C、D"
+      ],
+      "answer": 1,
+      "answers": [
+        1
+      ],
+      "note": "【核心觀念定位】特殊目的信託公司與參與機構",
+      "topic": "特殊目的信託公司與參與機構",
+      "conceptId": "concept-7",
+      "gradable": true,
+      "chapter": "c06",
+      "source_chapter": "c06",
+      "frequency": 89,
+      "topicRank": 7,
+      "frequencyScope": "全題庫"
+    },
+    {
+      "id": "past-54-practice-42",
       "term": 54,
       "period": 54,
-      "subject": "信託法規",
-      "number": 45,
-      "stem": "有關信託業之管理與監督，下列敘述何者正確？ A.信託業應提存賠償準備金 B.信託業應至少每年編製一次營業報告書並向主管機關申報 C.信託業違反信託業法主管機關得糾正並限期改善 D.信託業法之罰則均得易科罰金",
+      "subject": "信託實務",
+      "number": 42,
+      "stem": "採募集方式之不動產投資信託基金投資於開發型不動產或不動產相關權利，不得超過該基金信託財產價值之百分之多少？",
       "options": [
-        "B",
-        "C",
-        "C",
-        "D"
+        "(1) 十",
+        "(2) 十五",
+        "(3) 二十",
+        "(4) 四十"
       ],
-      "answer": 3,
-      "topic": "財產評審報告與會計公告",
-      "conceptId": "concept-11",
-      "weight": 80.0,
-      "raw_chap": "c2"
+      "answer": 1,
+      "answers": [
+        1
+      ],
+      "note": "【核心觀念定位】REIT募集投資標的與限制",
+      "topic": "REIT募集投資標的與限制",
+      "conceptId": "concept-8",
+      "gradable": true,
+      "chapter": "c06",
+      "source_chapter": "c06",
+      "frequency": 87,
+      "topicRank": 8,
+      "frequencyScope": "全題庫"
     },
     {
       "id": "past-45-law-49",
@@ -1523,16 +2128,51 @@
       "number": 49,
       "stem": "甲公司提供面值五百萬元約載年利率百分之五之公債，成立他益信託，約定三年內員工業績達成一億元者，可享有該信託財產及其三年間之孳息，請問在尚未有員工達成業績前，其每年利息所得應如何申報？",
       "options": [
-        "由甲公司申報",
-        "由受託人依規定扣繳率申報",
-        "由員工福利委員會申報",
-        "由未來達成業績之員工申報"
+        "(1) 由甲公司申報",
+        "(2) 由受託人依規定扣繳率申報",
+        "(3) 由員工福利委員會申報",
+        "(4) 由未來達成業績之員工申報"
       ],
-      "answer": 2,
+      "answer": 1,
+      "answers": [
+        1
+      ],
+      "note": "【核心觀念定位】員工福利信託特性與制度",
       "topic": "員工福利信託特性與制度",
       "conceptId": "concept-9",
-      "weight": 76.5,
-      "raw_chap": "c6"
+      "gradable": true,
+      "chapter": "c04",
+      "source_chapter": "c04",
+      "frequency": 69,
+      "topicRank": 9,
+      "frequencyScope": "全題庫"
+    },
+    {
+      "id": "past-59-law-5",
+      "term": 59,
+      "period": 59,
+      "subject": "信託法規",
+      "number": 5,
+      "stem": "甲為委託人、乙為受託人，雙方簽訂信託契約，約定甲交付現金新臺幣一千萬元予乙，乙須將新臺幣一千萬元用於購買特定之Ａ基金，信託期間為一年，則下列敘述何者正確？",
+      "options": [
+        "(1) 信託契約未另有約定時，信託關係嗣後因甲之死亡而消滅",
+        "(2) 信託契約未另有約定時，信託關係嗣後因乙之死亡而消滅",
+        "(3) 信託契約未另有約定時，信託關係嗣後因乙之受禁治產宣告而消滅",
+        "(4) 依信託契約之約定，信託期間屆滿信託關係消滅"
+      ],
+      "answer": 3,
+      "answers": [
+        3
+      ],
+      "note": "【核心觀念定位】受託人義務報酬與責任",
+      "topic": "受託人義務報酬與責任",
+      "conceptId": "concept-10",
+      "gradable": true,
+      "chapter": "c01",
+      "source_chapter": "c01",
+      "frequency": 61,
+      "topicRank": 10,
+      "frequencyScope": "全題庫"
     }
   ]
 }
