@@ -1111,6 +1111,22 @@
       border-radius: 8px;
       transition: transform 0.2s ease-out;
       user-select: none;
+      shape-rendering: geometricPrecision !important;
+      text-rendering: geometricPrecision !important;
+      image-rendering: -webkit-optimize-contrast;
+      transform-origin: center center;
+    }
+    @media (max-width: 768px) {
+      .lightbox-body {
+        padding: 10px !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+      }
+      .lightbox-body img {
+        min-width: 800px !important; /* 手機燈箱預設展開為 800px 高清原尺寸，任意拖曳漫遊查看！ */
+        max-width: none !important;
+        max-height: none !important;
+      }
     }
 
     /* 側邊欄抽屜遮罩 (手機/平板) */
@@ -1430,6 +1446,148 @@
       }
     }
 
+  
+    /* ==================== 核心圖解卡片與手機高清滑動 (SVG 模糊徹底解決方案) ==================== */
+    .diagram-interactive-card {
+      margin: 28px 0;
+      background: #111827;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+    }
+    .diagram-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 10px 16px;
+      background: rgba(31, 41, 55, 0.85);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .diagram-card-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #10b981;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 3px 8px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+    .diagram-card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #f1f5f9;
+      flex: 1;
+      min-width: 140px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .diagram-card-tools {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .diagram-scroll-hint {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.12);
+      padding: 3px 10px;
+      border-radius: 20px;
+      border: 1px dashed rgba(56, 189, 248, 0.4);
+      white-space: nowrap;
+      display: none;
+    }
+    .btn-diagram-zoom {
+      background: rgba(59, 130, 246, 0.2);
+      border: 1px solid rgba(59, 130, 246, 0.5);
+      color: #93c5fd;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      min-height: 36px;
+      border-radius: 8px;
+      cursor: pointer;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.2s ease;
+    }
+    .btn-diagram-zoom:hover,
+    .btn-diagram-zoom:active {
+      background: #2563eb;
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+    .diagram-card-canvas {
+      position: relative;
+      padding: 16px;
+      background: #0b1120;
+      cursor: zoom-in;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      touch-action: pan-x pan-y;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .diagram-svg-img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      shape-rendering: geometricPrecision !important;
+      text-rendering: geometricPrecision !important;
+      image-rendering: -webkit-optimize-contrast;
+      transition: transform 0.2s ease;
+    }
+    .diagram-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 8px 16px;
+      background: rgba(15, 23, 42, 0.7);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 0.82rem;
+      color: var(--text-subtle);
+    }
+    .diagram-quick-btn {
+      background: transparent;
+      border: none;
+      color: #38bdf8;
+      cursor: pointer;
+      font-size: 0.82rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-decoration: underline;
+      transition: color 0.2s;
+    }
+    .diagram-quick-btn:hover {
+      color: #60a5fa;
+    }
+
+    /* 手機/平板響應式優化（寬度 <= 768px） */
+    @media (max-width: 768px) {
+      .diagram-scroll-hint {
+        display: inline-block !important; /* 手機端自動提示左右滑動 */
+      }
+      .diagram-card-canvas {
+        justify-content: flex-start !important; /* 靠左排列，支援左右流暢滑動 */
+        padding: 14px 10px !important;
+      }
+      .diagram-svg-img {
+        min-width: 760px !important; /* 核心關鍵：手機端維持 760px 最小寬度，文字絕不縮小模糊！ */
+        max-width: none !important;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1473,7 +1631,6 @@
           <span>🎯 已練習: 0 題</span>
         </div>
         <button class="btn-action highlight" id="quickCrunchBtn">⚡ 速查手冊</button>
-        <button class="btn-action" id="exportProgressBtn" title="備份作答紀錄">📥 匯出紀錄</button>
         <button class="btn-icon" id="themeToggleBtn" title="切換色彩模式">🌓</button>
       </div>
     </header>
@@ -1577,17 +1734,23 @@ const courseData = {"chapters": [{"id": "c00", "filename": "00_信託證照攻�
       }
     }
 
-    // 匯出作答紀錄
-    const exportBtn = document.getElementById('exportProgressBtn');
-    if (exportBtn) {
-      exportBtn.onclick = () => {
-        const blob = new Blob([JSON.stringify(userAnswers, null, 2)], { type: 'application/json' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `trust_exam_answers_${new Date().toISOString().slice(0, 10)}.json`;
-        a.click();
-        URL.revokeObjectURL(url);
+        // ==================== ⚡ 速查手冊快速跳轉按鈕 ====================
+    const quickCrunchBtn = document.getElementById('quickCrunchBtn');
+    if (quickCrunchBtn) {
+      quickCrunchBtn.onclick = () => {
+        const ch8Idx = courseData.chapters.findIndex(c => c.id === 'c08');
+        if (ch8Idx !== -1) {
+          loadChapter(ch8Idx);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          const contentContainer = document.getElementById('contentContainer');
+          if (contentContainer && contentContainer.scrollTo) {
+            contentContainer.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+          const mainContent = document.querySelector('.main-content');
+          if (mainContent && mainContent.scrollTo) {
+            mainContent.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        }
       };
     }
 
@@ -1643,23 +1806,31 @@ const courseData = {"chapters": [{"id": "c00", "filename": "00_信託證照攻�
     const renderer = new marked.Renderer();
     const originalImageRenderer = renderer.image.bind(renderer);
 
-    renderer.image = function(href, title, text) {
+        renderer.image = function(href, title, text) {
       const rawTitle = title || text || '';
       const safeCaption = rawTitle.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
       const encodedHref = encodeURI(href);
       return `
-        <div class="image-interactive-container">
-          <div class="image-action-bar">
-            <span class="image-badge">📊 核心圖解</span>
-            <span class="image-title-text">${rawTitle || '點擊檢視高解析大圖'}</span>
-            <button class="image-zoom-btn" onclick="openImageLightbox('${encodedHref}', '${safeCaption}')" title="點擊檢視高解析大圖">
-              🔍 點擊看大圖
+        <div class="diagram-interactive-card">
+          <div class="diagram-card-header">
+            <span class="diagram-card-badge">📊 核心圖解</span>
+            <span class="diagram-card-title">${rawTitle || '法規重點架構圖'}</span>
+            <div class="diagram-card-tools">
+              <span class="diagram-scroll-hint">👈 手機左右滑動看清全圖 👉</span>
+              <button class="btn-diagram-zoom" onclick="openImageLightbox('${encodedHref}', '${safeCaption}')" title="點擊檢視高清大圖與自由縮放">
+                🔍 點擊看大圖
+              </button>
+            </div>
+          </div>
+          <div class="diagram-card-canvas" onclick="openImageLightbox('${encodedHref}', '${safeCaption}')" title="點擊檢視高清大圖">
+            <img src="${encodedHref}" alt="${safeCaption}" class="diagram-svg-img" loading="lazy" />
+          </div>
+          <div class="diagram-card-footer">
+            <span>${rawTitle}</span>
+            <button class="diagram-quick-btn" onclick="openImageLightbox('${encodedHref}', '${safeCaption}')">
+              🔍 全螢幕放大檢視
             </button>
           </div>
-          <div class="image-zoomable" onclick="openImageLightbox('${encodedHref}', '${safeCaption}')">
-            <img src="${encodedHref}" alt="${safeCaption}" />
-          </div>
-          <p class="image-caption">${rawTitle}</p>
         </div>
       `;
     };
@@ -2125,6 +2296,31 @@ const courseData = {"chapters": [{"id": "c00", "filename": "00_信託證照攻�
       bankConceptSelectEl.onchange = () => {
         currentBankPage = 0;
         filterBankQuestions();
+      };
+    }
+
+    
+    // ==================== 上一章 / 下一章底部按鈕事件綁定 ====================
+    const prevChapterBtn = document.getElementById('prevChapterBtn');
+    if (prevChapterBtn) {
+      prevChapterBtn.onclick = () => {
+        if (currentChapterIndex > 0) {
+          loadChapter(currentChapterIndex - 1);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          const mainContent = document.querySelector('.main-content');
+          if (mainContent) mainContent.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      };
+    }
+    const nextChapterBtn = document.getElementById('nextChapterBtn');
+    if (nextChapterBtn) {
+      nextChapterBtn.onclick = () => {
+        if (currentChapterIndex < courseData.chapters.length - 1) {
+          loadChapter(currentChapterIndex + 1);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          const mainContent = document.querySelector('.main-content');
+          if (mainContent) mainContent.scrollTo({ top: 0, behavior: 'smooth' });
+        }
       };
     }
 

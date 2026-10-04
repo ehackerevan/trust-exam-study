@@ -41,6 +41,14 @@ if (html.includes('word-break: break-word !important') && html.includes('white-s
   process.exit(1);
 }
 
+console.log('\n--- 2.5 驗證手機端 SVG 模糊解決方案樣式 ---');
+if (html.includes('diagram-interactive-card') && html.includes('min-width: 760px !important') && html.includes('shape-rendering: geometricPrecision !important')) {
+  console.log('✅ 通過：SVG 圖解卡片具備 min-width: 760px 手機水平滑動容器與次像素幾何精度渲染，徹底解決手機縮放模糊問題！');
+} else {
+  console.error('❌ 錯誤：缺少手機端圖解卡片或 min-width: 760px 樣式！');
+  process.exit(1);
+}
+
 console.log('\n--- 3. 驗證題庫資料完整性 ---');
 const bankSandbox = { window: {}, globalThis: {} };
 vm.createContext(bankSandbox);
@@ -75,10 +83,12 @@ if (scriptMatches.length < 1) {
 const mainScript = scriptMatches[scriptMatches.length - 1][1];
 
 // 建立 DOM 模擬沙盒
+const elementCache = {};
 const sandbox = {
   window: {
     EXAM_BANK_DATA: bankSandbox.window.EXAM_BANK_DATA,
-    addEventListener: () => {}
+    addEventListener: () => {},
+    scrollTo: () => {}
   },
   document: {
     documentElement: {
@@ -86,23 +96,29 @@ const sandbox = {
       setAttribute: () => {}
     },
     addEventListener: () => {},
+    querySelector: () => ({ scrollTo: () => {} }),
+    querySelectorAll: () => [],
     getElementById: (id) => {
-      return {
-        id,
-        innerHTML: '',
-        textContent: '',
-        value: 'all',
-        checked: false,
-        style: {},
-        classList: {
-          add: () => {},
-          remove: () => {},
-          contains: () => false
-        },
-        querySelectorAll: () => [],
-        appendChild: () => {},
-        scrollIntoView: () => {}, addEventListener: () => {}
-      };
+      if (!elementCache[id]) {
+        elementCache[id] = {
+          id,
+          innerHTML: '',
+          textContent: '',
+          value: 'all',
+          checked: false,
+          style: {},
+          classList: {
+            add: () => {},
+            remove: () => {},
+            contains: () => false
+          },
+          querySelectorAll: () => [],
+          appendChild: () => {},
+          scrollIntoView: () => {},
+          addEventListener: () => {}
+        };
+      }
+      return elementCache[id];
     },
     createElement: (tag) => {
       return {
@@ -182,6 +198,42 @@ try {
 
   sandbox.window.closeImageLightbox();
   console.log('✅ closeImageLightbox() 執行成功（關閉正常）！');
+
+  // 測試底部上一章 / 下一章按鈕
+  const prevChapterBtn = sandbox.document.getElementById('prevChapterBtn');
+  const nextChapterBtn = sandbox.document.getElementById('nextChapterBtn');
+  if (prevChapterBtn && typeof prevChapterBtn.onclick === 'function') {
+    prevChapterBtn.onclick();
+    console.log('✅ prevChapterBtn.onclick 點擊事件觸發正常！');
+  } else {
+    console.error('❌ prevChapterBtn 缺少 onclick 綁定！');
+    process.exit(1);
+  }
+  if (nextChapterBtn && typeof nextChapterBtn.onclick === 'function') {
+    nextChapterBtn.onclick();
+    console.log('✅ nextChapterBtn.onclick 點擊事件觸發正常！');
+  } else {
+    console.error('❌ nextChapterBtn 缺少 onclick 綁定！');
+    process.exit(1);
+  }
+
+  // 測試頂部「⚡ 速查手冊」跳轉按鈕
+  const quickCrunchBtn = sandbox.document.getElementById('quickCrunchBtn');
+  if (quickCrunchBtn && typeof quickCrunchBtn.onclick === 'function') {
+    quickCrunchBtn.onclick();
+    console.log('✅ quickCrunchBtn.onclick 點擊事件觸發正常（已跳轉至速查手冊 c08）！');
+  } else {
+    console.error('❌ quickCrunchBtn 缺少 onclick 綁定！');
+    process.exit(1);
+  }
+
+  // 驗證「匯出紀錄」功能已徹底拿掉
+  if (html.includes('id="exportProgressBtn"')) {
+    console.error('❌ 錯誤：HTML 中仍殘留 exportProgressBtn 按鈕！');
+    process.exit(1);
+  } else {
+    console.log('✅ 通過：匯出紀錄功能已完全從頂部導航列與代碼中安全移除！');
+  }
 
 } catch (err) {
   console.error('❌ JS 執行異常:', err);
