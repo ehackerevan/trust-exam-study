@@ -15,31 +15,34 @@ const bankJs = fs.readFileSync(bankDataPath, 'utf8');
 console.log(`index.html 大小: ${(html.length / 1024).toFixed(1)} KB`);
 console.log(`exam_bank_data.js 大小: ${(bankJs.length / 1024).toFixed(1)} KB`);
 
-console.log('\n--- 2. 驗證表格自適應與左右滑動 CSS 樣式 ---');
-// 驗證是否徹底移除破壞滑動的 overflow: hidden 在 table-scroll-wrapper
-const forbiddenPattern = /\.table-scroll-wrapper\s*\{[^}]*overflow:\s*hidden;?[^}]*\.table-scroll-inner\s*\{[^}]*min-width:\s*600px/s;
-if (forbiddenPattern.test(html)) {
-  console.error('❌ 錯誤：仍然存在 table-scroll-wrapper 限制 min-width 且 overflow: hidden 的舊規則！');
-  process.exit(1);
-} else {
-  console.log('✅ 通過：已成功消除覆蓋的 overflow: hidden 衝突。');
-}
-
-// 驗證 table-scroll-inner 擁有 overflow-x: auto
-if (html.includes('overflow-x: auto !important') && html.includes('touch-action: pan-x pan-y')) {
-  console.log('✅ 通過：表格滑動容器具備 overflow-x: auto !important 與 touch-action: pan-x pan-y。');
-} else {
-  console.error('❌ 錯誤：缺少 overflow-x 或 touch-action 樣式！');
+console.log('\n--- 2. 驗證響應式表格：桌機 / 平板 / 手機卡片 ---');
+if (!html.includes('@media (max-width: 900px) and (min-width: 641px)') ||
+    !html.includes('table-layout: fixed !important')) {
+  console.error('❌ 缺少平板表格自適應與固定欄寬規則');
   process.exit(1);
 }
-
-// 驗證單元格具備自然折行 (word-break: break-word / white-space: normal)
-if (html.includes('word-break: break-word !important') && html.includes('white-space: normal !important')) {
-  console.log('✅ 通過：表格單元格具備 word-break: break-word 與 white-space: normal，573px 手機下內容可完整排版折行。');
-} else {
-  console.error('❌ 錯誤：缺少 word-break 或 white-space 樣式！');
+if (!html.includes('@media (max-width: 640px)') ||
+    !html.includes('content: attr(data-label)') ||
+    !html.includes('.table-scroll-inner thead') ||
+    !html.includes('display: none;')) {
+  console.error('❌ 缺少手機表格轉卡片樣式');
   process.exit(1);
 }
+if (!html.includes('function enhanceResponsiveTables(root)') ||
+    !html.includes("cell.setAttribute('data-label'") ||
+    !html.includes('enhanceResponsiveTables(markdownOutput);')) {
+  console.error('❌ 缺少表頭標籤注入或章節載入後的響應式表格強化');
+  process.exit(1);
+}
+if (html.includes('欄位內容完整顯示，手機可左右滑動')) {
+  console.error('❌ 舊的手機左右滑動提示仍存在');
+  process.exit(1);
+}
+if (!html.includes('欄位會依畫面自動調整，手機改為卡片顯示')) {
+  console.error('❌ 缺少新版表格自適應提示');
+  process.exit(1);
+}
+console.log('✅ 表格已採桌機表格、平板換行、手機卡片顯示，無需手機橫向滑動');
 
 console.log('\n--- 2.5 驗證手機端 SVG 模糊解決方案樣式 ---');
 if (html.includes('diagram-interactive-card') && html.includes('min-width: 760px !important') && html.includes('shape-rendering: geometricPrecision !important')) {
