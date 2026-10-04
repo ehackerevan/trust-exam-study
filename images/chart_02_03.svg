@@ -61,13 +61,13 @@
     
     <text x="25" y="80" fill="#a7f3d0" font-size="15" font-weight="700">【原則禁止，具備要件時得例外進行】</text>
     <text x="25" y="110" fill="#cbd5e1" font-size="13">針對特定金融常規交易（如存款、匯款等），</text>
-    <text x="25" y="135" fill="#cbd5e1" font-size="13">必須同時滿足以下三大嚴格前提條件：</text>
+    <text x="25" y="135" fill="#cbd5e1" font-size="13">符合授權依據，並依常規條件辦理：</text>
     
     <text x="25" y="170" fill="#fbbf24" font-size="14" font-weight="700">1. 信託契約已事先載明約定，或</text>
     <text x="25" y="195" fill="#fbbf24" font-size="14" font-weight="700">2. 事先取得受益人之具體【書面同意】</text>
-    <text x="25" y="220" fill="#fbbf24" font-size="14" font-weight="700">3. 且經【董事會重度決議通過】！</text>
-    <text x="45" y="245" fill="#cbd5e1" font-size="13">(門檻：董事 2/3 以上出席，出席 3/4 同意)</text>
-    <text x="25" y="270" fill="#34d399" font-size="13">👉 必須以常規條件且依公平市價辦理！</text>
+    <text x="25" y="220" fill="#fbbf24" font-size="14" font-weight="700">👉 2/3＋3/4 並非第27條一般門檻</text>
+    <text x="45" y="245" fill="#cbd5e1" font-size="13">僅銀行法第33條特定利害關係人擔保授信適用</text>
+    <text x="25" y="270" fill="#34d399" font-size="13">⭐ 第27條交易仍應依常規條件與公平價格辦理</text>
   </g>
 
 </svg>
