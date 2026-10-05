@@ -80,8 +80,8 @@ const chapters = Object.fromEntries(
 );
 
 const lawAuditChecks = [
-  [chapters.c01.includes('法定例外只有兩類') && chapters.c01.includes('通知發行公司') && chapters.c01.includes('第 6 條第 3 項') && !chapters.c01.includes('第 6 條第 2 項'), '第 01 章：信託法第 25 條例外、第 4 條公示規則與第 6 條項次'],
-  [chapters.c02.includes('至少繳足 20% 股款') && chapters.c02.includes('不具運用決定權') && chapters.c02.includes('半年度終了後 2 個月內') && chapters.c02.includes('年度終了後 4 個月內'), '第 02 章：設立出資、利害關係交易與定期報告期限'],
+  [chapters.c01.includes('法定例外只有兩類') && chapters.c01.includes('通知發行公司') && chapters.c01.includes('第 6 條第 2 項') && chapters.c01.includes('第 6 條第 3 項'), '第 01 章：信託法第 25 條例外、第 4 條公示規則與第 6 條第 2、3 項'],
+  [chapters.c02.includes('至少繳足 20% 股款') && chapters.c02.includes('不具運用決定權') && chapters.c02.includes('施行細則》第 17 條') && chapters.c02.includes('2 個月內') && chapters.c02.includes('4 個月內'), '第 02 章：設立出資、利害關係交易與施行細則第 17 條定期報告期限'],
   [chapters.c03.includes('歸戶計算不是一律按每一信託各自獨立') && chapters.c03.includes('自益信託') && chapters.c03.includes('若當年度贈與總額已達依法應申報的程度') && chapters.c03.includes('第 94 條之 1'), '第 03 章：地價稅歸戶、印花稅、贈與稅與憑單免填發例外'],
   [chapters.c04.includes('淨資產總值 30%') && chapters.c04.includes('該金融機構淨值 10%') && chapters.c04.includes('淨資產價值 5%'), '第 04 章：集合管理運用集中度與流動性比率'],
   [chapters.c05.includes('不能把「140%／120%」寫成所有有價證券信託借券一律適用') && chapters.c05.includes('《信託業法》第 20 條之 1'), '第 05 章：借券比率與股票表決權不得過度概括'],
@@ -109,6 +109,14 @@ const forbiddenLegacyClaims = [
 for (const claim of forbiddenLegacyClaims) {
   if (Object.values(chapters).some(md => md.includes(claim))) {
     console.error(`❌ 仍殘留舊版錯誤或過度絕對化敘述：${claim}`);
+    process.exit(1);
+  }
+}
+
+const overPromotionalPhrases = ['高傳真金融實務情境', '考古題必考天條', '投資防暴比率', '信託 2.0 守護神', '高頻致命文字陷阱'];
+for (const phrase of overPromotionalPhrases) {
+  if (Object.values(chapters).some(md => md.includes(phrase))) {
+    console.error(`❌ 仍殘留過度宣傳式用語：${phrase}`);
     process.exit(1);
   }
 }
