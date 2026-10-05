@@ -34,7 +34,7 @@
     </marker>
   </defs>
 
-  <text x="460" y="38" fill="#f8fafc" font-size="20" font-weight="700" text-anchor="middle">⏱️ 信託法規關鍵法定期間總彙整 (由短至長排序)</text>
+  <text x="460" y="38" fill="#f8fafc" font-size="20" font-weight="700" text-anchor="middle">⏱️ 信託法規常考期間重點整理</text>
 
   <!-- 5 大時階垂直排布 -->
   <g transform="translate(60, 70)" filter="url(#shadow)">
