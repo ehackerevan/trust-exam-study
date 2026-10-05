@@ -56,9 +56,9 @@
     <text x="25" y="75" fill="#fbbf24" font-size="14" font-weight="700">列單申報信託所得相關資料</text>
     <text x="25" y="105" fill="#cbd5e1" font-size="13">• 1 月底前：向國稅局申報</text>
     <text x="25" y="130" fill="#cbd5e1" font-size="13">  扣繳或免扣繳憑單</text>
-    <text x="25" y="160" fill="#cbd5e1" font-size="13">• 2 月 10 日前：填發憑單</text>
-    <text x="25" y="185" fill="#cbd5e1" font-size="13">  送達納稅義務人 (受益人)</text>
-    <text x="25" y="210" fill="#fca5a5" font-size="13">⭐ 考題每年必出日期！</text>
+    <text x="25" y="160" fill="#cbd5e1" font-size="13">• 2 月 10 日前：原則填發憑單</text>
+    <text x="25" y="185" fill="#cbd5e1" font-size="13">  符合第 94-1 條者得免主動填發</text>
+    <text x="25" y="210" fill="#fca5a5" font-size="13">⭐ 仍應注意免填發例外與展延規定</text>
   </g>
 
   <g transform="translate(620, 75)" filter="url(#shadow)">
