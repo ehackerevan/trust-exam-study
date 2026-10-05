@@ -45,7 +45,7 @@
     <text x="130" y="27" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">1. 最低實收資本額</text>
     
     <text x="130" y="80" fill="#60a5fa" font-size="24" font-weight="800" text-anchor="middle">20 億元</text>
-    <text x="25" y="125" fill="#cbd5e1" font-size="13">• 發起人於發起時一次認足</text>
+    <text x="25" y="125" fill="#cbd5e1" font-size="13">• 一次認足發行股份，至少繳足 20%</text>
     <text x="25" y="155" fill="#cbd5e1" font-size="13">• 現金出資，確保實質資本</text>
     <text x="25" y="185" fill="#cbd5e1" font-size="13">• 兼營信託之銀行免另提資本</text>
     <text x="25" y="215" fill="#38bdf8" font-size="13">⭐ 考題頻率: 35.8%</text>
@@ -72,7 +72,7 @@
     <text x="25" y="120" fill="#a7f3d0" font-size="13">• 執照核發後 1 個月內繳存</text>
     <text x="25" y="145" fill="#a7f3d0" font-size="13">• 現金或政府公債存中央銀行</text>
     <text x="25" y="170" fill="#f87171" font-size="13">❌ 不得用股票或不動產替代</text>
-    <text x="25" y="200" fill="#fbbf24" font-size="14" font-weight="700">⭐ 委託人/受益人第一優先受償！</text>
+    <text x="25" y="200" fill="#fbbf24" font-size="14" font-weight="700">⭐ 委託人／受益人有優先受償權</text>
   </g>
 
 </svg>

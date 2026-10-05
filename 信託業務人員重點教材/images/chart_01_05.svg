@@ -42,10 +42,10 @@
   <g transform="translate(40, 75)" filter="url(#shadow)">
     <rect width="180" height="130" rx="10" fill="#1e293b" stroke="#f43f5e" stroke-width="2"/>
     <rect width="180" height="36" rx="10" fill="url(#gradRose)"/>
-    <text x="90" y="24" fill="#fff" font-size="14" font-weight="700" text-anchor="middle">步驟 1: 脫產詐害行為</text>
-    <text x="15" y="65" fill="#fca5a5" font-size="13" font-weight="700">債務人惡意移轉</text>
-    <text x="15" y="88" fill="#cbd5e1" font-size="12">委託人明知有債務</text>
-    <text x="15" y="108" fill="#cbd5e1" font-size="12">仍將房產/資金信託</text>
+    <text x="90" y="24" fill="#fff" font-size="14" font-weight="700" text-anchor="middle">步驟 1: 判斷是否害及債權</text>
+    <text x="15" y="65" fill="#fca5a5" font-size="13" font-weight="700">信託行為害及債權人權利</text>
+    <text x="15" y="88" fill="#cbd5e1" font-size="12">核心在於信託行為</text>
+    <text x="15" y="108" fill="#cbd5e1" font-size="12">是否害及債權人權利</text>
   </g>
 
   <g transform="translate(260, 75)" filter="url(#shadow)">
@@ -60,19 +60,19 @@
   <g transform="translate(480, 75)" filter="url(#shadow)">
     <rect width="180" height="130" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
     <rect width="180" height="36" rx="10" fill="url(#gradBlue)"/>
-    <text x="90" y="24" fill="#fff" font-size="14" font-weight="700" text-anchor="middle">步驟 3: 法院判決撤銷</text>
-    <text x="15" y="65" fill="#93c5fd" font-size="13" font-weight="700">信託行為無效</text>
-    <text x="15" y="88" fill="#cbd5e1" font-size="12">法院判決撤銷確定</text>
-    <text x="15" y="108" fill="#cbd5e1" font-size="12">財產所有權回歸原委託人</text>
+    <text x="90" y="24" fill="#fff" font-size="14" font-weight="700" text-anchor="middle">步驟 3: 法院審理撤銷要件</text>
+    <text x="15" y="65" fill="#93c5fd" font-size="13" font-weight="700">撤銷效果依判決與法規</text>
+    <text x="15" y="88" fill="#cbd5e1" font-size="12">受益人既得利益另依第6條</text>
+    <text x="15" y="108" fill="#cbd5e1" font-size="12">第2項規定判斷是否受影響</text>
   </g>
 
   <g transform="translate(700, 75)" filter="url(#shadow)">
     <rect width="180" height="130" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
     <rect width="180" height="36" rx="10" fill="url(#gradEmerald)"/>
-    <text x="90" y="24" fill="#fff" font-size="14" font-weight="700" text-anchor="middle">步驟 4: 強制執行受償</text>
+    <text x="90" y="24" fill="#fff" font-size="14" font-weight="700" text-anchor="middle">步驟 4: 再依裁判進行權利實現</text>
     <text x="15" y="65" fill="#6ee7b7" font-size="13" font-weight="700">查封拍賣受償</text>
-    <text x="15" y="88" fill="#cbd5e1" font-size="12">債權人得對該財產</text>
-    <text x="15" y="108" fill="#cbd5e1" font-size="12">合法聲請查封拍賣！</text>
+    <text x="15" y="88" fill="#cbd5e1" font-size="12">是否得執行仍依個案</text>
+    <text x="15" y="108" fill="#cbd5e1" font-size="12">裁判與強制執行法判斷</text>
   </g>
 
   <!-- 箭頭 -->

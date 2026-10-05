@@ -36,7 +36,7 @@
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#f87171"/>
     </marker>
   </defs>
-  <text x="460.0" y="36" fill="#f8fafc" font-size="20" font-weight="700" text-anchor="middle">🧮 信託財產本金折現與孳息拆解估價模型 (遺贈稅法施行細則第 10 條)</text>
+  <text x="460.0" y="36" fill="#f8fafc" font-size="20" font-weight="700" text-anchor="middle">🧮 信託利益權利價值計算（遺產及贈與稅法第 10 條之 2）</text>
 
   <g transform="translate(60, 70)" filter="url(#shadow)">
     <rect width="800" height="240" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
@@ -55,10 +55,10 @@
     <!-- 右邊公式 -->
     <g transform="translate(420, 70)">
       <rect width="340" height="130" rx="8" fill="#0f172a" stroke="#f43f5e" stroke-width="1.5"/>
-      <text x="170" y="32" fill="#fda4af" font-size="16" font-weight="700" text-anchor="middle">2. 孳息現值 (應申報贈與額)</text>
+      <text x="170" y="32" fill="#fda4af" font-size="16" font-weight="700" text-anchor="middle">2. 孳息部分信託利益價值</text>
       <text x="170" y="65" fill="#fff" font-size="18" font-weight="800" text-anchor="middle">孳息價值 = P － PV</text>
       <text x="20" y="95" fill="#cbd5e1" font-size="12">總財產現值扣除本金折現值，剩餘即為孳息現值</text>
-      <text x="20" y="118" fill="#fca5a5" font-size="13" font-weight="700">⭐ 若為「本金自益、孳息他益」，僅以此額課贈與稅！</text>
+      <text x="20" y="118" fill="#fca5a5" font-size="13" font-weight="700">⭐ 本金他益看折現現值；孳息他益原則看總價值減本金現值</text>
     </g>
   </g>
 

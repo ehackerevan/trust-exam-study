@@ -34,14 +34,14 @@
     </marker>
   </defs>
 
-  <text x="460" y="36" fill="#f8fafc" font-size="20" font-weight="700" text-anchor="middle">🛡️ 信託財產獨立性：神級防彈衣（防火牆理論）</text>
+  <text x="460" y="36" fill="#f8fafc" font-size="20" font-weight="700" text-anchor="middle">🛡️ 信託財產獨立性與強制執行界線</text>
 
   <!-- 中心核心：信託財產防彈衣 -->
   <g transform="translate(300, 180)" filter="url(#shadow)">
     <rect width="320" height="150" rx="16" fill="#064e3b" stroke="#10b981" stroke-width="3"/>
     <text x="160" y="45" fill="#6ee7b7" font-size="18" font-weight="700" text-anchor="middle">🛡️【信託財產】</text>
-    <text x="160" y="75" fill="#a7f3d0" font-size="14" font-weight="600" text-anchor="middle">穿戴法定無敵防彈衣與防火牆</text>
-    <text x="160" y="105" fill="#d1fae5" font-size="13" text-anchor="middle">• 實質獨立於委託人與受託人</text>
+    <text x="160" y="75" fill="#a7f3d0" font-size="14" font-weight="600" text-anchor="middle">依法具有獨立性與執行保護</text>
+    <text x="160" y="105" fill="#d1fae5" font-size="13" text-anchor="middle">• 不屬受託人遺產或破產財團</text>
     <text x="160" y="128" fill="#d1fae5" font-size="13" text-anchor="middle">• 信託法第 12 條：原則不得強制執行！</text>
   </g>
 
@@ -50,7 +50,7 @@
     <rect width="210" height="110" rx="10" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
     <text x="105" y="35" fill="#f87171" font-size="15" font-weight="700" text-anchor="middle">委託人債務與破產</text>
     <text x="105" y="65" fill="#cbd5e1" font-size="12" text-anchor="middle">委託人個人在外欠債破產</text>
-    <text x="105" y="90" fill="#ef4444" font-size="13" font-weight="700" text-anchor="middle">❌ 打不進防彈衣！</text>
+    <text x="105" y="90" fill="#ef4444" font-size="13" font-weight="700" text-anchor="middle">原則不得直接執行信託財產</text>
   </g>
 
   <!-- 右側威脅：受託人個人身故/倒閉 -->
@@ -58,7 +58,7 @@
     <rect width="210" height="110" rx="10" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
     <text x="105" y="35" fill="#f87171" font-size="15" font-weight="700" text-anchor="middle">受託人不幸身故/倒閉</text>
     <text x="105" y="65" fill="#cbd5e1" font-size="12" text-anchor="middle">不屬遺產、不列破產財團</text>
-    <text x="105" y="90" fill="#ef4444" font-size="13" font-weight="700" text-anchor="middle">❌ 債權人查封不到！</text>
+    <text x="105" y="90" fill="#ef4444" font-size="13" font-weight="700" text-anchor="middle">信託財產不列入遺產／破產財團</text>
   </g>
 
   <!-- 底部威脅：私人債務抵銷與混同 -->
@@ -66,7 +66,7 @@
     <rect width="320" height="90" rx="10" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
     <text x="160" y="34" fill="#f87171" font-size="15" font-weight="700" text-anchor="middle">債務抵銷與混同限制</text>
     <text x="160" y="60" fill="#cbd5e1" font-size="13" text-anchor="middle">受託人個人欠款不得與信託債權抵銷</text>
-    <text x="160" y="80" fill="#ef4444" font-size="13" font-weight="700" text-anchor="middle">❌ 嚴格禁止抵銷！</text>
+    <text x="160" y="80" fill="#ef4444" font-size="13" font-weight="700" text-anchor="middle">信託債權與非信託債務不得抵銷！</text>
   </g>
 
   <!-- 阻擋箭頭線條 -->

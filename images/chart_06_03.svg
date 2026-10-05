@@ -34,56 +34,56 @@
     </marker>
   </defs>
 
-  <text x="460" y="38" fill="#f8fafc" font-size="20" font-weight="700" text-anchor="middle">🏢 REITs vs REATs 雙雄世紀對決 (歷屆最愛考！)</text>
+  <text x="460" y="38" fill="#f8fafc" font-size="20" font-weight="700" text-anchor="middle">🏢 REITs 與 REATs 法規重點比較</text>
 
   <!-- REITs 卡片 -->
   <g transform="translate(40, 70)" filter="url(#shadow)">
     <rect width="400" height="320" rx="14" fill="#0f2942" stroke="#38bdf8" stroke-width="2.5"/>
     <rect width="400" height="56" rx="14" fill="url(#gradBlue)"/>
-    <text x="200" y="36" fill="#fff" font-size="18" font-weight="700" text-anchor="middle">🏢 REITs 不動產投資信託 (股權收益型)</text>
+    <text x="200" y="36" fill="#fff" font-size="18" font-weight="700" text-anchor="middle">🏢 REITs 不動產投資信託</text>
     
     <text x="25" y="90" fill="#7dd3fc" font-size="15" font-weight="700">1. 發起思維：</text>
-    <text x="120" y="90" fill="#e2e8f0" font-size="14">向大眾募資，去買商辦大樓收租 (投資型)</text>
+    <text x="120" y="90" fill="#e2e8f0" font-size="14">募集資金後依計畫投資不動產等標的</text>
     
     <text x="25" y="130" fill="#7dd3fc" font-size="15" font-weight="700">2. 證券本質：</text>
-    <text x="120" y="130" fill="#e2e8f0" font-size="14">類似「股票」，享有房價上漲與租金分紅</text>
+    <text x="120" y="130" fill="#e2e8f0" font-size="14">經濟性質可類比收益型投資，仍以契約為準</text>
 
     <text x="25" y="170" fill="#7dd3fc" font-size="15" font-weight="700">3. 存續期間：</text>
-    <text x="120" y="170" fill="#e2e8f0" font-size="14">封閉型為主，原則上無特定到期日</text>
+    <text x="120" y="170" fill="#e2e8f0" font-size="14">信託契約依法應記載【基金存續期間】</text>
 
     <text x="25" y="215" fill="#38bdf8" font-size="15" font-weight="700">4. 追加發行：</text>
-    <text x="120" y="215" fill="#34d399" font-size="15" font-weight="700">⭐ 符合法定條件得追加募集！</text>
+    <text x="120" y="215" fill="#34d399" font-size="15" font-weight="700">⭐ 追加募集／私募須依規定程序辦理</text>
 
     <text x="25" y="260" fill="#38bdf8" font-size="15" font-weight="700">5. 收益分配：</text>
-    <text x="120" y="260" fill="#fbbf24" font-size="15" font-weight="700">⭐ 90% 以上；年度終了後 6 個月內分配！</text>
+    <text x="120" y="260" fill="#fbbf24" font-size="15" font-weight="700">⭐ 契約配息比率≥90%；應分配收益 6 個月內分配</text>
 
     <text x="25" y="300" fill="#7dd3fc" font-size="15" font-weight="700">6. 借款限制：</text>
-    <text x="120" y="300" fill="#e2e8f0" font-size="14">經主管機關核准後得辦理借款</text>
+    <text x="120" y="300" fill="#e2e8f0" font-size="14">借款依證券化條例第 19 條等規定辦理</text>
   </g>
 
   <!-- REATs 卡片 -->
   <g transform="translate(480, 70)" filter="url(#shadow)">
     <rect width="400" height="320" rx="14" fill="#3d2806" stroke="#fbbf24" stroke-width="2.5"/>
     <rect width="400" height="56" rx="14" fill="url(#gradAmber)"/>
-    <text x="200" y="36" fill="#fff" font-size="18" font-weight="700" text-anchor="middle">🏦 REATs 不動產資產信託 (債權融資型)</text>
+    <text x="200" y="36" fill="#fff" font-size="18" font-weight="700" text-anchor="middle">🏦 REATs 不動產資產信託</text>
     
     <text x="25" y="90" fill="#fde68a" font-size="15" font-weight="700">1. 發起思維：</text>
-    <text x="120" y="90" fill="#e2e8f0" font-size="14">地主有現成大樓，交付信託換取現金 (融資型)</text>
+    <text x="120" y="90" fill="#e2e8f0" font-size="14">委託人移轉既有不動產／權利辦理證券化</text>
     
     <text x="25" y="130" fill="#fde68a" font-size="15" font-weight="700">2. 證券本質：</text>
-    <text x="120" y="130" fill="#e2e8f0" font-size="14">類似「債券」，享有固定票息與到期還本</text>
+    <text x="120" y="130" fill="#e2e8f0" font-size="14">收益與本金分配依資產信託計畫及契約</text>
 
     <text x="25" y="170" fill="#fde68a" font-size="15" font-weight="700">3. 存續期間：</text>
-    <text x="120" y="170" fill="#e2e8f0" font-size="14">具有明確固定到期期限 (如 3 年、5 年)</text>
+    <text x="120" y="170" fill="#e2e8f0" font-size="14">資產信託計畫／契約應記載【存續期間】</text>
 
     <text x="25" y="215" fill="#f87171" font-size="15" font-weight="700">4. 追加發行：</text>
-    <text x="120" y="215" fill="#f87171" font-size="15" font-weight="700">❌ 財產標的已確定，不得追加發行！</text>
+    <text x="120" y="215" fill="#f87171" font-size="15" font-weight="700">變更或發行安排依計畫、契約與主管機關規定</text>
 
     <text x="25" y="260" fill="#fde68a" font-size="15" font-weight="700">5. 收益分配：</text>
-    <text x="120" y="260" fill="#e2e8f0" font-size="14">依受託契約約定按期支付約定利息與本金</text>
+    <text x="120" y="260" fill="#e2e8f0" font-size="14">本金、利益、孳息等依契約約定分配</text>
 
     <text x="25" y="300" fill="#f87171" font-size="15" font-weight="700">6. 借款限制：</text>
-    <text x="120" y="300" fill="#f87171" font-size="14">原則上不得借款 (修繕目的等除外)</text>
+    <text x="120" y="300" fill="#f87171" font-size="14">相關融資限制依不動產證券化法規判斷</text>
   </g>
 
 </svg>

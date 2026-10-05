@@ -63,43 +63,102 @@ if (/renderConceptQuizzes\(chapter\);/.test(html)) {
 }
 console.log('✅ 章節頁面不得再顯示考古題區塊，且不再載入考古題腳本');
 
-console.log('\n--- 2.6. 驗證前七章與速查手冊一致性 ---');
+console.log('\n--- 2.6. 驗證政府法規校訂版教材一致性 ---');
 const studyDir = path.join(__dirname, '信託業務人員重點教材');
-const c01Md = fs.readFileSync(path.join(studyDir, '01_信託法規精粹_生活圖解篇.md'), 'utf8');
-const c02Md = fs.readFileSync(path.join(studyDir, '02_信託業法與監理架構_圖解篇.md'), 'utf8');
-const c04Md = fs.readFileSync(path.join(studyDir, '04_金錢信託與集合管理_實務篇.md'), 'utf8');
-const c06Md = fs.readFileSync(path.join(studyDir, '06_不動產信託與資產證券化_實務篇.md'), 'utf8');
-const chart0202 = fs.readFileSync(path.join(studyDir, 'images', 'chart_02_02.svg'), 'utf8');
-const chart0203 = fs.readFileSync(path.join(studyDir, 'images', 'chart_02_03.svg'), 'utf8');
-const chart0403 = fs.readFileSync(path.join(studyDir, 'images', 'chart_04_03.svg'), 'utf8');
-const chart0603 = fs.readFileSync(path.join(studyDir, 'images', 'chart_06_03.svg'), 'utf8');
-const rootChart0202 = fs.readFileSync(path.join(__dirname, 'images', 'chart_02_02.svg'), 'utf8');
-const rootChart0203 = fs.readFileSync(path.join(__dirname, 'images', 'chart_02_03.svg'), 'utf8');
-const rootChart0403 = fs.readFileSync(path.join(__dirname, 'images', 'chart_04_03.svg'), 'utf8');
-const rootChart0603 = fs.readFileSync(path.join(__dirname, 'images', 'chart_06_03.svg'), 'utf8');
+const chapterFiles = [
+  ['c01', '01_信託法規精粹_生活圖解篇.md'],
+  ['c02', '02_信託業法與監理架構_圖解篇.md'],
+  ['c03', '03_信託稅制全攻略_穿透圖解篇.md'],
+  ['c04', '04_金錢信託與集合管理_實務篇.md'],
+  ['c05', '05_有價證券信託與員工持股_實務篇.md'],
+  ['c06', '06_不動產信託與資產證券化_實務篇.md'],
+  ['c07', '07_公益信託與特殊形態信託_實務篇.md'],
+  ['c08', '08_歷屆考題高頻數字與易錯陷阱速查手冊.md']
+];
+const chapters = Object.fromEntries(
+  chapterFiles.map(([id, file]) => [id, fs.readFileSync(path.join(studyDir, file), 'utf8')])
+);
 
-const quickGuideChecks = [
-  [c01Md.includes('三大破防例外') && !c01Md.includes('四大破防漏洞'), '第 01 章強制執行例外應為三類'],
-  [!c02Md.includes('| **營業保證金** |') && c02Md.includes('信託業法本身沒有這項營業保證金要求'), '第 02 章不得把營業保證金列為信託業法要求'],
-  [c02Md.includes('2/3 出席、3/4 同意不是第 27 條的一般門檻'), '第 02 章須區分第 27 條與銀行法第 33 條董事會門檻'],
-  [c04Md.includes('該公司**實收資本額的 10%**') && !c04Md.includes('該公司總發行股份的 **10%**'), '第 04 章雙十原則第二基準應為實收資本額 10%'],
-  [c06Md.includes('會計年度結束後 6 個月內') && c06Md.includes('90% 以上'), '第 06 章 REIT 收益分配須含 90% 與 6 個月期限'],
-  [chart0202.includes('高頻陷阱：營業保證金') && chart0202.includes('信託業法無此項'), 'chart_02_02 須將營業保證金標示為陷阱'],
-  [chart0203.includes('2/3＋3/4 並非第27條一般門檻'), 'chart_02_03 不得把 2/3＋3/4 當作第 27 條一般門檻'],
-  [chart0403.includes('實收資本額之 10%') && !chart0403.includes('已發行股份總數之 10%'), 'chart_04_03 雙十原則基準須同步'],
-  [chart0603.includes('6 個月內分配'), 'chart_06_03 REIT 分配期限須同步'],
-  [rootChart0202 === chart0202 && rootChart0203 === chart0203 && rootChart0403 === chart0403 && rootChart0603 === chart0603, 'Pages 根目錄 SVG 必須與教材 SVG 完全同步']
+const lawAuditChecks = [
+  [chapters.c01.includes('法定例外只有兩類') && chapters.c01.includes('通知發行公司'), '第 01 章：信託法第 25 條例外與第 4 條公示規則'],
+  [chapters.c02.includes('至少繳足 20% 股款') && chapters.c02.includes('不具運用決定權') && chapters.c02.includes('半年度終了後 2 個月內') && chapters.c02.includes('年度終了後 4 個月內'), '第 02 章：設立出資、利害關係交易與定期報告期限'],
+  [chapters.c03.includes('歸戶計算不是一律按每一信託各自獨立') && chapters.c03.includes('自益信託') && chapters.c03.includes('若當年度贈與總額已達依法應申報的程度'), '第 03 章：地價稅歸戶、印花稅與贈與稅申報條件'],
+  [chapters.c04.includes('淨資產總值 30%') && chapters.c04.includes('該金融機構淨值 10%') && chapters.c04.includes('淨資產價值 5%'), '第 04 章：集合管理運用集中度與流動性比率'],
+  [chapters.c05.includes('不能把「140%／120%」寫成所有有價證券信託借券一律適用') && chapters.c05.includes('《信託業法》第 20 條之 1'), '第 05 章：借券比率與股票表決權不得過度概括'],
+  [chapters.c06.includes('可分配收益 90% 以上') && chapters.c06.includes('會計年度結束後 6 個月內') && chapters.c06.includes('50%／35%／25%／15%') && !chapters.c06.includes('財產標的已確定，**不得追加發行**'), '第 06 章：REIT 配息、分配期限、借款上限與追加募集'],
+  [chapters.c07.includes('每年至少一次') && chapters.c07.includes('沒有信託行為所定的歸屬權利人') && chapters.c07.includes('但經金管會核准者例外'), '第 07 章：公益信託監督、消滅歸屬與基金保管機構限制'],
+  [chapters.c08.includes('達第 24 條應申報條件者') && chapters.c08.includes('2 個月 / 4 個月') && chapters.c08.includes('第 6 條第 3 項') && chapters.c08.includes('90% 是契約配息比率要求'), '第 08 章：速查手冊已改以現行政府法規為基準']
 ];
 
-for (const [ok, message] of quickGuideChecks) {
+for (const [ok, message] of lawAuditChecks) {
   if (!ok) {
     console.error(`❌ ${message}`);
     process.exit(1);
   }
 }
-console.log('✅ 前七章與速查手冊重疊考點已一致，文字與 SVG 圖解同步');
 
-console.log('\n--- 3. 驗證題庫資料完整性（資料保留供後續校正） ---');
+const forbiddenLegacyClaims = [
+  '四大破防漏洞',
+  '得委任第三人之例外情事（僅限三種）',
+  '縱使委託人或受益人書面同意，依然絕對無效',
+  '無任何例外！絕不放行',
+  '該公司總發行股份的 **10%**',
+  '返還登記書據，**仍應貼用印花稅票**',
+  '公益信託**應**設置（**強制必須設立，法無例外！**）'
+];
+for (const claim of forbiddenLegacyClaims) {
+  if (Object.values(chapters).some(md => md.includes(claim))) {
+    console.error(`❌ 仍殘留舊版錯誤或過度絕對化敘述：${claim}`);
+    process.exit(1);
+  }
+}
+
+const courseData = JSON.parse(fs.readFileSync(path.join(studyDir, 'course_data.json'), 'utf8'));
+for (const [id, file] of chapterFiles) {
+  const embedded = courseData.chapters.find(ch => ch.id === id);
+  if (!embedded || embedded.markdown !== chapters[id]) {
+    console.error(`❌ course_data.json 的 ${id} 未與 ${file} 同步`);
+    process.exit(1);
+  }
+}
+
+const nestedHtml = fs.readFileSync(path.join(studyDir, 'index.html'), 'utf8');
+if (nestedHtml !== html) {
+  console.error('❌ 根目錄 index.html 與教材 index.html 不一致');
+  process.exit(1);
+}
+for (const marker of [
+  '法定例外只有兩類',
+  '半年度終了後 2 個月內',
+  '歸戶計算不是一律按每一信託各自獨立',
+  '50%／35%／25%／15%',
+  '每年至少一次'
+]) {
+  if (!html.includes(marker)) {
+    console.error(`❌ index.html 尚未內嵌最新校訂內容：${marker}`);
+    process.exit(1);
+  }
+}
+
+const rootImageDir = path.join(__dirname, 'images');
+const nestedImageDir = path.join(studyDir, 'images');
+const nestedSvgs = fs.readdirSync(nestedImageDir).filter(name => name.endsWith('.svg'));
+for (const name of nestedSvgs) {
+  const rootPath = path.join(rootImageDir, name);
+  if (!fs.existsSync(rootPath)) {
+    console.error(`❌ Pages 根目錄缺少 SVG：${name}`);
+    process.exit(1);
+  }
+  const rootSvg = fs.readFileSync(rootPath, 'utf8');
+  const nestedSvg = fs.readFileSync(path.join(nestedImageDir, name), 'utf8');
+  if (rootSvg !== nestedSvg) {
+    console.error(`❌ Pages 與教材 SVG 不一致：${name}`);
+    process.exit(1);
+  }
+}
+console.log('✅ 第 01～08 章、course_data、兩份 index 與全部 SVG 均完成政府法規校訂同步');
+
+console.log('\n--- 3. 驗證題庫資料檔仍可讀取（僅保留供後續答案校正） ---');
 const bankSandbox = { window: {}, globalThis: {} };
 vm.createContext(bankSandbox);
 vm.runInContext(bankJs, bankSandbox);
@@ -118,35 +177,7 @@ if (bankSandbox.window && bankSandbox.window.EXAM_BANK_DATA) {
     process.exit(1);
   }
 
-  // 高頻精選題回歸檢查：不得再次退化為只挑最新期別。
-  const normalizedStems = new Set();
-  chapters.forEach(ch => {
-    const questions = bank[ch];
-    if (questions.length !== 10) {
-      console.error(`❌ ${ch} 精選題應為 10 題，實際為 ${questions.length} 題`);
-      process.exit(1);
-    }
-    questions.forEach(q => {
-      if (!q.frequency || !q.topicRank || !q.frequencyScope) {
-        console.error(`❌ ${q.id} 缺少高頻統計欄位`);
-        process.exit(1);
-      }
-      const sig = String(q.stem || '').normalize('NFKC').replace(/\\s+/g, '').replace(/[，。；：？！、「」『』（）()【】\\[\\]．,.!?;:'"“”‘’\\-—_]/g, '');
-      if (normalizedStems.has(sig)) {
-        console.error(`❌ 精選題跨章節重複：${q.stem}`);
-        process.exit(1);
-      }
-      normalizedStems.add(sig);
-    });
-    if (ch !== 'c08') {
-      const terms = new Set(questions.map(q => q.term));
-      if (terms.size < 3 || questions.every(q => q.term >= 61)) {
-        console.error(`❌ ${ch} 期別分布過度集中，疑似退回近期題優先邏輯`);
-        process.exit(1);
-      }
-    }
-  });
-  console.log('✅ 高頻精選題：每章 10 題、具頻率標記、跨期分散、全域無重複');
+  console.log('✅ 題庫資料檔仍可正常解析；目前不作答案正確性與精選邏輯驗證，避免錯誤答案重新出現在 UI');
 } else {
   console.error('❌ 題庫腳本未正確定義 window.EXAM_BANK_DATA！');
   process.exit(1);
@@ -250,21 +281,11 @@ try {
   
   // 測試呼叫 loadChapter
   sandbox.window.loadChapter(4); // 測試第 5 章（有價證券與員工福利信託）
-  console.log('✅ loadChapter(4) 執行成功（0.00ms 快速完成，且教材秒級準備完畢）！');
+  console.log('✅ loadChapter(4) 執行成功，教材章節可正常渲染！');
   
   // 測試載入第 1 章（信託法規精粹）
   sandbox.window.loadChapter(1);
-  console.log('✅ loadChapter(1) 執行成功（本章 10 題高頻真題即時就緒）！');
-
-  // 測試作答檢查
-  const mockOptionElem = {
-    parentElement: {
-      querySelectorAll: () => []
-    },
-    classList: { add: () => {}, remove: () => {} }
-  };
-  sandbox.window.checkAnswer(mockOptionElem, 'concept_c01_0', 1, 1, 'explain_c01_0');
-  console.log('✅ checkAnswer 答題互動正常！');
+  console.log('✅ loadChapter(1) 執行成功，且不會重新顯示已移除的章節考古題！');
 
   // 測試燈箱 (點擊看大圖、放大、還原、關閉)
   sandbox.window.openImageLightbox('images/chart_01_02.svg', '⚖️ 詐害信託撤銷權');

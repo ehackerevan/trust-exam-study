@@ -36,7 +36,7 @@
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#f87171"/>
     </marker>
   </defs>
-  <text x="460.0" y="36" fill="#f8fafc" font-size="20" font-weight="700" text-anchor="middle">🌲 土地信託【不課徵】vs【應課徵】土地增值稅法定界線 (土地稅法第 28 條之 3)</text>
+  <text x="460.0" y="36" fill="#f8fafc" font-size="20" font-weight="700" text-anchor="middle">🌲 信託土地移轉的土地增值稅判斷（土地稅法第 28 條之 3 等）</text>
 
   <g transform="translate(40, 70)" filter="url(#shadow)">
     <rect width="400" height="270" rx="10" fill="#064e3b" stroke="#10b981" stroke-width="2"/>
@@ -47,22 +47,22 @@
     <text x="25" y="115" fill="#a7f3d0" font-size="14" font-weight="700">2. 信託存續中，更換受託人移轉予新受託人</text>
     <text x="25" y="155" fill="#a7f3d0" font-size="14" font-weight="700">3. 信託關係終止消滅，受託人移轉歸還原委託人</text>
     <text x="25" y="195" fill="#a7f3d0" font-size="14" font-weight="700">4. 遺囑信託生效，受託人將土地移轉予繼承人</text>
-    <text x="25" y="240" fill="#6ee7b7" font-size="13">👉 核心法理：名義所有權變動，無實質資本利得實現！</text>
+    <text x="25" y="240" fill="#6ee7b7" font-size="13">👉 上述為第 28 條之 3 明定不課徵的信託移轉類型</text>
   </g>
 
   <g transform="translate(480, 70)" filter="url(#shadow)">
     <rect width="400" height="270" rx="10" fill="#3b0f0f" stroke="#ef4444" stroke-width="2"/>
     <rect width="400" height="42" rx="10" fill="url(#gradRose)"/>
-    <text x="200" y="27" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">❌ 應依法課徵土地增值稅（實質移轉）</text>
+    <text x="200" y="27" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">⚠️ 其他實質移轉應依土地稅法判斷</text>
     
     <text x="25" y="80" fill="#fca5a5" font-size="15" font-weight="700">1. 受託人處分信託土地出售給第三人買方</text>
     <text x="45" y="105" fill="#cbd5e1" font-size="13">• 納稅義務人：受託人 (以信託財產繳納)</text>
 
-    <text x="25" y="150" fill="#fca5a5" font-size="15" font-weight="700">2. 他益信託終止，土地移轉給非委託人之受益人</text>
-    <text x="45" y="175" fill="#cbd5e1" font-size="13">• 實質發生土地所有權無償或有償終局轉讓</text>
-    <text x="45" y="200" fill="#fca5a5" font-size="13">• 納稅義務人：該取得土地之受益人！</text>
+    <text x="25" y="150" fill="#fca5a5" font-size="15" font-weight="700">2. 信託土地歸屬於委託人以外之歸屬權利人</text>
+    <text x="45" y="175" fill="#cbd5e1" font-size="13">• 屬信託關係人間的終局所有權移轉</text>
+    <text x="45" y="200" fill="#fca5a5" font-size="13">• 納稅義務人：歸屬權利人</text>
 
-    <text x="25" y="240" fill="#fbbf24" font-size="13">⭐ 考題常考「出售給第三人是否免課」，絕對要課！</text>
+    <text x="25" y="240" fill="#fbbf24" font-size="13">⭐ 出售第三人不屬第 28 條之 3 的信託不課徵類型</text>
   </g>
 
 </svg>

@@ -36,7 +36,7 @@
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#f87171"/>
     </marker>
   </defs>
-  <text x="460.0" y="36" fill="#f8fafc" font-size="20" font-weight="700" text-anchor="middle">📅 信託所得稅報稅申報與憑單填發關鍵時程 (所得稅法第 6 條之 2、89 條之 1)</text>
+  <text x="460.0" y="36" fill="#f8fafc" font-size="20" font-weight="700" text-anchor="middle">📅 信託所得歸屬與申報時程（所得稅法第 3 條之 4、92 條之 1）</text>
 
   <g transform="translate(40, 75)" filter="url(#shadow)">
     <rect width="260" height="230" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
@@ -45,15 +45,15 @@
     <text x="25" y="75" fill="#60a5fa" font-size="14" font-weight="700">日常帳務備查</text>
     <text x="25" y="105" fill="#cbd5e1" font-size="13">• 受託人設專用帳簿</text>
     <text x="25" y="135" fill="#cbd5e1" font-size="13">• 載明各項收支明細</text>
-    <text x="25" y="165" fill="#cbd5e1" font-size="13">• 所得發生即歸屬該年度</text>
-    <text x="25" y="195" fill="#fbbf24" font-size="13">⭐ 不論受託人何時實際分配！</text>
+    <text x="25" y="165" fill="#cbd5e1" font-size="13">• 一般情形依所得發生年度計算</text>
+    <text x="25" y="195" fill="#fbbf24" font-size="13">⭐ 受益人不特定等情形另依特別規定</text>
   </g>
 
   <g transform="translate(330, 75)" filter="url(#shadow)">
     <rect width="260" height="230" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
     <rect width="260" height="42" rx="10" fill="url(#gradAmber)"/>
     <text x="130" y="27" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">2. 次年 1 月底 / 2 月 10 日</text>
-    <text x="25" y="75" fill="#fbbf24" font-size="14" font-weight="700">開具憑單向國稅局申報</text>
+    <text x="25" y="75" fill="#fbbf24" font-size="14" font-weight="700">列單申報信託所得相關資料</text>
     <text x="25" y="105" fill="#cbd5e1" font-size="13">• 1 月底前：向國稅局申報</text>
     <text x="25" y="130" fill="#cbd5e1" font-size="13">  扣繳或免扣繳憑單</text>
     <text x="25" y="160" fill="#cbd5e1" font-size="13">• 2 月 10 日前：填發憑單</text>
@@ -66,10 +66,10 @@
     <rect width="260" height="42" rx="10" fill="url(#gradEmerald)"/>
     <text x="130" y="27" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">3. 每年 5 月報稅季</text>
     <text x="25" y="75" fill="#34d399" font-size="14" font-weight="700">實質納稅人綜合所得稅</text>
-    <text x="25" y="105" fill="#cbd5e1" font-size="13">• 自益信託：由委託人申報</text>
-    <text x="25" y="135" fill="#cbd5e1" font-size="13">• 他益信託：由受益人申報</text>
-    <text x="25" y="165" fill="#cbd5e1" font-size="13">• 並入個人綜合所得總額</text>
-    <text x="25" y="195" fill="#a7f3d0" font-size="13">⭐ 適用個人累進所得稅率</text>
+    <text x="25" y="105" fill="#cbd5e1" font-size="13">• 自益信託：依委託人受益權歸屬</text>
+    <text x="25" y="135" fill="#cbd5e1" font-size="13">• 他益信託：依受益人受益權歸屬</text>
+    <text x="25" y="165" fill="#cbd5e1" font-size="13">• 所得類別與稅率依稅法判斷</text>
+    <text x="25" y="195" fill="#a7f3d0" font-size="13">⭐ 不宜概括成所有信託同一稅率</text>
   </g>
 
   <path d="M 300 190 L 330 190" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrow)"/>
