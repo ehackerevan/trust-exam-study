@@ -44,6 +44,18 @@ if (!html.includes('欄位會依畫面自動調整，手機改為卡片顯示'))
 }
 console.log('✅ 表格已採桌機表格、平板換行、手機卡片顯示，無需手機橫向滑動');
 
+console.log('\n--- 2.2 驗證新版配色與預設閱讀模式 ---');
+if (!html.includes('<html lang="zh-TW" data-theme="light">') ||
+    !html.includes('--primary: #0369a1;') ||
+    !html.includes('--accent: #b45309;') ||
+    !html.includes('--primary: #38bdf8;') ||
+    !html.includes('color: var(--accent-contrast);') ||
+    !html.includes("document.getElementById('themeToggleBtn').onclick = () => toggleTheme();")) {
+  console.error('❌ 新版淺色預設、夜藍深色模式或藍／琥珀配色未完整套用');
+  process.exit(1);
+}
+console.log('✅ 預設採清爽淺色介面，深色模式改為夜藍、天藍與琥珀配色');
+
 console.log('\n--- 2.5 驗證教材圖解改用 HTML/CSS 排版 ---');
 if (html.includes('mobile-diagrams:styles:start') &&
     html.includes('mobile-diagrams:renderer:start') &&
@@ -135,6 +147,25 @@ for (const [id, file] of chapterFiles) {
     process.exit(1);
   }
 }
+
+for (const pcode of [
+  'I0020024', 'G0310027', 'G0310028', 'G0310029', 'G0310034', 'G0310040',
+  'G0340003', 'G0340072', 'G0340096', 'G0380001', 'G0380122', 'G0380169', 'G0380172',
+  'G0400082', 'G0400084', 'G0400095'
+]) {
+  if (!courseData.chapters.some(ch => ch.markdown.includes(`law.moj.gov.tw/LawClass/LawAll.aspx?pcode=${pcode}`))) {
+    console.error(`❌ 缺少政府法規來源連結：${pcode}`);
+    process.exit(1);
+  }
+}
+if (!chapters.c03.includes('五類不課徵土地增值稅') ||
+    !chapters.c03.includes('不限於繼承人') ||
+    chapters.c08.includes('書面通知各受益人') ||
+    chapters.c08.includes('每 3 個月至少評審一次')) {
+  console.error('❌ 政府法規查核後的修正內容不完整');
+  process.exit(1);
+}
+console.log('✅ 各章均附政府法規來源，土地稅、通知方式及評審週期已依現行條文校正');
 
 const nestedHtml = fs.readFileSync(path.join(studyDir, 'index.html'), 'utf8');
 if (nestedHtml !== html) {

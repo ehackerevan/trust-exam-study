@@ -59,7 +59,7 @@
     <rect width="420" height="44" rx="12" fill="url(#gradEmerald)"/>
     <text x="210" y="28" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">⭕ 但書例外：以下三類情形不受禁止</text>
     
-    <text x="20" y="75" fill="#a7f3d0" font-size="14" font-weight="700">1. 信託前已存在於該財產之權利</text>
+    <text x="20" y="75" fill="#a7f3d0" font-size="14" font-weight="700">1. 信託前存在於該財產之權利</text>
     <text x="35" y="98" fill="#cbd5e1" font-size="13">• 例如：信託前房屋已向銀行設定第一順位抵押權</text>
 
     <text x="20" y="128" fill="#a7f3d0" font-size="14" font-weight="700">2. 因處理信託事務所生之權利</text>
