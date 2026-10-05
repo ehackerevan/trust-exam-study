@@ -82,11 +82,11 @@ const chapters = Object.fromEntries(
 const lawAuditChecks = [
   [chapters.c01.includes('法定例外只有兩類') && chapters.c01.includes('通知發行公司'), '第 01 章：信託法第 25 條例外與第 4 條公示規則'],
   [chapters.c02.includes('至少繳足 20% 股款') && chapters.c02.includes('不具運用決定權') && chapters.c02.includes('半年度終了後 2 個月內') && chapters.c02.includes('年度終了後 4 個月內'), '第 02 章：設立出資、利害關係交易與定期報告期限'],
-  [chapters.c03.includes('歸戶計算不是一律按每一信託各自獨立') && chapters.c03.includes('自益信託') && chapters.c03.includes('達第 24 條應申報條件'), '第 03 章：地價稅歸戶、印花稅與贈與稅申報條件'],
+  [chapters.c03.includes('歸戶計算不是一律按每一信託各自獨立') && chapters.c03.includes('自益信託') && chapters.c03.includes('若當年度贈與總額已達依法應申報的程度'), '第 03 章：地價稅歸戶、印花稅與贈與稅申報條件'],
   [chapters.c04.includes('淨資產總值 30%') && chapters.c04.includes('該金融機構淨值 10%') && chapters.c04.includes('淨資產價值 5%'), '第 04 章：集合管理運用集中度與流動性比率'],
-  [chapters.c05.includes('不能把「140%／120%」寫成所有有價證券信託借券一律適用') && chapters.c05.includes('信託業法》第 20 條之 1'.replace('》', '》')), '第 05 章：借券比率與股票表決權不得過度概括'],
+  [chapters.c05.includes('不能把「140%／120%」寫成所有有價證券信託借券一律適用') && chapters.c05.includes('《信託業法》第 20 條之 1'), '第 05 章：借券比率與股票表決權不得過度概括'],
   [chapters.c06.includes('可分配收益 90% 以上') && chapters.c06.includes('會計年度結束後 6 個月內') && chapters.c06.includes('50%／35%／25%／15%') && !chapters.c06.includes('財產標的已確定，**不得追加發行**'), '第 06 章：REIT 配息、分配期限、借款上限與追加募集'],
-  [chapters.c07.includes('每年至少一次') && chapters.c07.includes('沒有信託行為所定的歸屬權利人') && chapters.c07.includes('除經金管會核准外'), '第 07 章：公益信託監督、消滅歸屬與基金保管機構限制'],
+  [chapters.c07.includes('每年至少一次') && chapters.c07.includes('沒有信託行為所定的歸屬權利人') && chapters.c07.includes('但經金管會核准者例外'), '第 07 章：公益信託監督、消滅歸屬與基金保管機構限制'],
   [chapters.c08.includes('達第 24 條應申報條件者') && chapters.c08.includes('2 個月 / 4 個月') && chapters.c08.includes('第 6 條第 3 項') && chapters.c08.includes('90% 是契約配息比率要求'), '第 08 章：速查手冊已改以現行政府法規為基準']
 ];
 
