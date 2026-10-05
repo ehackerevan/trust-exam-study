@@ -28,46 +28,25 @@ const rank = items => {
 };
 const escape = s => String(s).replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&apos;' }[ch]));
 
-function chart(filename, title, items, total, subtitle) {
-  const width = 1000;
-  const height = 152 + items.length * 46;
+function chart(title, items, total, subtitle) {
   const max = Math.max(...items.map(item => item.count));
   const rows = items.map((item, i) => {
-    const y = 110 + i * 46;
-    const length = item.count / max * 440;
-    const label = `${item.count} 題 · ${(item.count / total * 100).toFixed(1)}%`;
-    return `<g><title>${escape(item.topic)}：${label}</title>
-      <text x="30" y="${y + 21}" fill="#94a3b8" font-size="15">${i + 1}</text>
-      <text x="66" y="${y + 21}" fill="#e2e8f0" font-size="17">${escape(item.topic)}</text>
-      <rect x="420" y="${y}" width="440" height="30" rx="6" fill="#1e293b"/>
-      <rect x="420" y="${y}" width="${length.toFixed(2)}" height="30" rx="6" fill="${i < 3 ? '#38bdf8' : '#818cf8'}"/>
-      <text x="970" y="${y + 21}" text-anchor="end" fill="#f8fafc" font-size="16">${label}</text></g>`;
-  }).join('\n');
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="title desc">
-    <title id="title">${escape(title)}</title>
-    <desc id="desc">${escape(subtitle)}。${escape(items.map(item => `${item.topic} ${item.count} 題`).join('；'))}</desc>
-    <rect width="1000" height="${height}" rx="18" fill="#0f172a"/>
-    <g font-family="system-ui, 'Noto Sans TC', sans-serif">
-      <text x="30" y="40" fill="#f8fafc" font-size="24" font-weight="700">${escape(title)}</text>
-      <text x="30" y="73" fill="#94a3b8" font-size="16">${escape(subtitle)}</text>
-      ${rows}
-      <text x="30" y="${height - 20}" fill="#94a3b8" font-size="15">橫條長度代表出題次數；百分比以${total.toLocaleString('en-US')}題為分母，非未來考試配分預測。</text>
-    </g>
-  </svg>\n`;
-  for (const directory of [ROOT, material]) {
-    fs.writeFileSync(path.join(directory, 'images', filename), svg);
-  }
-  return `![${title}](images/${filename})`;
+    const percent = (item.count / total * 100).toFixed(1);
+    const width = (item.count / max * 100).toFixed(2);
+    return `<li class="topic-stat-row"><span class="topic-stat-label"><span class="topic-stat-rank">${i + 1}</span><span>${escape(item.topic)}</span></span><span class="topic-stat-track" aria-hidden="true"><span class="topic-stat-fill${i < 3 ? ' topic-stat-leading' : ''}" style="width:${width}%"></span></span><span class="topic-stat-value">${item.count} 題<span class="topic-stat-percent">${percent}%</span></span></li>`;
+  }).join('');
+  // 保持 HTML 區塊內無空白行，避免 Markdown 將圖表內部當成一般段落。
+  return `<section class="topic-stat-chart" aria-label="${escape(title)}"><p class="topic-stat-heading">${escape(title)}</p><p class="topic-stat-subtitle">${escape(subtitle)}</p><ol class="topic-stat-list">${rows}</ol><p class="topic-stat-note">橫條以本圖最高題數為比較基準；占比以 ${total.toLocaleString('en-US')} 題為分母。</p></section>`;
 }
 
 const topics = rank(questions);
 let section = `\n\n<!-- topic-statistics:start -->\n\n---\n\n## 📊 歷屆出題知識點統計\n\n統計範圍：**${scope}、${topics.length} 個知識點**。依 c01–c07 完整題庫的知識點分類計算，每筆來源題計一次；不同期別的相同題目仍各計一次。第 08 章為跨章速查切片，不重複納入。\n\n> 教材前言的 2,860 題是歷屆原始總量；以下圖表以目前 c01–c07 已收錄且分類的 **${questions.length.toLocaleString('en-US')} 題**為準。出題次數僅反映本站收錄題目，不代表未來配分。\n\n### 全題庫高頻知識點 TOP 15\n\n`;
-section += chart('chart_00_topic_top15.svg', '全題庫高頻知識點 TOP 15', topics.slice(0, 15), questions.length, `${scope}｜占比以全題庫為分母`) + '\n';
-section += '\n### 各章完整知識點分布\n\n展開各章可查看全部知識點；點擊圖表可放大檢視。各章百分比以該章收錄題數為分母。\n';
+section += chart('全題庫高頻知識點 TOP 15', topics.slice(0, 15), questions.length, `${scope}｜占比以全題庫為分母`) + '\n';
+section += '\n### 各章完整知識點分布\n\n展開各章可查看全部知識點。圖表隨螢幕寬度調整，手機可直接閱讀完整名稱、題數與占比。各章百分比以該章收錄題數為分母。\n';
 for (const chapter of chapters) {
   const items = questions.filter(q => q.chapter === chapter.id || bank[chapter.id].some(source => source.id === q.id));
   const chapterTopics = rank(items);
-  const image = chart(`chart_00_topics_${chapter.id}.svg`, `${chapter.title}：出題知識點`, chapterTopics, items.length, `第 ${terms[0]}–${terms.at(-1)} 期｜本章 ${items.length} 題｜${chapterTopics.length} 個知識點`);
+  const image = chart(`${chapter.title}：出題知識點`, chapterTopics, items.length, `第 ${terms[0]}–${terms.at(-1)} 期｜本章 ${items.length} 題｜${chapterTopics.length} 個知識點`);
   section += `\n<details>\n<summary>${chapter.icon} ${chapter.title}｜${items.length} 題</summary>\n\n${image}\n\n</details>\n`;
 }
 section += '\n<!-- topic-statistics:end -->\n';
@@ -78,12 +57,19 @@ fs.writeFileSync(coursePath, JSON.stringify(course, null, 2) + '\n');
 for (const directory of [ROOT, material]) {
   const filename = path.join(directory, 'index.html');
   const html = fs.readFileSync(filename, 'utf8');
-  const updated = html.replace(/const courseData = (\{[^\n]+\});/, (_, data) => {
+  let updated = html.replace(/const courseData = (\{[^\n]+\});/, (_, data) => {
     const embedded = JSON.parse(data);
     embedded.chapters.find(c => c.id === 'c00').markdown = intro.markdown;
     return `const courseData = ${JSON.stringify(embedded)};`;
   });
   if (updated === html && !html.includes('topic-statistics:start')) throw new Error('找不到內嵌教材資料');
+  const style = fs.readFileSync(path.join(__dirname, 'topic_statistics.css'), 'utf8').trimEnd();
+  const styleBlock = `    /* topic-statistics:styles:start */\n${style}\n    /* topic-statistics:styles:end */`;
+  if (updated.includes('/* topic-statistics:styles:start */')) {
+    updated = updated.replace(/^[ \t]*\/\* topic-statistics:styles:start \*\/[\s\S]*?^[ \t]*\/\* topic-statistics:styles:end \*\//m, styleBlock);
+  } else {
+    updated = updated.replace('  </style>', `${styleBlock}\n  </style>`);
+  }
   fs.writeFileSync(filename, updated);
 }
 console.log(`已同步統計圖表：${questions.length} 題、${topics.length} 個知識點。`);
