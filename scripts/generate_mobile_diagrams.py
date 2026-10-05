@@ -1,4 +1,4 @@
-"""從教材 SVG 的文字與分組產生手機可讀的圖解資料，嵌入兩份離線網站。"""
+"""從教材 SVG 的節點位置與文字產生手機互動導覽，嵌入兩份離線網站。"""
 import json
 import re
 from pathlib import Path
@@ -15,21 +15,49 @@ def text_of(element):
 
 def diagram_data(svg_path):
     root = ET.parse(svg_path).getroot()
+    _, _, view_width, view_height = (float(value) for value in root.get('viewBox').split())
     blocks = []
-    for child in root:
-        if child.tag != SVG_NS + 'g' or not any(
-            shape.tag in (SVG_NS + 'rect', SVG_NS + 'polygon') for shape in child
-        ):
-            continue
+    def add_group(child, parent_x=0, parent_y=0):
         lines = []
-        for element in child.iter(SVG_NS + 'text'):
+        for element in child:
+            if element.tag != SVG_NS + 'text':
+                continue
             value = text_of(element)
             if value:
                 lines.append({'text': value, 'emphasis': element.get('font-weight', '').isdigit()
                               and int(element.get('font-weight')) >= 600})
-        if not lines:
-            continue
-        blocks.append({'title': lines[0]['text'], 'lines': lines[1:]})
+        transform = re.fullmatch(r'translate\(([\d.]+)[, ]+([\d.]+)\)', child.get('transform', ''))
+        if not transform:
+            raise ValueError(f'{svg_path.name} 節點位置格式無法判讀')
+        local_x, local_y = map(float, transform.groups())
+        x, y = parent_x + local_x, parent_y + local_y
+        shape = next(shape for shape in child if shape.tag in (SVG_NS + 'rect', SVG_NS + 'polygon'))
+        if shape.tag == SVG_NS + 'rect':
+            x += float(shape.get('x', 0))
+            y += float(shape.get('y', 0))
+            width = float(shape.get('width'))
+            height = float(shape.get('height'))
+        else:
+            points = [tuple(map(float, pair.split(','))) for pair in shape.get('points').split()]
+            min_x, max_x = min(p[0] for p in points), max(p[0] for p in points)
+            min_y, max_y = min(p[1] for p in points), max(p[1] for p in points)
+            x += min_x
+            y += min_y
+            width, height = max_x - min_x, max_y - min_y
+        if lines:
+            blocks.append({'title': lines[0]['text'], 'lines': lines[1:],
+                           'bounds': [x, y, width, height]})
+        for nested in child:
+            if nested.tag == SVG_NS + 'g' and any(
+                shape.tag in (SVG_NS + 'rect', SVG_NS + 'polygon') for shape in nested
+            ):
+                add_group(nested, parent_x + local_x, parent_y + local_y)
+
+    for child in root:
+        if child.tag == SVG_NS + 'g' and any(
+            shape.tag in (SVG_NS + 'rect', SVG_NS + 'polygon') for shape in child
+        ):
+            add_group(child)
 
     # 兩張圖另有寫在圖形外的關係標籤，補入相應節點以保留流程意義。
     if svg_path.name == 'chart_01_01.svg':
@@ -41,7 +69,7 @@ def diagram_data(svg_path):
         blocks[2]['relation'] = '法定例外：依信託法第 12 條判斷'
     if not blocks:
         raise ValueError(f'{svg_path.name} 缺少可顯示的圖解文字')
-    return blocks
+    return {'size': [view_width, view_height], 'blocks': blocks}
 
 
 references = set()
@@ -81,10 +109,11 @@ for directory in (ROOT, MATERIAL):
         html = html.replace('    const renderer = new marked.Renderer();',
                             render_block + '\n    const renderer = new marked.Renderer();', 1)
     html = html.replace('👈 手機左右滑動看清全圖 👉', '手機版逐項閱讀')
+    html = html.replace('手機版逐項閱讀', '點圖選區塊看重點')
     if '${renderMobileDiagram(encodedHref, rawTitle)}' not in html:
         html = html.replace('          <div class="diagram-card-canvas" onclick=',
                             '          ${renderMobileDiagram(encodedHref, rawTitle)}\n          <div class="diagram-card-canvas" onclick=', 1)
     html = html.replace('🔍 全螢幕放大檢視', '🔍 查看完整架構圖')
     index.write_text(html)
 
-print(f'已同步 {len(data)} 張圖解的手機卡片資料至兩份網站。')
+print(f'已同步 {len(data)} 張圖解的手機互動導覽資料至兩份網站。')

@@ -44,15 +44,17 @@ if (!html.includes('欄位會依畫面自動調整，手機改為卡片顯示'))
 }
 console.log('✅ 表格已採桌機表格、平板換行、手機卡片顯示，無需手機橫向滑動');
 
-console.log('\n--- 2.5 驗證手機端圖解卡片與原圖入口 ---');
+console.log('\n--- 2.5 驗證手機端圖解導覽與原圖入口 ---');
 if (html.includes('mobile-diagrams:styles:start') &&
     html.includes('mobile-diagrams:renderer:start') &&
     html.includes('const mobileDiagramData = ') &&
     html.includes('renderMobileDiagram(encodedHref, rawTitle)') &&
+    html.includes('selectMobileDiagramPoint(this, event)') &&
+    html.includes('class="mobile-diagram-overview"') &&
     html.includes('.diagram-card-canvas { display: none !important; }') &&
     html.includes('查看完整架構圖') &&
     !html.includes('手機左右滑動看清全圖')) {
-  console.log('✅ 手機顯示完整圖解卡片，原圖仍可開啟放大');
+  console.log('✅ 手機顯示可點選區塊的完整導覽圖，原圖仍可開啟放大');
 } else {
   console.error('❌ 手機圖解卡片、原圖入口或舊滑動提示有誤');
   process.exit(1);
