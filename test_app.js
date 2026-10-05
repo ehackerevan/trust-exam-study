@@ -44,19 +44,17 @@ if (!html.includes('欄位會依畫面自動調整，手機改為卡片顯示'))
 }
 console.log('✅ 表格已採桌機表格、平板換行、手機卡片顯示，無需手機橫向滑動');
 
-console.log('\n--- 2.5 驗證手機端圖解導覽與原圖入口 ---');
+console.log('\n--- 2.5 驗證教材圖解改用 HTML/CSS 排版 ---');
 if (html.includes('mobile-diagrams:styles:start') &&
     html.includes('mobile-diagrams:renderer:start') &&
     html.includes('const mobileDiagramData = ') &&
-    html.includes('renderMobileDiagram(encodedHref, rawTitle)') &&
-    html.includes('selectMobileDiagramPoint(this, event)') &&
-    html.includes('class="mobile-diagram-overview"') &&
-    html.includes('.diagram-card-canvas { display: none !important; }') &&
-    html.includes('查看完整架構圖') &&
-    !html.includes('手機左右滑動看清全圖')) {
-  console.log('✅ 手機顯示可點選區塊的完整導覽圖，原圖仍可開啟放大');
+    html.includes('renderStudyDiagram(href, title || text') &&
+    html.includes('study-diagram-sequence') &&
+    html.includes('study-diagram-criteria') &&
+    !html.includes('diagram-card-canvas')) {
+  console.log('✅ 流程、分類、對照圖已用 HTML/CSS 直接呈現');
 } else {
-  console.error('❌ 手機圖解卡片、原圖入口或舊滑動提示有誤');
+  console.error('❌ 教材圖解仍依賴舊圖片容器或缺少排版');
   process.exit(1);
 }
 
