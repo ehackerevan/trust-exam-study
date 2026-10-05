@@ -83,7 +83,7 @@
   <!-- 下方除斥期間重要提醒 -->
   <g transform="translate(140, 240)" filter="url(#shadow)">
     <rect width="640" height="85" rx="10" fill="#1e293b" stroke="#e2e8f0" stroke-width="1.5"/>
-    <text x="320" y="32" fill="#fbbf24" font-size="16" font-weight="700" text-anchor="middle">⏱️ 撤銷權消滅時效（除斥期間）：知一成十</text>
+    <text x="320" y="32" fill="#fbbf24" font-size="16" font-weight="700" text-anchor="middle">⏱️ 撤銷權的除斥期間</text>
     <text x="320" y="58" fill="#cbd5e1" font-size="14" text-anchor="middle">• 自債權人「知有撤銷原因」時起：1 年間不行使而消滅</text>
     <text x="320" y="78" fill="#cbd5e1" font-size="14" text-anchor="middle">• 自「信託行為成立」時起：逾 10 年者亦消滅！</text>
   </g>

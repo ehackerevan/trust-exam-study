@@ -32,7 +32,7 @@
   </defs>
 
   <!-- Title -->
-  <text x="460" y="36" fill="#f3f4f6" font-size="19" font-weight="700" text-anchor="middle">📚 信託三大核心法定分類架構 (考點全景圖)</text>
+  <text x="460" y="36" fill="#f3f4f6" font-size="19" font-weight="700" text-anchor="middle">📚 信託三種常見信託分類方式</text>
   
   <!-- 頂部根節點 -->
   <g transform="translate(310, 60)" filter="url(#shadow)">

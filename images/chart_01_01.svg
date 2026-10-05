@@ -69,7 +69,7 @@
   <!-- 底部：獨立性信託財產防護罩 -->
   <g transform="translate(180, 230)" filter="url(#shadow)">
     <rect width="540" height="90" rx="12" fill="#064e3b" stroke="#10b981" stroke-width="2"/>
-    <text x="270" y="36" fill="#6ee7b7" font-size="16" font-weight="700" text-anchor="middle">🛡️ 信託財產 Trust Property（穿戴法定防彈衣與防火牆）</text>
+    <text x="270" y="36" fill="#6ee7b7" font-size="16" font-weight="700" text-anchor="middle">🛡️ 信託財產 Trust Property（依法與自有財產分開管理）</text>
     <text x="270" y="64" fill="#a7f3d0" font-size="13" text-anchor="middle">名義雖在受託人名下，但獨立於委託人與受託人之自有財產，原則上不得強制執行！</text>
   </g>
   

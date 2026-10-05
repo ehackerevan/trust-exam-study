@@ -44,7 +44,7 @@
     <text x="200" y="27" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">🏢 員工持股信託 (ESOT)</text>
     <text x="25" y="75" fill="#60a5fa" font-size="15" font-weight="700">投資標的：依員工持股方案約定配置公司股票</text>
     <text x="25" y="105" fill="#cbd5e1" font-size="13">• 資金來源：員工自提金 ＋ 公司獎助金 (如 1:1)</text>
-    <text x="25" y="135" fill="#cbd5e1" font-size="13">• 核心目的：員工與企業命運一體化、凝聚向心力</text>
+    <text x="25" y="135" fill="#cbd5e1" font-size="13">• 主要目的：讓員工參與公司持股並累積資產</text>
     <text x="25" y="165" fill="#cbd5e1" font-size="13">• 退休或離職時：領取實體股票或折算現金返還</text>
     <text x="25" y="195" fill="#38bdf8" font-size="13">⭐ 稅務：企業獎勵提撥依具體制度與所得稅規定判斷</text>
   </g>
@@ -54,7 +54,7 @@
     <rect width="400" height="42" rx="10" fill="url(#gradEmerald)"/>
     <text x="200" y="27" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">🌱 員工福利儲蓄信託 (EFST)</text>
     <text x="25" y="75" fill="#34d399" font-size="15" font-weight="700">投資標的：依契約約定之多元資產</text>
-    <text x="25" y="105" fill="#cbd5e1" font-size="13">• 投資範圍：國內外基金、優質公債、存款</text>
+    <text x="25" y="105" fill="#cbd5e1" font-size="13">• 投資範圍：國內外基金、公債、存款等</text>
     <text x="25" y="135" fill="#cbd5e1" font-size="13">• 核心目的：為員工長期儲蓄退休金、分散股市單一風險</text>
     <text x="25" y="165" fill="#cbd5e1" font-size="13">• 標的與配置：依信託契約／福利方案辦理</text>
     <text x="25" y="195" fill="#fbbf24" font-size="13">⭐ 實際權利義務以契約及適用法規為準</text>
