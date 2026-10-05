@@ -41,13 +41,14 @@
   <g transform="translate(40, 70)" filter="url(#shadow)">
     <rect width="400" height="270" rx="10" fill="#064e3b" stroke="#10b981" stroke-width="2"/>
     <rect width="400" height="42" rx="10" fill="url(#gradEmerald)"/>
-    <text x="200" y="27" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">⭕ 不課徵土地增值稅（四種法定移轉）</text>
+    <text x="200" y="27" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">⭕ 不課徵土地增值稅（五類法定移轉）</text>
     
-    <text x="25" y="75" fill="#a7f3d0" font-size="14" font-weight="700">1. 因信託行為成立，委託人移轉土地予受託人</text>
-    <text x="25" y="115" fill="#a7f3d0" font-size="14" font-weight="700">2. 信託存續中，更換受託人移轉予新受託人</text>
-    <text x="25" y="155" fill="#a7f3d0" font-size="14" font-weight="700">3. 信託關係終止消滅，受託人移轉歸還原委託人</text>
-    <text x="25" y="195" fill="#a7f3d0" font-size="14" font-weight="700">4. 遺囑信託生效，受託人將土地移轉予繼承人</text>
-    <text x="25" y="240" fill="#6ee7b7" font-size="13">👉 上述為第 28 條之 3 明定不課徵的信託移轉類型</text>
+    <text x="25" y="70" fill="#a7f3d0" font-size="13" font-weight="700">1. 信託成立：委託人與受託人間移轉</text>
+    <text x="25" y="105" fill="#a7f3d0" font-size="13" font-weight="700">2. 變更受託人：原受託人與新受託人間移轉</text>
+    <text x="25" y="140" fill="#a7f3d0" font-size="13" font-weight="700">3. 自益信託消滅：受託人與受益人間移轉</text>
+    <text x="25" y="175" fill="#a7f3d0" font-size="13" font-weight="700">4. 遺囑信託消滅：受託人與受益人間移轉</text>
+    <text x="25" y="210" fill="#a7f3d0" font-size="13" font-weight="700">5. 信託不成立、無效、解除或撤銷</text>
+    <text x="25" y="245" fill="#6ee7b7" font-size="13">上述為第 28 條之 3 明定的移轉類型</text>
   </g>
 
   <g transform="translate(480, 70)" filter="url(#shadow)">
