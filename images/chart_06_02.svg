@@ -36,7 +36,7 @@
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#f87171"/>
     </marker>
   </defs>
-  <text x="460.0" y="36" fill="#f8fafc" font-size="20" font-weight="700" text-anchor="middle">🧱 不動產開發信託專款專用與續建完工承諾防弊體系</text>
+  <text x="460.0" y="36" fill="#f8fafc" font-size="20" font-weight="700" text-anchor="middle">🧱 不動產開發信託：資金控管與風險隔離</text>
 
   <g transform="translate(40, 75)" filter="url(#shadow)">
     <rect width="250" height="180" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
@@ -49,20 +49,20 @@
 
   <g transform="translate(340, 75)" filter="url(#shadow)">
     <rect width="240" height="180" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
-    <text x="120" y="35" fill="#34d399" font-size="16" font-weight="700" text-anchor="middle">2. 建經按工進查核</text>
-    <text x="20" y="75" fill="#cbd5e1" font-size="13">• 專業建築經理公司</text>
-    <text x="20" y="100" fill="#cbd5e1" font-size="13">• 現場勘查實際施工度</text>
-    <text x="20" y="125" fill="#cbd5e1" font-size="13">• 審核合格始放款撥付</text>
-    <text x="20" y="155" fill="#34d399" font-size="13">⭐ 專款專用杜絕挪用</text>
+    <text x="120" y="35" fill="#34d399" font-size="16" font-weight="700" text-anchor="middle">2. 工程／資金控管</text>
+    <text x="20" y="75" fill="#cbd5e1" font-size="13">• 是否由建經公司查核</text>
+    <text x="20" y="100" fill="#cbd5e1" font-size="13">  依個案契約安排</text>
+    <text x="20" y="125" fill="#cbd5e1" font-size="13">• 撥款條件依信託契約</text>
+    <text x="20" y="155" fill="#34d399" font-size="13">⭐ 信託可降低挪用風險</text>
   </g>
 
   <g transform="translate(630, 75)" filter="url(#shadow)">
     <rect width="250" height="180" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
-    <text x="125" y="35" fill="#c084fc" font-size="16" font-weight="700" text-anchor="middle">3. 續建完工機制</text>
-    <text x="20" y="75" fill="#cbd5e1" font-size="13">• 若建商中途破產跳票</text>
-    <text x="20" y="100" fill="#cbd5e1" font-size="13">• 啟動續建承諾條款</text>
-    <text x="20" y="125" fill="#cbd5e1" font-size="13">• 指定新營造廠接手完工</text>
-    <text x="20" y="155" fill="#fbbf24" font-size="13">⭐ 順利取得使用執照！</text>
+    <text x="125" y="35" fill="#c084fc" font-size="16" font-weight="700" text-anchor="middle">3. 續建／完工不是信託當然效果</text>
+    <text x="20" y="75" fill="#cbd5e1" font-size="13">• 是否有續建或完工承諾</text>
+    <text x="20" y="100" fill="#cbd5e1" font-size="13">  要看契約與其他履約保證</text>
+    <text x="20" y="125" fill="#cbd5e1" font-size="13">• 信託本身不等於銀行保證</text>
+    <text x="20" y="155" fill="#fbbf24" font-size="13">⭐ 應逐案確認保障內容</text>
   </g>
 
   <path d="M 290 150 L 340 150" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)"/>
