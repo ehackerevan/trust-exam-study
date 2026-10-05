@@ -36,7 +36,7 @@
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#f87171"/>
     </marker>
   </defs>
-  <text x="460.0" y="36" fill="#f8fafc" font-size="20" font-weight="700" text-anchor="middle">🏛️ 公益信託設立許可、信託監察人必設與年度申報法定體系</text>
+  <text x="460.0" y="36" fill="#f8fafc" font-size="20" font-weight="700" text-anchor="middle">🏛️ 公益信託設立許可、信託監察人與年度監督</text>
 
   <g transform="translate(40, 75)" filter="url(#shadow)">
     <rect width="250" height="180" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
@@ -50,19 +50,19 @@
   <g transform="translate(340, 75)" filter="url(#shadow)">
     <rect width="240" height="180" rx="10" fill="#3b0f0f" stroke="#ef4444" stroke-width="2"/>
     <text x="120" y="35" fill="#fca5a5" font-size="16" font-weight="700" text-anchor="middle">2. 強制設信託監察人</text>
-    <text x="20" y="75" fill="#fca5a5" font-size="13">⭐ 信託法第 75 條天條：</text>
-    <text x="20" y="100" fill="#cbd5e1" font-size="13">• 公益信託【必須設置】</text>
+    <text x="20" y="75" fill="#fca5a5" font-size="13">⭐ 信託法第 75 條：</text>
+    <text x="20" y="100" fill="#cbd5e1" font-size="13">• 公益信託【應置】信託監察人</text>
     <text x="20" y="125" fill="#cbd5e1" font-size="13">• 代表不特定公眾利益</text>
     <text x="20" y="155" fill="#34d399" font-size="13">嚴格把關受託人運作！</text>
   </g>
 
   <g transform="translate(630, 75)" filter="url(#shadow)">
     <rect width="250" height="180" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
-    <text x="125" y="35" fill="#34d399" font-size="16" font-weight="700" text-anchor="middle">3. 3 個月內申報與公告</text>
-    <text x="20" y="75" fill="#cbd5e1" font-size="13">• 會計年度終了後 3 個月內</text>
-    <text x="20" y="100" fill="#cbd5e1" font-size="13">• 編具報告書/資產負債表</text>
-    <text x="20" y="125" fill="#cbd5e1" font-size="13">• 向主管機關申報並公告</text>
-    <text x="20" y="155" fill="#fbbf24" font-size="13">⭐ 接受社會大眾公開檢驗！</text>
+    <text x="125" y="35" fill="#34d399" font-size="16" font-weight="700" text-anchor="middle">3. 每年至少一次申報與公告</text>
+    <text x="20" y="75" fill="#cbd5e1" font-size="13">• 信託法第 72 條：每年至少一次</text>
+    <text x="20" y="100" fill="#cbd5e1" font-size="13">• 信託事務處理情形及財務狀況</text>
+    <text x="20" y="125" fill="#cbd5e1" font-size="13">• 經監察人審核後報主管機關核備並公告</text>
+    <text x="20" y="155" fill="#fbbf24" font-size="13">⭐ 個別主管機關另有規定者從其規定</text>
   </g>
 
   <path d="M 290 150 L 340 150" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)"/>
