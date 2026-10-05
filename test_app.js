@@ -44,11 +44,17 @@ if (!html.includes('欄位會依畫面自動調整，手機改為卡片顯示'))
 }
 console.log('✅ 表格已採桌機表格、平板換行、手機卡片顯示，無需手機橫向滑動');
 
-console.log('\n--- 2.5 驗證手機端 SVG 模糊解決方案樣式 ---');
-if (html.includes('diagram-interactive-card') && html.includes('min-width: 760px !important') && html.includes('shape-rendering: geometricPrecision !important')) {
-  console.log('✅ 通過：SVG 圖解卡片具備 min-width: 760px 手機水平滑動容器與次像素幾何精度渲染，徹底解決手機縮放模糊問題！');
+console.log('\n--- 2.5 驗證手機端圖解卡片與原圖入口 ---');
+if (html.includes('mobile-diagrams:styles:start') &&
+    html.includes('mobile-diagrams:renderer:start') &&
+    html.includes('const mobileDiagramData = ') &&
+    html.includes('renderMobileDiagram(encodedHref, rawTitle)') &&
+    html.includes('.diagram-card-canvas { display: none !important; }') &&
+    html.includes('查看完整架構圖') &&
+    !html.includes('手機左右滑動看清全圖')) {
+  console.log('✅ 手機顯示完整圖解卡片，原圖仍可開啟放大');
 } else {
-  console.error('❌ 錯誤：缺少手機端圖解卡片或 min-width: 760px 樣式！');
+  console.error('❌ 手機圖解卡片、原圖入口或舊滑動提示有誤');
   process.exit(1);
 }
 

@@ -1,0 +1,55 @@
+    .mobile-diagram { display: none; }
+    @media (max-width: 768px) {
+      .diagram-card-header { align-items: flex-start; }
+      .diagram-card-title {
+        white-space: normal;
+        overflow: visible;
+        overflow-wrap: anywhere;
+      }
+      .diagram-scroll-hint { display: none !important; }
+      .diagram-card-canvas { display: none !important; }
+      .mobile-diagram {
+        display: grid;
+        gap: 12px;
+        padding: 14px;
+        background: var(--bg-primary);
+      }
+      .mobile-diagram-card {
+        min-width: 0;
+        padding: 16px;
+        border: 1px solid var(--border-color);
+        border-left: 4px solid var(--primary);
+        border-radius: 10px;
+        background: var(--bg-secondary);
+        color: var(--text-main);
+        overflow-wrap: anywhere;
+      }
+      .mobile-diagram-card h4 {
+        margin: 0 0 10px;
+        color: var(--text-main);
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+      .mobile-diagram-card p {
+        margin: 6px 0 0;
+        color: var(--text-muted);
+        font-size: 0.94rem;
+        line-height: 1.6;
+      }
+      .mobile-diagram-card .mobile-diagram-emphasis {
+        color: var(--text-main);
+        font-weight: 700;
+      }
+      .mobile-diagram-card .mobile-diagram-relation {
+        margin-top: 12px;
+        padding-top: 10px;
+        border-top: 1px solid var(--border-color);
+        color: var(--primary);
+        font-weight: 700;
+      }
+      .diagram-card-footer > span { display: none; }
+      .diagram-card-footer .diagram-quick-btn {
+        min-height: 40px;
+        font-size: 0.9rem;
+      }
+    }
