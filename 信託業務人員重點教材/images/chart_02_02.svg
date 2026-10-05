@@ -36,7 +36,7 @@
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#f87171"/>
     </marker>
   </defs>
-  <text x="460.0" y="36" fill="#f8fafc" font-size="20" font-weight="700" text-anchor="middle">💰 信託業兩大法定資金門檻＋營業保證金高頻陷阱</text>
+  <text x="460.0" y="36" fill="#f8fafc" font-size="20" font-weight="700" text-anchor="middle">💰 信託業的兩項法定資金門檻與營業保證金辨識</text>
 
   <!-- 兩大法定資金門檻＋一個高頻陷阱 -->
   <g transform="translate(40, 75)" filter="url(#shadow)">
@@ -54,12 +54,12 @@
   <g transform="translate(330, 75)" filter="url(#shadow)">
     <rect width="260" height="230" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
     <rect width="260" height="42" rx="10" fill="url(#gradAmber)"/>
-    <text x="130" y="27" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">⚠️ 高頻陷阱：營業保證金</text>
+    <text x="130" y="27" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">⚠️ 常見錯誤：營業保證金</text>
     
     <text x="130" y="80" fill="#fbbf24" font-size="24" font-weight="800" text-anchor="middle">信託業法無此項</text>
-    <text x="25" y="125" fill="#cbd5e1" font-size="13">• 「資本額 5%」＝錯誤陷阱</text>
-    <text x="25" y="155" fill="#cbd5e1" font-size="13">• 「最低 5,000 萬」＝錯誤陷阱</text>
-    <text x="25" y="185" fill="#cbd5e1" font-size="13">• 「繳存國庫」＝錯誤陷阱</text>
+    <text x="25" y="125" fill="#cbd5e1" font-size="13">• 「資本額 5%」＝錯誤說法</text>
+    <text x="25" y="155" fill="#cbd5e1" font-size="13">• 「最低 5,000 萬」＝錯誤說法</text>
+    <text x="25" y="185" fill="#cbd5e1" font-size="13">• 「繳存國庫」＝錯誤說法</text>
     <text x="25" y="215" fill="#fbbf24" font-size="13">⭐ 正確制度是第 34 條賠償準備金</text>
   </g>
 

@@ -51,7 +51,7 @@
     <text x="20" y="70" fill="#93c5fd" font-size="14" font-weight="700">信託行為有約定者</text>
     <text x="20" y="95" fill="#cbd5e1" font-size="13">• 依信託契約或遺囑</text>
     <text x="20" y="118" fill="#cbd5e1" font-size="13">  所指定之歸屬權利人取得</text>
-    <text x="20" y="140" fill="#34d399" font-size="12">⭐ 契約自治優先原則！</text>
+    <text x="20" y="140" fill="#34d399" font-size="12">先依信託行為的約定</text>
   </g>
 
   <g transform="translate(330, 150)" filter="url(#shadow)">

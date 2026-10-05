@@ -36,7 +36,7 @@
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#f87171"/>
     </marker>
   </defs>
-  <text x="460.0" y="36" fill="#f8fafc" font-size="20" font-weight="700" text-anchor="middle">👵 高齡安養信託專款專用與信託監察人防護罩機制</text>
+  <text x="460.0" y="36" fill="#f8fafc" font-size="20" font-weight="700" text-anchor="middle">👵 高齡安養信託的付款安排與監督機制</text>
 
   <g transform="translate(40, 75)" filter="url(#shadow)">
     <rect width="250" height="210" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
@@ -44,7 +44,7 @@
     <text x="20" y="75" fill="#cbd5e1" font-size="13">• 將畢生積蓄交付信託</text>
     <text x="20" y="105" fill="#cbd5e1" font-size="13">• 自益安排原則不構成他益信託贈與</text>
     <text x="20" y="135" fill="#cbd5e1" font-size="13">• 約定日常每月生活金</text>
-    <text x="20" y="170" fill="#34d399" font-size="13">👉 確保老有所養！</text>
+    <text x="20" y="170" fill="#34d399" font-size="13">👉 依約定支付生活與照護費用</text>
   </g>
 
   <g transform="translate(340, 65)" filter="url(#shadow)">
@@ -53,7 +53,7 @@
     <text x="20" y="75" fill="#a7f3d0" font-size="13">• 醫療院所：看護費用</text>
     <text x="20" y="105" fill="#a7f3d0" font-size="13">• 安養長照機構：月費直撥</text>
     <text x="20" y="135" fill="#a7f3d0" font-size="13">• 輔具採購：檢據實報實銷</text>
-    <text x="20" y="175" fill="#fbbf24" font-size="13">⭐ 錢不經旁人之手防詐騙！</text>
+    <text x="20" y="175" fill="#fbbf24" font-size="13">⭐ 直接付款可降低款項被挪用的風險</text>
   </g>
 
   <g transform="translate(630, 75)" filter="url(#shadow)">

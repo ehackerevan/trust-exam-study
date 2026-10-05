@@ -73,7 +73,7 @@
   <!-- 底部時間線提醒 -->
   <g transform="translate(160, 260)" filter="url(#shadow)">
     <rect width="600" height="80" rx="10" fill="#1e293b" stroke="#64748b" stroke-width="1"/>
-    <text x="300" y="32" fill="#fbbf24" font-size="14" font-weight="700" text-anchor="middle">📅 報稅關鍵時程（每年必考）：</text>
+    <text x="300" y="32" fill="#fbbf24" font-size="14" font-weight="700" text-anchor="middle">📅 報稅日期：</text>
     <text x="300" y="58" fill="#cbd5e1" font-size="13" text-anchor="middle">受託人應於每年 1 月底前開具憑單向國稅局申報，並於 2 月 10 日前填發給受益人！</text>
   </g>
 

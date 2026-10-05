@@ -36,7 +36,7 @@
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#f87171"/>
     </marker>
   </defs>
-  <text x="460.0" y="36" fill="#f8fafc" font-size="20" font-weight="700" text-anchor="middle">🛡️ 受託人防弊規範：享有利益與轉為自有之限制 (信託法第 34、35 條)</text>
+  <text x="460.0" y="36" fill="#f8fafc" font-size="20" font-weight="700" text-anchor="middle">🛡️ 受託人的利益衝突限制：享有利益與轉為自有之限制 (信託法第 34、35 條)</text>
 
   <!-- 左卡片: 第34條 -->
   <g transform="translate(40, 75)" filter="url(#shadow)">
@@ -45,7 +45,7 @@
     <text x="200" y="27" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">🛡️ 信託法第 34 條：受託人享有信託利益限制</text>
     
     <text x="25" y="75" fill="#f87171" font-size="15" font-weight="700">❌ 原則：受託人不得享有信託利益！</text>
-    <text x="25" y="98" fill="#cbd5e1" font-size="13">避免受託人利用管理之便，自肥侵吞信託利益。</text>
+    <text x="25" y="98" fill="#cbd5e1" font-size="13">避免受託人因管理信託財產而取得不當利益。</text>
 
     <text x="25" y="145" fill="#34d399" font-size="15" font-weight="700">⭕ 例外許可：共同受益人之一</text>
     <text x="25" y="170" fill="#cbd5e1" font-size="13">受託人「得」為共同受益人之一（如合夥/共同共有）。</text>
