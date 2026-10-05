@@ -1,74 +1,93 @@
+    // 教材圖解的文字取自校訂後的 SVG，頁面以 HTML/CSS 呈現，不依賴圖檔縮放。
     const escapeDiagramText = value => String(value).replace(/[&<>"']/g, char => ({
       '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
     })[char]);
 
-    function diagramDetail(block) {
-      return `<h4>${escapeDiagramText(block.title)}</h4>
-        ${block.lines.map(line => `<p${line.emphasis ? ' class="mobile-diagram-emphasis"' : ''}>${escapeDiagramText(line.text)}</p>`).join('')}
-        ${block.relation ? `<p class="mobile-diagram-relation">${escapeDiagramText(block.relation)}</p>` : ''}`;
+    function diagramLines(lines) {
+      if (!lines.length) return '';
+      return `<ul class="study-diagram-lines">${lines.map(line => {
+        const value = line.text.replace(/^\s*•\s*/, '').trim();
+        return `<li${line.emphasis ? ' class="study-diagram-emphasis"' : ''}>${escapeDiagramText(value)}</li>`;
+      }).join('')}</ul>`;
     }
 
-    function diagramFocusStyle(diagram, block) {
-      const [width, height] = diagram.size;
-      const [x, y, w, h] = block.bounds;
-      return `left:${x / width * 100}%;top:${y / height * 100}%;width:${w / width * 100}%;height:${h / height * 100}%`;
+    function diagramNode(block) {
+      return `<section class="study-diagram-node">
+        <h4>${escapeDiagramText(block.title)}</h4>
+        ${diagramLines(block.lines)}
+        ${block.relation ? `<p class="study-diagram-relation">${escapeDiagramText(block.relation)}</p>` : ''}
+      </section>`;
     }
 
-    function renderMobileDiagram(href, caption) {
+    function classificationDiagram(blocks) {
+      const items = [...blocks];
+      const root = items[0] && !items[0].lines.length ? items.shift() : null;
+      const groups = [];
+      let current;
+      for (const block of items) {
+        if (!block.lines.length) {
+          current = { title: block.title, children: [] };
+          groups.push(current);
+        } else {
+          if (!current) {
+            current = { title: '', children: [] };
+            groups.push(current);
+          }
+          current.children.push(block);
+        }
+      }
+      return `${root ? `<p class="study-diagram-root">${escapeDiagramText(root.title)}</p>` : ''}
+        <div class="study-diagram-groups">${groups.map(group => `<section class="study-diagram-group">
+          ${group.title ? `<h3>${escapeDiagramText(group.title)}</h3>` : ''}
+          <div class="study-diagram-children">${group.children.map(diagramNode).join('')}</div>
+        </section>`).join('')}</div>`;
+    }
+
+    function comparisonDiagram(blocks) {
+      const items = [...blocks];
+      const root = items[0] && !items[0].lines.length ? items.shift() : null;
+      return `${root ? `<p class="study-diagram-root">${escapeDiagramText(root.title)}</p>` : ''}
+        <div class="study-diagram-panels">${items.map(diagramNode).join('')}</div>`;
+    }
+
+    function numberedComparison(blocks) {
+      // REITs / REATs 原圖逐項對照，手機依比較項目排列，避免來回找兩欄。
+      const sides = blocks.map(block => {
+        const entries = [];
+        for (let i = 0; i < block.lines.length; i += 2) {
+          entries.push({ label: block.lines[i]?.text || '', value: block.lines[i + 1]?.text || '' });
+        }
+        return entries;
+      });
+      return `<div class="study-diagram-criteria">${sides[0].map((entry, index) => `<section class="study-diagram-criterion">
+        <h4>${escapeDiagramText(entry.label)}</h4>
+        <dl>
+          <div><dt>${escapeDiagramText(blocks[0].title)}</dt><dd>${escapeDiagramText(entry.value)}</dd></div>
+          <div><dt>${escapeDiagramText(blocks[1].title)}</dt><dd>${escapeDiagramText(sides[1][index]?.value || '')}</dd></div>
+        </dl>
+      </section>`).join('')}</div>`;
+    }
+
+    function renderStudyDiagram(href, caption) {
       const filename = decodeURI(href).split('/').pop();
       const diagram = mobileDiagramData[filename];
       if (!diagram) return '';
-      const selected = 0;
-      return `<div class="mobile-diagram" data-filename="${escapeDiagramText(filename)}" data-selected="${selected}" role="group" aria-label="${escapeDiagramText(caption)}：圖解導覽">
-        <p class="mobile-diagram-hint">點圖中區塊查看重點，也可從選單直接選擇。</p>
-        <div class="mobile-diagram-overview" onclick="selectMobileDiagramPoint(this, event)">
-          <img src="${href}" alt="${escapeDiagramText(caption)}：完整架構圖" loading="lazy" />
-          <span class="mobile-diagram-focus" style="${diagramFocusStyle(diagram, diagram.blocks[selected])}" aria-hidden="true"></span>
-        </div>
-        <div class="mobile-diagram-controls">
-          <button type="button" onclick="stepMobileDiagram(this, -1)" aria-label="上一個區塊">‹</button>
-          <select aria-label="選擇圖中區塊" onchange="setMobileDiagramSelection(this.closest('.mobile-diagram'), Number(this.value))">
-            ${diagram.blocks.map((block, index) => `<option value="${index}">${escapeDiagramText(block.title)}</option>`).join('')}
-          </select>
-          <button type="button" onclick="stepMobileDiagram(this, 1)" aria-label="下一個區塊">›</button>
-        </div>
-        <div class="mobile-diagram-detail" aria-live="polite">${diagramDetail(diagram.blocks[selected])}</div>
-      </div>`;
-    }
-
-    function setMobileDiagramSelection(container, index) {
-      const diagram = mobileDiagramData[container.dataset.filename];
-      const selected = Math.max(0, Math.min(diagram.blocks.length - 1, index));
-      container.dataset.selected = selected;
-      container.querySelector('select').value = selected;
-      container.querySelector('.mobile-diagram-focus').style.cssText = diagramFocusStyle(diagram, diagram.blocks[selected]);
-      container.querySelector('.mobile-diagram-detail').innerHTML = diagramDetail(diagram.blocks[selected]);
-    }
-
-    function stepMobileDiagram(button, delta) {
-      const container = button.closest('.mobile-diagram');
-      const diagram = mobileDiagramData[container.dataset.filename];
-      const next = (Number(container.dataset.selected) + delta + diagram.blocks.length) % diagram.blocks.length;
-      setMobileDiagramSelection(container, next);
-    }
-
-    function selectMobileDiagramPoint(overview, event) {
-      const container = overview.closest('.mobile-diagram');
-      const diagram = mobileDiagramData[container.dataset.filename];
-      const rect = overview.querySelector('img').getBoundingClientRect();
-      const x = (event.clientX - rect.left) / rect.width * diagram.size[0];
-      const y = (event.clientY - rect.top) / rect.height * diagram.size[1];
-      let best = 0;
-      let distance = Infinity;
-      diagram.blocks.forEach((block, index) => {
-        const [bx, by, bw, bh] = block.bounds;
-        const dx = Math.max(bx - x, 0, x - bx - bw);
-        const dy = Math.max(by - y, 0, y - by - bh);
-        const score = dx * dx + dy * dy;
-        if (score < distance) {
-          distance = score;
-          best = index;
-        }
-      });
-      setMobileDiagramSelection(container, best);
+      const { blocks, kind } = diagram;
+      let content;
+      if (kind === 'classification') content = classificationDiagram(blocks);
+      else if (filename === 'chart_06_03.svg') content = numberedComparison(blocks);
+      else if (kind === 'compare') content = comparisonDiagram(blocks);
+      else if (kind === 'decision') {
+        content = `<div class="study-diagram-question">${diagramNode(blocks[0])}</div>
+          <div class="study-diagram-branches">${blocks.slice(1).map(diagramNode).join('')}</div>`;
+      } else {
+        const items = [...blocks];
+        const root = items[0] && !items[0].lines.length ? items.shift() : null;
+        content = `${root ? `<p class="study-diagram-root">${escapeDiagramText(root.title)}</p>` : ''}
+          <ol class="study-diagram-sequence">${items.map(block => `<li>${diagramNode(block)}</li>`).join('')}</ol>`;
+      }
+      return `<figure class="study-diagram study-diagram--${kind}" aria-label="${escapeDiagramText(caption)}">
+        <figcaption><span class="study-diagram-icon">◆</span>${escapeDiagramText(caption)}</figcaption>
+        ${content}
+      </figure>`;
     }

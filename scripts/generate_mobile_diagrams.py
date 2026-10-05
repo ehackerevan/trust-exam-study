@@ -1,4 +1,4 @@
-"""從教材 SVG 的節點位置與文字產生手機互動導覽，嵌入兩份離線網站。"""
+"""從教材圖解擷取校訂後文字，產生可離線閱讀的 HTML/CSS 圖表。"""
 import json
 import re
 from pathlib import Path
@@ -15,9 +15,8 @@ def text_of(element):
 
 def diagram_data(svg_path):
     root = ET.parse(svg_path).getroot()
-    _, _, view_width, view_height = (float(value) for value in root.get('viewBox').split())
     blocks = []
-    def add_group(child, parent_x=0, parent_y=0):
+    def add_group(child):
         lines = []
         for element in child:
             if element.tag != SVG_NS + 'text':
@@ -26,32 +25,13 @@ def diagram_data(svg_path):
             if value:
                 lines.append({'text': value, 'emphasis': element.get('font-weight', '').isdigit()
                               and int(element.get('font-weight')) >= 600})
-        transform = re.fullmatch(r'translate\(([\d.]+)[, ]+([\d.]+)\)', child.get('transform', ''))
-        if not transform:
-            raise ValueError(f'{svg_path.name} 節點位置格式無法判讀')
-        local_x, local_y = map(float, transform.groups())
-        x, y = parent_x + local_x, parent_y + local_y
-        shape = next(shape for shape in child if shape.tag in (SVG_NS + 'rect', SVG_NS + 'polygon'))
-        if shape.tag == SVG_NS + 'rect':
-            x += float(shape.get('x', 0))
-            y += float(shape.get('y', 0))
-            width = float(shape.get('width'))
-            height = float(shape.get('height'))
-        else:
-            points = [tuple(map(float, pair.split(','))) for pair in shape.get('points').split()]
-            min_x, max_x = min(p[0] for p in points), max(p[0] for p in points)
-            min_y, max_y = min(p[1] for p in points), max(p[1] for p in points)
-            x += min_x
-            y += min_y
-            width, height = max_x - min_x, max_y - min_y
         if lines:
-            blocks.append({'title': lines[0]['text'], 'lines': lines[1:],
-                           'bounds': [x, y, width, height]})
+            blocks.append({'title': lines[0]['text'], 'lines': lines[1:]})
         for nested in child:
             if nested.tag == SVG_NS + 'g' and any(
                 shape.tag in (SVG_NS + 'rect', SVG_NS + 'polygon') for shape in nested
             ):
-                add_group(nested, parent_x + local_x, parent_y + local_y)
+                add_group(nested)
 
     for child in root:
         if child.tag == SVG_NS + 'g' and any(
@@ -69,7 +49,49 @@ def diagram_data(svg_path):
         blocks[2]['relation'] = '法定例外：依信託法第 12 條判斷'
     if not blocks:
         raise ValueError(f'{svg_path.name} 缺少可顯示的圖解文字')
-    return {'size': [view_width, view_height], 'blocks': blocks}
+    return {'kind': LAYOUTS[svg_path.name], 'blocks': blocks}
+
+
+LAYOUTS = {
+    'chart_00_01.svg': 'classification',
+    'chart_01_01.svg': 'flow',
+    'chart_01_02.svg': 'classification',
+    'chart_01_03.svg': 'decision',
+    'chart_01_04.svg': 'decision',
+    'chart_01_05.svg': 'flow',
+    'chart_01_06.svg': 'compare',
+    'chart_01_07.svg': 'flow',
+    'chart_02_01.svg': 'classification',
+    'chart_02_02.svg': 'compare',
+    'chart_02_03.svg': 'compare',
+    'chart_02_04.svg': 'flow',
+    'chart_02_05.svg': 'flow',
+    'chart_03_01.svg': 'flow',
+    'chart_03_02.svg': 'timeline',
+    'chart_03_03.svg': 'flow',
+    'chart_03_04.svg': 'compare',
+    'chart_03_05.svg': 'compare',
+    'chart_04_01.svg': 'classification',
+    'chart_04_02.svg': 'flow',
+    'chart_04_03.svg': 'compare',
+    'chart_05_01.svg': 'compare',
+    'chart_05_02.svg': 'flow',
+    'chart_05_03.svg': 'flow',
+    'chart_05_04.svg': 'compare',
+    'chart_05_05.svg': 'flow',
+    'chart_06_01.svg': 'compare',
+    'chart_06_02.svg': 'flow',
+    'chart_06_03.svg': 'compare',
+    'chart_06_04.svg': 'flow',
+    'chart_06_05.svg': 'flow',
+    'chart_07_01.svg': 'compare',
+    'chart_07_02.svg': 'flow',
+    'chart_07_03.svg': 'compare',
+    'chart_07_04.svg': 'flow',
+    'chart_08_01.svg': 'timeline',
+    'chart_08_02.svg': 'compare',
+    'chart_08_03.svg': 'flow',
+}
 
 
 references = set()
@@ -79,6 +101,8 @@ for markdown in MATERIAL.glob('*.md'):
 data = {name: diagram_data(ROOT / 'images' / name) for name in sorted(references)}
 if len(data) != 38:
     raise ValueError(f'預期 38 張教材圖解，實際找到 {len(data)} 張')
+if set(data) != set(LAYOUTS):
+    raise ValueError('圖解排版設定未涵蓋全部教材圖')
 
 payload = json.dumps(data, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
 styles = (ROOT / 'scripts' / 'mobile_diagrams.css').read_text().rstrip()
@@ -97,10 +121,8 @@ for directory in (ROOT, MATERIAL):
                       lambda _: style_block, html, count=1, flags=re.MULTILINE)
     else:
         html = html.replace('  </style>', style_block + '\n  </style>', 1)
-    html = re.sub(
-        r'\s*/\* 手機/平板響應式優化（寬度 <= 768px） \*/[\s\S]*?(?=\s*/\* topic-statistics:styles:start \*/)',
-        '\n', html, count=1,
-    )
+    html = re.sub(r'\s*/\* ==================== 核心圖解卡片[\s\S]*?(?=\s*/\* topic-statistics:styles:start \*/)',
+                  '\n', html, count=1)
     render_block = f'    // mobile-diagrams:renderer:start\n{renderer}\n    // mobile-diagrams:renderer:end'
     if '// mobile-diagrams:renderer:start' in html:
         html = re.sub(r'^[ \t]*// mobile-diagrams:renderer:start[\s\S]*?^[ \t]*// mobile-diagrams:renderer:end',
@@ -108,12 +130,13 @@ for directory in (ROOT, MATERIAL):
     else:
         html = html.replace('    const renderer = new marked.Renderer();',
                             render_block + '\n    const renderer = new marked.Renderer();', 1)
-    html = html.replace('👈 手機左右滑動看清全圖 👉', '手機版逐項閱讀')
-    html = html.replace('手機版逐項閱讀', '點圖選區塊看重點')
-    if '${renderMobileDiagram(encodedHref, rawTitle)}' not in html:
-        html = html.replace('          <div class="diagram-card-canvas" onclick=',
-                            '          ${renderMobileDiagram(encodedHref, rawTitle)}\n          <div class="diagram-card-canvas" onclick=', 1)
-    html = html.replace('🔍 全螢幕放大檢視', '🔍 查看完整架構圖')
+    image_renderer = '''    renderer.image = function(href, title, text) {
+      return renderStudyDiagram(href, title || text || '圖解') || originalImageRenderer(href, title, text);
+    };
+
+'''
+    html = re.sub(r'^[ \t]*renderer\.image = function\(href, title, text\) \{[\s\S]*?(?=    // 表格包裹器)',
+                  lambda _: image_renderer, html, count=1, flags=re.MULTILINE)
     index.write_text(html)
 
-print(f'已同步 {len(data)} 張圖解的手機互動導覽資料至兩份網站。')
+print(f'已同步 {len(data)} 張 HTML/CSS 教材圖解至兩份網站。')

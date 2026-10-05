@@ -1,96 +1,133 @@
-    .mobile-diagram { display: none; }
-    @media (max-width: 768px) {
-      .diagram-card-header { align-items: flex-start; }
-      .diagram-card-title {
-        white-space: normal;
-        overflow: visible;
-        overflow-wrap: anywhere;
-      }
-      .diagram-scroll-hint { display: none !important; }
-      .diagram-card-canvas { display: none !important; }
-      .mobile-diagram {
-        display: block;
-        padding: 14px;
-        background: var(--bg-primary);
-        color: var(--text-main);
-      }
-      .mobile-diagram-hint {
-        margin: 0 0 10px;
-        color: var(--text-muted);
-        font-size: 0.85rem;
-      }
-      .mobile-diagram-overview {
-        position: relative;
-        width: 100%;
-        overflow: hidden;
-        border-radius: 8px;
-        background: #0b1120;
-        cursor: pointer;
-      }
-      .mobile-diagram-overview img {
-        display: block;
-        width: 100%;
-        height: auto;
-      }
-      .mobile-diagram-focus {
-        position: absolute;
-        pointer-events: none;
-        border: 2px solid #fff;
-        border-radius: 4px;
-        box-shadow: 0 0 0 2px var(--primary), 0 0 14px 4px rgba(16, 185, 129, 0.6);
-      }
-      .mobile-diagram-controls {
-        display: grid;
-        grid-template-columns: 42px minmax(0, 1fr) 42px;
-        gap: 8px;
-        margin: 12px 0;
-      }
-      .mobile-diagram-controls button,
-      .mobile-diagram-controls select {
-        min-width: 0;
-        min-height: 44px;
-        padding: 5px;
-        border: 1px solid var(--border-color);
-        border-radius: 8px;
-        background: var(--bg-secondary);
-        color: var(--text-main);
-        font: inherit;
-      }
-      .mobile-diagram-controls button { font-size: 1.5rem; }
-      .mobile-diagram-detail {
-        min-height: 72px;
-        max-height: min(38vh, 300px);
-        overflow-y: auto;
-        padding: 14px;
-        border: 1px solid var(--border-color);
-        border-left: 4px solid var(--primary);
-        border-radius: 10px;
-        background: var(--bg-secondary);
-        overflow-wrap: anywhere;
-      }
-      .mobile-diagram-detail h4 {
-        margin: 0 0 8px;
-        color: var(--text-main);
-        font-size: 1rem;
-      }
-      .mobile-diagram-detail p {
-        margin: 6px 0 0;
-        color: var(--text-muted);
-        font-size: 0.94rem;
-        line-height: 1.5;
-      }
-      .mobile-diagram-detail .mobile-diagram-emphasis {
-        color: var(--text-main);
-        font-weight: 700;
-      }
-      .mobile-diagram-detail .mobile-diagram-relation {
-        margin-top: 10px;
-        color: var(--primary);
-        font-weight: 700;
-      }
-      .diagram-card-footer > span { display: none; }
-      .diagram-card-footer .diagram-quick-btn {
-        min-height: 40px;
-        font-size: 0.9rem;
-      }
+    .markdown-body .study-diagram {
+      min-width: 0;
+      margin: 24px 0;
+      padding: 20px;
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      background: var(--bg-secondary);
+      color: var(--text-main);
+      overflow-wrap: anywhere;
+    }
+    .markdown-body .study-diagram figcaption {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin: 0 0 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 1.08rem;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+    .study-diagram-icon { color: var(--primary); }
+    .markdown-body .study-diagram-root,
+    .study-diagram-question .study-diagram-node {
+      margin: 0 0 14px;
+      padding: 9px 12px;
+      border-left: 4px solid var(--primary);
+      border-radius: 4px;
+      background: var(--primary-light);
+      color: var(--text-main);
+      font-weight: 700;
+    }
+    .study-diagram-groups,
+    .study-diagram-panels,
+    .study-diagram-branches {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 12px;
+    }
+    .study-diagram-group,
+    .study-diagram-panels > .study-diagram-node,
+    .study-diagram-branches > .study-diagram-node {
+      min-width: 0;
+      padding: 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      background: var(--bg-primary);
+    }
+    .markdown-body .study-diagram-group h3 {
+      margin: 0 0 10px;
+      padding: 0 0 8px;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--primary);
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+    .study-diagram-children { border-left: 2px solid var(--primary); }
+    .study-diagram-children > .study-diagram-node {
+      padding: 7px 0 8px 12px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .study-diagram-children > .study-diagram-node:last-child { border-bottom: 0; }
+    .markdown-body .study-diagram-node h4 {
+      margin: 0 0 5px;
+      color: var(--text-main);
+      font-size: 0.98rem;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+    .markdown-body .study-diagram-lines {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .markdown-body .study-diagram-lines li {
+      margin: 3px 0;
+      padding: 0;
+      color: var(--text-muted);
+      font-size: 0.91rem;
+      line-height: 1.45;
+    }
+    .markdown-body .study-diagram-lines .study-diagram-emphasis {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+    .markdown-body .study-diagram-relation {
+      margin: 8px 0 0;
+      color: var(--primary);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+    .markdown-body .study-diagram-sequence {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .study-diagram-sequence > li {
+      position: relative;
+      margin: 0 0 0 11px;
+      padding: 0 0 14px 22px;
+      border-left: 2px solid var(--primary);
+    }
+    .study-diagram-sequence > li:last-child { padding-bottom: 0; border-left-color: transparent; }
+    .study-diagram-sequence > li::before {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: -7px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--primary);
+    }
+    .study-diagram-criteria { display: grid; gap: 10px; }
+    .study-diagram-criterion {
+      padding: 10px 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      background: var(--bg-primary);
+    }
+    .study-diagram-criterion h4 { margin: 0 0 8px; color: var(--primary); font-size: 0.95rem; }
+    .study-diagram-criterion dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 0; }
+    .study-diagram-criterion dt { color: var(--text-main); font-size: 0.88rem; font-weight: 700; }
+    .study-diagram-criterion dd { margin: 4px 0 0; color: var(--text-muted); font-size: 0.9rem; line-height: 1.45; }
+    @media (max-width: 640px) {
+      .markdown-body .study-diagram { padding: 14px; margin: 18px 0; }
+      .markdown-body .study-diagram figcaption { font-size: 1rem; }
+      .study-diagram-groups,
+      .study-diagram-panels,
+      .study-diagram-branches { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+      .study-diagram-criterion dl { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+      .study-diagram-criterion dl > div { padding-left: 8px; border-left: 2px solid var(--primary); }
     }
