@@ -80,7 +80,7 @@ const chapters = Object.fromEntries(
 );
 
 const lawAuditChecks = [
-  [chapters.c01.includes('法定例外只有兩類') && chapters.c01.includes('通知發行公司'), '第 01 章：信託法第 25 條例外與第 4 條公示規則'],
+  [chapters.c01.includes('法定例外只有兩類') && chapters.c01.includes('通知發行公司') && chapters.c01.includes('第 6 條第 3 項') && !chapters.c01.includes('第 6 條第 2 項'), '第 01 章：信託法第 25 條例外、第 4 條公示規則與第 6 條項次'],
   [chapters.c02.includes('至少繳足 20% 股款') && chapters.c02.includes('不具運用決定權') && chapters.c02.includes('半年度終了後 2 個月內') && chapters.c02.includes('年度終了後 4 個月內'), '第 02 章：設立出資、利害關係交易與定期報告期限'],
   [chapters.c03.includes('歸戶計算不是一律按每一信託各自獨立') && chapters.c03.includes('自益信託') && chapters.c03.includes('若當年度贈與總額已達依法應申報的程度'), '第 03 章：地價稅歸戶、印花稅與贈與稅申報條件'],
   [chapters.c04.includes('淨資產總值 30%') && chapters.c04.includes('該金融機構淨值 10%') && chapters.c04.includes('淨資產價值 5%'), '第 04 章：集合管理運用集中度與流動性比率'],
