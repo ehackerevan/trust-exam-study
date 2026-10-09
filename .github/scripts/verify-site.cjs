@@ -6,6 +6,7 @@ const warning = '若覺得答案有怪怪的，請一律查資料，我比較懶
 let data;
 for (const file of ['信託證照教材.html', '信託證照教材_離線版.html', '信託歷屆題庫.html']) {
  const html = fs.readFileSync(path.join(root, file), 'utf8');
+ assert(html.includes('rel="icon" href="data:image/svg+xml,'));
  assert(html.includes(warning), `${file}: missing warning`);
  assert(!html.includes('href="無效檔案/'));
  for (const image of new Set(html.match(/教材圖解\/[^\s"'<>\\)]+\.svg/g) || [])) assert(fs.existsSync(path.join(root, image)), image);
