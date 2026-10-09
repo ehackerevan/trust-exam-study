@@ -578,7 +578,7 @@
         <span>題 (可練習題共 <span id="totalCount">0</span> 題)</span>
       </div>
       <div style="font-size:0.85rem; color:var(--text-sub);">
-        <span>💡 題目右上角直接標註標準解答，點擊選項可即時對答案</span>
+        <span>💡 先點選你的答案，即會顯示正確答案與正確選項</span>
       </div>
       <p class="quality-note" role="note">已移除第47期130題、複選或有複選疑義3題、官方送分1題及原卷不一致4題。保留2,722題，原題號不變。</p>
     </div>
@@ -612,6 +612,7 @@
         (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
       document.documentElement.setAttribute('data-theme', savedTheme);
 
+      toggleMode();
       applyFilters();
 
       window.addEventListener('scroll', () => {
@@ -777,6 +778,7 @@
       } else {
         el.classList.add('user-selected-wrong');
       }
+      revealSingleAns(el.closest('.q-card').querySelector('.btn-reveal'));
     }
 
     function revealSingleAns(btn) {
