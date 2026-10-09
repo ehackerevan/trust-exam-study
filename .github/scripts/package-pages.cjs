@@ -4,7 +4,7 @@ const {execFileSync} = require('node:child_process');
 const root = path.resolve(__dirname, '../..');
 const output = path.join(root, '.pages-output');
 fs.mkdirSync(output, {recursive:true});
-for (const file of ['index.html', '信託證照教材.html', '信託證照教材_離線版.html', '信託歷屆題庫.html']) fs.copyFileSync(path.join(root,file), path.join(output,file));
+for (const file of ['index.html', '信託證照教材.html', '信託證照教材_離線版.html', '信託歷屆題庫.html', '答題紀錄與隨機練習.js']) fs.copyFileSync(path.join(root,file), path.join(output,file));
 fs.cpSync(path.join(root,'教材圖解'), path.join(output,'教材圖解'), {recursive:true});
 fs.writeFileSync(path.join(output,'.nojekyll'), '');
 fs.writeFileSync(path.join(output,'build-version.txt'), execFileSync('git',['rev-parse','HEAD'],{cwd:root}).toString().trim()+'\n');

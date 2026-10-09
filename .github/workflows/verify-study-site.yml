@@ -22,7 +22,9 @@ jobs:
         with:
           node-version: '22'
       - name: Verify site
-        run: node .github/scripts/verify-site.cjs
+        run: |
+          node .github/scripts/verify-site.cjs
+          node .github/scripts/test-practice.cjs
 
   build:
     if: github.event_name != 'pull_request'

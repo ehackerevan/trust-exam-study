@@ -20,6 +20,8 @@ for (const file of ['信託證照教材.html', '信託證照教材_離線版.htm
   for (const qs of Object.values(course.quizzes)) for (const q of qs) assert(q.answer >= 0 && q.answer <= 3 && q.options.length === 4);
   if (data) assert.deepEqual(course, data); else data = course;
  } else {
+  assert(html.includes('src="答題紀錄與隨機練習.js"'));
+  assert(html.includes('會記錄你的答題狀況，但如果瀏覽器紀錄清除掉，就會消失!'));
   const qs = JSON.parse(html.match(/const RAW_QUESTIONS = (\[[^\n]+\]);/)[1]);
   assert.equal(qs.length, 2722);
   assert(qs.every(q => q.p !== 47 && (String(q.a).match(/[1-4]/g) || []).length === 1));
