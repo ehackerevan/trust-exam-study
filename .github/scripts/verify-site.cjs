@@ -4,7 +4,7 @@ const assert = require('node:assert/strict');
 const root = path.resolve(__dirname, '../..');
 const warning = '若覺得答案有怪怪的，請一律查資料，我比較懶，用AI整理、檢查幾次就沒再人工審核了';
 let data;
-for (const file of ['信託證照教材.html', '信託證照教材_離線版.html', '信託歷屆題庫.html']) {
+for (const file of ['index.html', '信託證照教材.html', '信託證照教材_離線版.html', '信託歷屆題庫.html']) {
  const html = fs.readFileSync(path.join(root, file), 'utf8');
  assert(html.includes('rel="icon" href="data:image/svg+xml,'));
  assert(html.includes(warning), `${file}: missing warning`);
@@ -32,5 +32,8 @@ for (const file of ['信託證照教材.html', '信託證照教材_離線版.htm
   assert.equal(qs.find(q=>q.p===52 && q.s===1 && q.n===2).a, '4');
  }
 }
-assert(fs.readFileSync(path.join(root, 'index.html'), 'utf8').includes('url=信託證照教材.html'));
+const entry = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+assert.equal(entry, fs.readFileSync(path.join(root, '信託證照教材.html'), 'utf8'));
+assert(!/http-equiv=["']refresh/i.test(entry));
+assert(fs.readFileSync(path.join(root, '信託歷屆題庫.html'), 'utf8').includes('href="index.html"'));
 console.log('PASS: pages, warnings, questions, image references and default entry');
