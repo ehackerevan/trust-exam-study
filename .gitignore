@@ -2,3 +2,6 @@
 node_modules/
 __pycache__/
 *.pyc
+
+.pages-output/
+.github/驗收紀錄/
