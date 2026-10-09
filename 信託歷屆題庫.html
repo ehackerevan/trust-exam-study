@@ -506,17 +506,62 @@
   .question-warning { margin:12px 0; padding:10px 12px; border-left:3px solid #b45309; background:rgba(180,83,9,.09); color:inherit; font-size:.875rem; line-height:1.7; overflow-wrap:anywhere; }
 
     .progress-notice { margin:0; padding:12px 20px; background:var(--warning-light); color:var(--text-main); border-bottom:1px solid var(--warning-border); line-height:1.7; }
-    .practice-panel { padding:20px; margin-bottom:20px; border:1px solid var(--border-color); border-radius:12px; background:var(--bg-card); }
+    .practice-panel { padding:20px; margin-bottom:20px; border:1px solid var(--border); border-radius:12px; background:var(--card-bg); }
     .practice-panel h2 { margin:0 0 12px; font-size:1.15rem; }
     .practice-actions { display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
     .practice-actions select { max-width:100%; flex:1; min-width:180px; }
     .practice-summary, .practice-session { margin:12px 0; line-height:1.8; }
-    .topic-error-row { display:flex; flex-wrap:wrap; align-items:center; gap:8px; padding:10px 0; border-bottom:1px solid var(--border-color); }
+    .topic-error-row { display:flex; flex-wrap:wrap; align-items:center; gap:8px; padding:10px 0; border-bottom:1px solid var(--border); }
     .topic-error-row strong { flex:1; min-width:150px; }
     .practice-panel small { display:block; line-height:1.7; color:var(--text-sub); margin:10px 0; }
     .opt-chip { width:100%; font:inherit; text-align:left; color:inherit; }
     .opt-chip:disabled { cursor:default; opacity:1; }
     body.mode-quiz .q-note-box { display:none; }
+
+    [hidden] { display:none !important; }
+    .brand-title h1 { font-size:1.15rem; margin:0; }
+    .btn, select, input[type="text"], summary { min-height:44px; }
+    button:focus-visible, a:focus-visible, select:focus-visible, summary:focus-visible { outline:3px solid var(--primary); outline-offset:3px; }
+    .practice-panel { padding:16px; margin-bottom:12px; }
+    .practice-tabs { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:8px; }
+    .practice-tabs .btn { justify-content:center; padding:10px 8px; white-space:normal; }
+    .practice-tabs [aria-pressed="true"] { background:var(--primary); color:white; border-color:var(--primary); }
+    .filter-bar { padding:8px 0 0; border:0; }
+    .filter-bar summary { cursor:pointer; padding:10px 0; }
+    .filter-bar[open] .filter-inner { padding-top:12px; }
+    .filter-inner { gap:16px; }
+    .filter-group select { min-width:0; max-width:100%; }
+    #topicControls { margin-top:16px; }
+    .practice-details { margin-top:12px; border-top:1px solid var(--border); padding-top:8px; }
+    .practice-details summary { cursor:pointer; padding:10px 0; }
+    #storageNotice:empty { display:none; }
+    #storageNotice { margin-top:12px; color:var(--warning); }
+    .round-summary { margin:16px 0; }
+    .practice-session { font-weight:600; margin:0 0 4px; }
+    .bank-count, .answer-hint { color:var(--text-sub); font-size:.85rem; }
+    .q-card { scroll-margin-top:140px; }
+    .opt-label { min-width:0; overflow-wrap:anywhere; }
+    .opt-check { flex-shrink:0; }
+    @media (max-width:768px) {
+      .header-inner { flex-direction:row; align-items:center; gap:8px; padding:10px 16px; }
+      .header-actions { gap:6px; }
+      .header-actions .btn { padding:8px; font-size:.85rem; }
+      .container { padding:16px 12px; }
+      .practice-panel { padding:12px; }
+      .practice-tabs { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .filter-group { align-items:stretch; gap:8px; }
+      .filter-group .filter-label { width:100%; }
+      #periodSelect { width:100%; }
+      .filter-group > div { display:grid !important; grid-template-columns:repeat(3,minmax(0,1fr)); width:100%; }
+      .filter-group > div .btn { padding:8px 4px; justify-content:center; font-size:.85rem; }
+      #topicControls label { width:100%; }
+      #topicControls select { width:100%; flex-basis:100%; }
+      .opt-chip { flex-wrap:wrap; }
+      .opt-label { flex:1; }
+      .opt-check { width:100%; padding-left:36px; }
+      .q-card-header { gap:8px; }
+      .badge-topic { white-space:normal; }
+    }
   </style>
 </head>
 <body>
@@ -525,23 +570,28 @@
   <header class="top-header">
     <div class="header-inner">
       <div class="brand-title">
-        <span>📜 信託業務人員測驗</span>
-        <span class="brand-badge">歷屆全真題庫大全</span>
+        <h1>信託歷屆題庫</h1>
       </div>
       <div class="header-actions">
-        <a class="btn" href="信託證照教材.html">返回圖解教材</a>
-        <button class="btn btn-primary" id="modeBtn" onclick="toggleMode()">
-          <span id="modeIcon">👁️</span> <span id="modeText">隱藏解答 (刷題模式)</span>
-        </button>
-        <button class="btn" onclick="toggleTheme()">🌓 模式</button>
+        <a class="btn" href="信託證照教材.html">返回教材</a>
+        <button class="btn" onclick="toggleTheme()">🌓 主題</button>
       </div>
     </div>
   </header>
 
-  <div class="filter-bar">
+  <main class="container">
+    <section class="practice-panel" aria-label="練習方式">
+      <nav class="practice-tabs" aria-label="選擇練習方式">
+        <button type="button" class="btn" id="randomPracticeBtn" data-view="random" aria-pressed="false" onclick="startRandomPractice()">隨機20題</button>
+        <button type="button" class="btn" id="wrongQuestionsBtn" data-view="wrong" aria-pressed="false" onclick="showWrongQuestions()">我的錯題</button>
+        <button type="button" class="btn" id="topicModeBtn" data-view="topic" aria-pressed="false" onclick="startTopicPractice()">知識點練習</button>
+        <button type="button" class="btn" id="historyModeBtn" data-view="history" aria-pressed="true" onclick="applyFilters()">歷屆瀏覽</button>
+      </nav>
+  <details class="filter-bar" id="historyControls">
+    <summary id="filterSummary">第62期 · 全部科目 · 篩選題目</summary>
     <div class="filter-inner">
       <div class="filter-group">
-        <label class="filter-label">選擇屆數：</label>
+        <label class="filter-label" for="periodSelect">期別</label>
         <select id="periodSelect" onchange="applyFilters()">
           <option value="62" selected>第 62 屆 (最新)</option>
           <option value="all">全部歷屆瀏覽 (41~62 屆，不含47屆)</option>
@@ -569,7 +619,7 @@
       </div>
 
       <div class="filter-group">
-        <label class="filter-label">科目篩選：</label>
+        <span class="filter-label">科目</span>
         <div style="display:flex; gap:4px;">
           <button class="btn btn-active" id="subBtnAll" onclick="setSubject(0)">全部科目</button>
           <button class="btn" id="subBtnLaw" onclick="setSubject(1)">📘 信託法規</button>
@@ -578,51 +628,40 @@
       </div>
 
       <div class="filter-group">
-        <input type="text" id="searchInput" class="search-input" placeholder="🔍 搜尋法條、概念或題目..." oninput="debounceSearch()">
+        <input aria-label="搜尋題目與知識點" type="text" id="searchInput" class="search-input" placeholder="🔍 搜尋法條、概念或題目..." oninput="debounceSearch()">
         <button class="btn" onclick="clearSearch()">清除</button>
       </div>
     </div>
-  </div>
+  </details>
 
-  <main class="container">
-    <div class="stats-card">
-      <div class="stat-badge">
-        <span>目前顯示：</span>
-        <span class="stat-count" id="displayCount">0</span>
-        <span>題 (可練習題共 <span id="totalCount">0</span> 題)</span>
+      <div class="practice-actions" id="topicControls" hidden>
+        <label for="topicSelect">知識點</label>
+        <select id="topicSelect" onchange="startTopicPractice()"></select>
+        <button type="button" class="btn" id="topicPracticeBtn" onclick="startTopicPractice()">重新抽題</button>
       </div>
-      <div style="font-size:0.85rem; color:var(--text-sub);">
-        <span>💡 先點選你的答案，即會顯示正確答案與正確選項</span>
-      </div>
-      <p class="quality-note" role="note">已移除第47期130題、複選或有複選疑義3題、官方送分1題及原卷不一致4題。保留2,722題，原題號不變。</p>
+      <p id="storageNotice" role="status"></p>
+      <details id="progressDetails" class="practice-details">
+        <summary>答題統計與作答設定</summary>
+        <p class="practice-summary" id="progressSummary" aria-live="polite"></p>
+        <details id="topicErrorDetails">
+          <summary>錯誤最多的知識點（累計錯誤次數）</summary>
+          <div id="topicErrorList"></div>
+        </details>
+        <small>每輪每題只計第一次選擇；先揭曉答案不計入紀錄。錯題集收錄最近一次答錯的題目，重做答對後會移出。</small>
+        <button class="btn btn-primary" id="modeBtn" onclick="toggleMode()">
+          <span id="modeIcon">👁️</span> <span id="modeText">隱藏全部解答</span>
+        </button>
+      </details>
+    </section>
+    <div class="round-summary">
+      <p class="practice-session" id="practiceSession" aria-live="polite"></p>
+      <span class="bank-count">本輪 <span id="displayCount">0</span> 題 · 題庫 <span id="totalCount">0</span> 題</span>
+      <p class="answer-hint">點選選項，立即顯示正確答案</p>
     </div>
 
-
-    <section class="practice-panel" aria-labelledby="practiceTitle">
-      <h2 id="practiceTitle">我的練習與錯題</h2>
-      <p class="practice-summary" id="progressSummary" aria-live="polite"></p>
-      <p id="storageNotice" role="status"></p>
-      <div class="practice-actions">
-        <button type="button" class="btn btn-primary" id="randomPracticeBtn" onclick="startRandomPractice()">全題庫隨機 20 題</button>
-        <button type="button" class="btn" id="wrongQuestionsBtn" onclick="showWrongQuestions()">我的錯題集</button>
-        <button type="button" class="btn" onclick="applyFilters()">返回歷屆瀏覽</button>
-      </div>
-      <small>紀錄保存在這個瀏覽器，不需登入網站、不跨裝置同步。每輪每題只計第一次選擇；先揭曉答案不計入紀錄。錯題集收錄最近一次答錯的題目，重做答對後會移出。</small>
-      <div class="practice-actions">
-        <label for="topicSelect">知識點加強：</label>
-        <select id="topicSelect"></select>
-        <button type="button" class="btn" id="topicPracticeBtn" onclick="startTopicPractice()">此知識點隨機練習</button>
-      </div>
-      <details id="topicErrorDetails">
-        <summary>錯誤最多的知識點（累計錯誤次數）</summary>
-        <div id="topicErrorList"></div>
-      </details>
-      <p class="practice-session" id="practiceSession" aria-live="polite"></p>
-    </section>
-
     <!-- 題號快捷導覽 -->
-    <details class="quick-nav-box" id="quickNavDetails" open>
-      <summary class="quick-nav-title">📑 題號快速直達索引（點擊跳轉）</summary>
+    <details class="quick-nav-box" id="quickNavDetails">
+      <summary class="quick-nav-title">題號索引</summary>
       <div class="quick-nav-grid" id="quickNavGrid"></div>
     </details>
 
@@ -656,7 +695,7 @@
       document.getElementById('storageNotice').textContent = progressState.message;
       const list = document.getElementById('topicErrorList');
       list.innerHTML = stats.topics.length ? stats.topics.map((t,i) => `<div class="topic-error-row"><strong>${i+1}. ${escapeHtml(t.topic)}</strong><span>答錯 ${t.wrong} / 作答 ${t.attempts} 次（${Math.round(t.wrong/t.attempts*100)}%）</span><button type="button" class="btn" data-topic="${escapeHtml(t.topic)}">加強練習</button></div>`).join('') : '<p>還沒有錯題，開始練習後就會出現統計。</p>';
-      list.querySelectorAll('button').forEach(btn => btn.addEventListener('click', () => { document.getElementById('topicSelect').value = btn.dataset.topic; startTopicPractice(); }));
+      list.querySelectorAll('button').forEach(btn => btn.addEventListener('click', () => { document.getElementById('topicSelect').value = btn.dataset.topic; document.getElementById('progressDetails').open = false; startTopicPractice(); }));
       const correct = [...currentRound.values()].filter(Boolean).length;
       document.getElementById('practiceSession').textContent = `${roundLabel}｜本輪作答 ${currentRound.size} / ${roundQuestions.length} 題，答對 ${correct} 題`;
     }
@@ -670,17 +709,27 @@
       refreshProgress();
     }
 
+    function setPracticeView(view) {
+      clearTimeout(searchTimer);
+      document.getElementById('historyControls').hidden = view !== 'history';
+      document.getElementById('topicControls').hidden = view !== 'topic';
+      document.querySelectorAll('.practice-tabs button').forEach(btn => btn.setAttribute('aria-pressed', String(btn.dataset.view === view)));
+    }
+
     function startRandomPractice() {
+      setPracticeView('random');
       startRound(TrustPractice.sample(USABLE_QUESTIONS), '全題庫隨機 20 題');
     }
 
     function startTopicPractice() {
+      setPracticeView('topic');
       const topic = document.getElementById('topicSelect').value;
       const pool = USABLE_QUESTIONS.filter(q => q.tp === topic);
       startRound(TrustPractice.sample(pool), `${topic}｜隨機 ${Math.min(pool.length,20)} 題${pool.length<20?'（本知識點不足20題，全數列出）':''}`);
     }
 
     function showWrongQuestions() {
+      setPracticeView('wrong');
       startRound(TrustPractice.stats(progressState.records,USABLE_QUESTIONS).unresolved, '我的錯題集');
     }
 
@@ -721,12 +770,12 @@
       if (isQuizMode) {
         document.body.classList.add('mode-quiz');
         btn.classList.remove('btn-primary');
-        text.innerText = '顯示解答 (全覽模式)';
+        text.innerText = '顯示全部解答';
         icon.innerText = '🎯';
       } else {
         document.body.classList.remove('mode-quiz');
         btn.classList.add('btn-primary');
-        text.innerText = '隱藏解答 (刷題模式)';
+        text.innerText = '隱藏全部解答';
         icon.innerText = '👁️';
       }
     }
@@ -752,8 +801,10 @@
     }
 
     function applyFilters() {
+      setPracticeView('history');
       const periodVal = document.getElementById('periodSelect').value;
       const searchKeyword = document.getElementById('searchInput').value.trim().toLowerCase();
+      document.getElementById('filterSummary').textContent = `${periodVal === 'all' ? '全部歷屆' : '第' + periodVal + '期'} · ${['全部科目','信託法規','信託實務'][currentSubject]}${searchKeyword ? ' · 搜尋：' + searchKeyword : ''} · 篩選題目`;
 
       const filtered = USABLE_QUESTIONS.filter(q => {
         // Period filter
