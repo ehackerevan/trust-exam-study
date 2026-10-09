@@ -562,6 +562,11 @@
       .q-card-header { gap:8px; }
       .badge-topic { white-space:normal; }
     }
+
+    .question-heading { display:flex; align-items:flex-start; gap:12px; }
+    .question-heading > .quiz-question, .question-heading > .q-text { flex:1; min-width:0; }
+    .answer-search { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:8px 10px; border:1px solid var(--primary); border-radius:8px; color:var(--primary); font-size:.85rem; white-space:nowrap; text-decoration:none; flex:none; }
+    .answer-search:focus-visible { outline:3px solid var(--primary); outline-offset:3px; }
   </style>
 </head>
 <body>
@@ -891,7 +896,10 @@
             </div>
 
             <p class="question-warning">若覺得答案有怪怪的，請一律查資料，我比較懶，用AI整理、檢查幾次就沒再人工審核了</p>
-            <div class="q-text">${escapeHtml(q.t)}</div>
+            <div class="question-heading">
+              <div class="q-text">${escapeHtml(q.t)}</div>
+              <a class="answer-search" href="https://www.google.com/search?q=${encodeURIComponent(q.t)}" target="_blank" rel="noopener noreferrer" aria-label="查答案：Google搜尋本題（開啟新分頁）">查答案</a>
+            </div>
 
             <div class="options-list">
               ${optionsHtml}

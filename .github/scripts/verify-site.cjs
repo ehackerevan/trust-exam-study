@@ -8,6 +8,7 @@ for (const file of ['index.html', '信託證照教材.html', '信託證照教材
  const html = fs.readFileSync(path.join(root, file), 'utf8');
  assert(html.includes('rel="icon" href="data:image/svg+xml,'));
  assert(html.includes(warning), `${file}: missing warning`);
+ assert(html.includes('class="answer-search"') && html.includes('https://www.google.com/search?q=${encodeURIComponent('));
  assert(!html.includes('href="無效檔案/'));
  for (const image of new Set(html.match(/教材圖解\/[^\s"'<>\\)]+\.svg/g) || [])) assert(fs.existsSync(path.join(root, image)), image);
  if (file !== '信託歷屆題庫.html') {

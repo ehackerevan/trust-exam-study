@@ -1829,6 +1829,11 @@
     }
     /* mobile-diagrams:styles:end */
   .question-warning { margin:12px 0; padding:10px 12px; border-left:3px solid #b45309; background:rgba(180,83,9,.09); color:inherit; font-size:.875rem; line-height:1.7; overflow-wrap:anywhere; }
+
+    .question-heading { display:flex; align-items:flex-start; gap:12px; }
+    .question-heading > .quiz-question, .question-heading > .q-text { flex:1; min-width:0; }
+    .answer-search { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:8px 10px; border:1px solid var(--primary); border-radius:8px; color:var(--primary); font-size:.85rem; white-space:nowrap; text-decoration:none; flex:none; }
+    .answer-search:focus-visible { outline:3px solid var(--primary); outline-offset:3px; }
   </style>
 </head>
 <body>
@@ -2336,8 +2341,11 @@ const courseData = {"chapters":[{"id":"c00","filename":"00_信託證照攻略與
             ${q.frequency ? `<span class="topic-badge">📊 ${q.frequencyScope || '本章'} ${q.frequency} 題｜#${q.topicRank}</span>` : ''}
             ${isAnswered ? (isCorrect ? '<span style="color:var(--primary); font-size:0.8rem; font-weight:700;">✅ 已掌握</span>' : '<span style="color:var(--danger); font-size:0.8rem; font-weight:700;">❌ 曾答錯</span>') : ''}
           </div>
+          <div class="question-heading">
           <div class="quiz-question" style="font-size:1.02rem; line-height:1.65; margin-bottom:12px; font-weight:600; color:var(--text-main);">
             ${highlightLegalText(q.stem)}
+          </div>
+            <a class="answer-search" href="https://www.google.com/search?q=${encodeURIComponent(q.stem)}" target="_blank" rel="noopener noreferrer" aria-label="查答案：Google搜尋本題（開啟新分頁）">查答案</a>
           </div>
           <div class="quiz-options">${optionsHtml}</div>
           <div class="quiz-explain ${isAnswered ? 'show' : ''}" id="explain_${chapter.id}_${qIdx}">
@@ -2509,8 +2517,11 @@ const courseData = {"chapters":[{"id":"c00","filename":"00_信託證照攻略與
             ${q.topic ? `<span class="topic-badge">💡 ${q.topic}</span>` : ''}
             ${isAnswered ? (isCorrect ? '<span style="color:var(--primary); font-size:0.8rem; font-weight:700;">✅ 已答對</span>' : '<span style="color:var(--danger); font-size:0.8rem; font-weight:700;">❌ 曾答錯</span>') : ''}
           </div>
+          <div class="question-heading">
           <div class="quiz-question" style="font-size:1.02rem; line-height:1.65; margin-bottom:12px; font-weight:600; color:var(--text-main);">
             ${highlightLegalText(q.stem)}
+          </div>
+            <a class="answer-search" href="https://www.google.com/search?q=${encodeURIComponent(q.stem)}" target="_blank" rel="noopener noreferrer" aria-label="查答案：Google搜尋本題（開啟新分頁）">查答案</a>
           </div>
           <div class="quiz-options">${optionsHtml}</div>
           <div class="quiz-explain ${isAnswered ? 'show' : ''}" id="bank_explain_${qid}">
