@@ -3,6 +3,8 @@ const path = require('node:path');
 const assert = require('node:assert/strict');
 const root = path.resolve(__dirname, '../..');
 const warning = '若覺得答案有怪怪的，請一律查資料，我比較懶，用AI整理、檢查幾次就沒再人工審核了';
+const analyticsSrc = 'https://static.cloudflareinsights.com/beacon.min.js';
+const analyticsToken = '59713a6319a6493194058911d9a9a96d';
 let data;
 for (const file of ['index.html', '信託證照教材.html', '信託證照教材_離線版.html', '信託歷屆題庫.html']) {
  const html = fs.readFileSync(path.join(root, file), 'utf8');
@@ -10,6 +12,9 @@ for (const file of ['index.html', '信託證照教材.html', '信託證照教材
  assert(html.includes(warning), `${file}: missing warning`);
  assert(html.includes('class="answer-search"') && html.includes('https://www.google.com/search?q=${encodeURIComponent('));
  assert(!html.includes('href="無效檔案/'));
+ const tracksOnlineTraffic = file !== '信託證照教材_離線版.html';
+ assert.equal(html.split(analyticsSrc).length - 1, tracksOnlineTraffic ? 1 : 0, `${file}: analytics script count`);
+ assert.equal(html.split(analyticsToken).length - 1, tracksOnlineTraffic ? 1 : 0, `${file}: analytics token count`);
  for (const image of new Set(html.match(/教材圖解\/[^\s"'<>\\)]+\.svg/g) || [])) assert(fs.existsSync(path.join(root, image)), image);
  if (file !== '信託歷屆題庫.html') {
   assert.equal(html.split('<p class="question-warning">').length - 1, 2);
