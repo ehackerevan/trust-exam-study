@@ -42,4 +42,15 @@ const entry = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 assert.equal(entry, fs.readFileSync(path.join(root, '信託證照教材.html'), 'utf8'));
 assert(!/http-equiv=["']refresh/i.test(entry));
 assert(fs.readFileSync(path.join(root, '信託歷屆題庫.html'), 'utf8').includes('href="index.html"'));
+
+const combined = fs.readFileSync(path.join(root, '信託教材與題庫_單檔版.html'), 'utf8');
+const embedded = Object.fromEntries([...combined.matchAll(/(study|questions): '([A-Za-z0-9+/=]+)'/g)].map(match => [match[1], Buffer.from(match[2], 'base64').toString('utf8')]));
+assert.deepEqual(Object.keys(embedded).sort(), ['questions', 'study']);
+assert(combined.includes('data-pane="study"') && combined.includes('data-pane="questions"'));
+assert(!combined.includes('cloudflareinsights.com'));
+assert(embedded.study.includes('const courseData = ') && embedded.study.includes('const mobileDiagramData = '));
+assert(embedded.study.includes("type:'trust-study-switch', pane:'questions'"));
+assert(embedded.questions.includes('const RAW_QUESTIONS = ') && embedded.questions.includes('root.TrustPractice=api'));
+assert(embedded.questions.includes("type:'trust-study-switch', pane:'study'"));
+assert(!embedded.questions.includes('src="答題紀錄與隨機練習.js"') && !embedded.questions.includes('cloudflareinsights.com'));
 console.log('PASS: pages, warnings, questions, image references and default entry');
