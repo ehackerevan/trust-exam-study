@@ -2158,9 +2158,13 @@ const courseData = {"chapters":[{"id":"c00","filename":"00_信託證照攻略與
     }
 
     function updateGlobalStats() {
-      const sharedKeys = Object.keys(progressState.records || {});
-      const legacyKeys = Object.keys(legacyAnswers || {});
-      const totalCount = Math.max(sharedKeys.length, legacyKeys.length);
+      const practiced = new Set(Object.keys(progressState.records || {}));
+      for (const id of Object.keys(legacyAnswers || {})) {
+        const match = id.match(/^concept_(c\d{2})_(\d+)$/);
+        const q = match && courseData.quizzes[match[1]]?.[Number(match[2])];
+        practiced.add((q && parseQuestionKey(q)) || `legacy:${id}`);
+      }
+      const totalCount = practiced.size;
       const pill = document.getElementById('globalStatsPill');
       if (pill) {
         pill.innerHTML = `<span>🎯 已練習: <strong>${totalCount}</strong> 題</span>`;
