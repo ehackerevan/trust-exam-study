@@ -10,6 +10,7 @@ function node(id) {
   if (!nodes.has(id)) nodes.set(id, {
     id, dataset:{}, style:{}, textContent:'', innerHTML:'', classList:{add(){}, remove(){}, toggle(){}},
     setAttribute(name, value) { this[name] = value; },
+    removeAttribute(name) { delete this[name]; },
     querySelector(selector) { return node(id + selector); },
     querySelectorAll() { return []; },
     focus() { this.focused = true; },
@@ -18,7 +19,8 @@ function node(id) {
   return nodes.get(id);
 }
 const context = vm.createContext({
-  document:{getElementById:node, querySelector:node, body:node('body')},
+  document:{getElementById:node, querySelector:node, querySelectorAll:()=>[], body:node('body')},
+  clearTimeout(){},
   window:{matchMedia:() => ({matches:true}), confirm:() => true},
   TrustPractice:practice,
   TrustExplanations:{render:() => ''},
@@ -73,6 +75,21 @@ answer(2, Number(questions[2].a));
 assert.equal(node('nav-' + peekKey).dataset.state, 'assisted');
 assert.equal(run('currentRound.size'), 2, 'Answering after peeking remains excluded from scores');
 assert.equal(node('navProgress').textContent, '已答 3 題／未答 157 題');
+run('showQuestion(0, false)');
+assert.equal(node('q-' + right).hidden,false);
+assert.equal(node('q-' + wrong).hidden,true);
+assert.equal(node('previousQuestionBtn').disabled,true);
+run('nextQuestion()');
+assert.equal(node('q-' + right).hidden,true);
+assert.equal(node('q-' + wrong).hidden,false);
+assert.equal(run('roundSelections.size'),3,'Changing displayed question preserves selected answers');
+run('showRoundReview()');
+assert.equal(node('scorePanel').hidden,false);
+assert.equal(node('questionsContainer').hidden,true);
+assert.equal(node('quickNavDetails').open,true);
+run('showQuestion(0, false)');
+assert.equal(node('scorePanel').hidden,true);
+assert.equal(node('quickNavDetails').open,false);
 run('goToUnanswered()');
 assert.equal(node('q-' + practice.key(questions[3])).focused, true);
 run('roundAnswered = new Set(roundQuestions.map(TrustPractice.key)); refreshQuestionIndex()');
