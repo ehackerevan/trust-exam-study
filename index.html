@@ -2600,6 +2600,15 @@ const courseData = {"chapters":[{"id":"c00","filename":"00_信託證照攻略與
     };
 
     // ==================== 1. 精選觀念題目渲染 ====================
+    function updateConceptAccuracy(chapter = courseData.chapters[currentChapterIndex]) {
+      const el = document.getElementById('conceptAccuracy');
+      if (!el) return;
+      const quizzes = (window.EXAM_BANK_DATA && window.EXAM_BANK_DATA[chapter.id]) || courseData.quizzes[chapter.id] || [];
+      const statuses = quizzes.map((q, i) => getQuestionStatus(q, `concept_${chapter.id}_${i}`)).filter(s => s.isAnswered);
+      const correct = statuses.filter(s => s.isCorrect).length;
+      el.textContent = `本章已答 ${statuses.length}／${quizzes.length} 題・答對 ${correct} 題・正確率 ${statuses.length ? Math.round(correct * 1000 / statuses.length) / 10 + '%' : '尚無紀錄'}（以各題最近一次作答計算）`;
+    }
+
     function renderConceptQuizzes(chapter, quizList = document.getElementById('quizList')) {
       const quizzes = (window.EXAM_BANK_DATA && window.EXAM_BANK_DATA[chapter.id]) || courseData.quizzes[chapter.id] || [];
 
@@ -2608,7 +2617,7 @@ const courseData = {"chapters":[{"id":"c00","filename":"00_信託證照攻略與
         return;
       }
 
-      quizList.innerHTML = '';
+      quizList.innerHTML = '<p id="conceptAccuracy" role="status" aria-live="polite" style="line-height:1.8;"></p>';
       quizzes.forEach((q, qIdx) => {
         const qid = `concept_${chapter.id}_${qIdx}`;
         const status = getQuestionStatus(q, qid);
@@ -2669,6 +2678,7 @@ const courseData = {"chapters":[{"id":"c00","filename":"00_信託證照攻略與
         `;
         quizList.appendChild(card);
       });
+      updateConceptAccuracy(chapter);
     }
 
     // 精選觀念題作答檢查
@@ -2690,6 +2700,8 @@ const courseData = {"chapters":[{"id":"c00","filename":"00_信託證照攻略與
         }
       }
       updateGlobalStats();
+
+      updateConceptAccuracy(chapter);
 
       const parent = elem.parentElement;
       const allOptions = parent.querySelectorAll('.quiz-option');

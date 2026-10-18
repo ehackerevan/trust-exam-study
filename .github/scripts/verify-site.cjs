@@ -72,4 +72,8 @@ assert(embedded.study.includes("type:'trust-study-switch', pane:'questions'"));
 assert(embedded.questions.includes('const RAW_QUESTIONS = ') && embedded.questions.includes('root.TrustPractice=api'));
 assert(embedded.questions.includes("type:'trust-study-switch', pane:'study'"));
 assert(!embedded.questions.includes('src="答題紀錄與隨機練習.js"') && !embedded.questions.includes('cloudflareinsights.com'));
+assert(embedded.questions.includes(fs.readFileSync(path.join(root,'答題紀錄與隨機練習.js'),'utf8').trim()), 'Standalone quiz must include current shared scoring and progress code');
+assert(embedded.questions.includes('id="submitRoundBtn"') && embedded.questions.includes('id="navProgress"'), 'Standalone quiz must include scoring and live index');
+assert.deepEqual(JSON.parse(embedded.questions.match(/const RAW_QUESTIONS = (\[[^\n]+\]);/)[1]), bankQuestions, 'Standalone and online question data must match');
+assert(embedded.study.includes('id="conceptAccuracy"'), 'Standalone textbook must include chapter accuracy');
 console.log('PASS: pages, warnings, questions, image references and default entry');

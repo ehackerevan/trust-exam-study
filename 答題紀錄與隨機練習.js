@@ -62,6 +62,52 @@
     }
     return correct;
   }
-  const api={load,save,key,record,answer,stats,sample};
+  function isCorrect(q, selected) {
+    return (String(q.a).match(/[1-4]/g)||[]).includes(String(selected));
+  }
+  function score(questions, selections, peeked = new Set()) {
+    const result = {total:questions.length, correct:0, wrong:0, unanswered:0, assisted:0, score:0, accuracy:null, subjects:[]};
+    const subjects = new Map();
+    for (const q of questions) {
+      const id = key(q), selected = selections.get(id);
+      const state = !selected ? 'unanswered' : peeked.has(id) ? 'assisted' : isCorrect(q, selected) ? 'correct' : 'wrong';
+      result[state]++;
+      const subject = subjects.get(q.s) || {subject:q.s, total:0, correct:0, wrong:0, unanswered:0, assisted:0, score:0};
+      subject.total++; subject[state]++; subjects.set(q.s, subject);
+    }
+    const percent = (correct, total) => total ? Math.round(correct * 1000 / total) / 10 : 0;
+    result.score = percent(result.correct, result.total);
+    if (result.correct + result.wrong) result.accuracy = percent(result.correct, result.correct + result.wrong);
+    result.subjects = [...subjects.values()].map(s => ({...s, score:percent(s.correct, s.total)}));
+    return result;
+  }
+  const HISTORY_KEY = 'trust_exam_scores_v1';
+  function loadHistory(storage) {
+    try {
+      const raw = storage.getItem(HISTORY_KEY);
+      if (!raw) return {entries:[], writable:true, message:''};
+      const data = JSON.parse(raw);
+      if (data.version !== 1 || !Array.isArray(data.entries)) throw Error('format');
+      for (const e of data.entries) {
+        if (!e || typeof e.label !== 'string' || !['practice','exam'].includes(e.mode) || !Number.isFinite(Date.parse(e.date)) || !Number.isFinite(e.score) || e.score < 0 || e.score > 100 || !Number.isSafeInteger(e.total) || e.total < 1 || !Number.isFinite(e.seconds) || e.seconds < 0) throw Error('entry');
+      }
+      return {entries:data.entries.slice(0,20), writable:true, message:''};
+    } catch (_) {
+      return {entries:[], writable:false, message:'無法讀取歷次成績，原紀錄不會被覆蓋，本次成績只暫存於頁面。'};
+    }
+  }
+  function addHistory(storage, state, entry) {
+    if (state.writable) {
+      const latest = loadHistory(storage);
+      if (latest.writable) state.entries = latest.entries;
+      else { state.writable = false; state.message = latest.message; }
+    }
+    state.entries = [entry, ...state.entries].slice(0,20);
+    if (state.writable) {
+      try { storage.setItem(HISTORY_KEY, JSON.stringify({version:1, entries:state.entries})); }
+      catch (_) { state.writable = false; state.message = '瀏覽器無法保存成績，本次成績只暫存於頁面。'; }
+    }
+  }
+  const api={load,save,key,record,answer,stats,sample,isCorrect,score,loadHistory,addHistory};
   if(typeof module==='object'&&module.exports)module.exports=api;else root.TrustPractice=api;
 })(typeof window==='undefined'?globalThis:window);

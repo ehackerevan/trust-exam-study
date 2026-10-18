@@ -25,6 +25,8 @@ jobs:
         run: |
           node .github/scripts/verify-site.cjs
           node .github/scripts/test-practice.cjs
+          node .github/scripts/test-question-index.cjs
+          node .github/scripts/test-scoring.cjs
 
   build:
     if: github.event_name != 'pull_request'

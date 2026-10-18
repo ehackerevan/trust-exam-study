@@ -574,6 +574,27 @@
     }
 
     .question-heading { display:flex; align-items:flex-start; gap:12px; }
+    .quick-nav-grid { display:grid; max-height:320px; overflow-y:auto; grid-template-columns:repeat(auto-fill,minmax(76px,1fr)); }
+    .quick-nav-grid .nav-chip { min-height:44px; height:auto; width:auto; padding:6px; display:flex; flex-direction:column; gap:2px; justify-content:center; align-items:center; line-height:1.4; }
+    .nav-chip small { font-size:.7rem; }
+    .nav-chip[data-state="correct"] { background:var(--success-light); border-color:var(--success-border); color:var(--text-main); }
+    .nav-chip[data-state="wrong"] { background:var(--warning-light); border-color:var(--warning-border); color:var(--text-main); }
+    .nav-chip[data-state="peeked"], .nav-chip[data-state="assisted"] { border-style:dashed; }
+    .nav-chip:focus-visible { outline:3px solid var(--primary); outline-offset:-3px; }
+    .nav-actions { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:8px 0 12px; }
+    .nav-actions p { flex:1; margin:0; min-width:160px; }
+    .nav-help { color:var(--text-sub); font-size:.85rem; line-height:1.7; }
+    .question-index-link { display:inline-flex; align-items:center; min-height:44px; color:var(--primary); }
+    .score-panel { padding:16px; margin:12px 0; border:1px solid var(--border); border-radius:12px; background:var(--card-bg); }
+    .score-panel h2 { margin:0 0 8px; font-size:1.1rem; }
+    .score-panel p { line-height:1.7; overflow-wrap:anywhere; }
+    .score-actions { display:flex; flex-wrap:wrap; gap:8px; }
+    .score-history { padding-left:22px; line-height:1.8; }
+    .score-history li { padding:8px 0; border-bottom:1px solid var(--border); }
+    .opt-chip.user-pending { outline:2px solid var(--primary); outline-offset:-2px; background:var(--primary-light) !important; }
+    .nav-chip[data-state="answered"] { border-color:var(--primary); background:var(--primary-light); }
+    body.exam-active .btn-reveal, body.exam-active .answer-search, body.exam-active .badge-ans,
+    body.exam-active .q-note-box, body.exam-active .opt-check { display:none !important; }
     .question-heading > .quiz-question, .question-heading > .q-text { flex:1; min-width:0; }
     .answer-search { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:8px 10px; border:1px solid var(--primary); border-radius:8px; color:var(--primary); font-size:.85rem; white-space:nowrap; text-decoration:none; flex:none; }
     .answer-search:focus-visible { outline:3px solid var(--primary); outline-offset:3px; }
@@ -650,6 +671,10 @@
     </div>
   </details>
 
+      <div class="filter-group" id="mockExamControls">
+        <button type="button" class="btn btn-primary" onclick="startMockExam()">開始這期這科模擬考</button>
+        <span class="nav-help">先在歷屆篩選選單一期別與科目；交卷前可改答案。</span>
+      </div>
       <div class="practice-actions" id="topicControls" hidden>
         <label for="topicSelect">知識點</label>
         <select id="topicSelect" onchange="startTopicPractice()"></select>
@@ -675,11 +700,30 @@
       <span class="bank-count">本輪 <span id="displayCount">0</span> 題 · 題庫 <span id="totalCount">0</span> 題</span>
       <p class="answer-hint">點選選項，立即顯示正確答案</p>
     </div>
+    <section class="score-panel" aria-label="本輪成績與交卷">
+      <h2 id="scoreHeading">本輪計分</h2>
+      <p id="scoreLive" aria-live="polite"></p>
+      <p class="nav-help">滿分100分，答對題數÷本輪總題數×100；答錯、未答、先看答案都不給分，不倒扣。分數為本站練習結果。</p>
+      <p id="roundNotice" role="status"></p>
+      <div class="score-actions">
+        <button type="button" class="btn btn-primary" id="submitRoundBtn" onclick="submitRound()">結束練習並計分</button>
+        <button type="button" class="btn" id="confirmSubmitBtn" onclick="submitRound(true)" hidden>仍要交卷</button>
+        <button type="button" class="btn" id="retryWrongBtn" onclick="retryRoundWrong()" hidden>重練錯題與未答題</button>
+        <button type="button" class="btn" id="retakeRoundBtn" onclick="retakeRound()" hidden>重新測驗</button>
+      </div>
+      <div id="roundResult" tabindex="-1" aria-live="polite"></div>
+      <details><summary>最近20次成績</summary><p id="scoreStorageNotice" role="status"></p><ol class="score-history" id="scoreHistory"></ol></details>
+    </section>
 
     <!-- 題號快捷導覽 -->
-    <details class="quick-nav-box" id="quickNavDetails">
+    <details class="quick-nav-box" id="quickNavDetails" open>
       <summary class="quick-nav-title">題號索引</summary>
-      <div class="quick-nav-grid" id="quickNavGrid"></div>
+      <div class="nav-actions">
+        <p id="navProgress" role="status" aria-live="polite"></p>
+        <button type="button" class="btn" id="nextUnansweredBtn" onclick="goToUnanswered()">前往未答題</button>
+      </div>
+      <p class="nav-help">點題號可跳題。未答：尚未選答；✓／✕：已作答；已看答案：尚未選答；看後作答：不計入答題統計。每輪重新計算。</p>
+      <nav class="quick-nav-grid" id="quickNavGrid" aria-label="本輪題號與作答狀態"></nav>
     </details>
 
     <!-- 題目清單容器 -->
@@ -703,8 +747,15 @@
     let progressState;
     let progressStorage;
     let currentRound = new Map();
+    let roundAnswered = new Set();
+    let roundPeeked = new Set();
     let roundQuestions = [];
     let roundLabel = '歷屆瀏覽';
+    let roundMode = 'practice';
+    let roundSubmitted = false;
+    let roundSelections = new Map();
+    let roundStartedAt = Date.now();
+    let scoreHistoryState;
     const questionByKey = new Map(USABLE_QUESTIONS.map(q => [TrustPractice.key(q), q]));
 
     function refreshProgress() {
@@ -715,45 +766,199 @@
       list.innerHTML = stats.topics.length ? stats.topics.map((t,i) => `<div class="topic-error-row"><strong>${i+1}. ${escapeHtml(t.topic)}</strong><span>答錯 ${t.wrong} / 作答 ${t.attempts} 次（${Math.round(t.wrong/t.attempts*100)}%）</span><button type="button" class="btn" data-topic="${escapeHtml(t.topic)}">加強練習</button></div>`).join('') : '<p>還沒有錯題，開始練習後就會出現統計。</p>';
       list.querySelectorAll('button').forEach(btn => btn.addEventListener('click', () => { document.getElementById('topicSelect').value = btn.dataset.topic; document.getElementById('progressDetails').open = false; startTopicPractice(); }));
       const correct = [...currentRound.values()].filter(Boolean).length;
-      document.getElementById('practiceSession').textContent = `${roundLabel}｜本輪作答 ${currentRound.size} / ${roundQuestions.length} 題，答對 ${correct} 題`;
+      document.getElementById('practiceSession').textContent = roundMode === 'exam' && !roundSubmitted
+        ? `${roundLabel}｜已答 ${roundAnswered.size}／${roundQuestions.length} 題，交卷後公布答案`
+        : `${roundLabel}｜本輪作答 ${roundAnswered.size} / ${roundQuestions.length} 題，答對 ${correct} 題`;
+      refreshQuestionIndex();
+      refreshRoundScore();
     }
 
-    function startRound(list,label) {
-      if (!isQuizMode) toggleMode();
+    function questionIndexState(key) {
+      if (roundMode === 'exam' && !roundSubmitted) return roundAnswered.has(key) ? 'answered' : 'unanswered';
+      if (currentRound.has(key)) return currentRound.get(key) ? 'correct' : 'wrong';
+      if (roundAnswered.has(key)) return 'assisted';
+      return roundPeeked.has(key) ? 'peeked' : 'unanswered';
+    }
+
+    function refreshQuestionIndex(key) {
+      const states = {unanswered:'未答', answered:'已答', correct:'✓ 答對', wrong:'✕ 答錯', peeked:'已看答案', assisted:'看後作答'};
+      const questions = key ? roundQuestions.filter(q => TrustPractice.key(q) === key) : roundQuestions;
+      for (const q of questions) {
+        const id = TrustPractice.key(q);
+        const chip = document.getElementById('nav-' + id);
+        if (!chip) continue;
+        const state = questionIndexState(id);
+        chip.dataset.state = state;
+        chip.querySelector('.nav-state').textContent = states[state];
+        chip.setAttribute('aria-label', `第${q.p}期 ${q.s === 1 ? '信託法規' : '信託實務'} 第${q.n}題，${states[state]}`);
+      }
+      const answered = roundQuestions.filter(q => roundAnswered.has(TrustPractice.key(q))).length;
+      document.getElementById('navProgress').textContent = `已答 ${answered} 題／未答 ${roundQuestions.length - answered} 題`;
+      document.getElementById('nextUnansweredBtn').disabled = answered === roundQuestions.length;
+    }
+
+    function goToUnanswered() {
+      const q = roundQuestions.find(q => !roundAnswered.has(TrustPractice.key(q)));
+      if (!q) return;
+      const card = document.getElementById('q-' + TrustPractice.key(q));
+      card.focus({preventScroll:true});
+      card.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'start'});
+    }
+
+    function returnToQuestionIndex() {
+      const index = document.getElementById('quickNavDetails');
+      index.open = true;
+      index.querySelector('summary').focus({preventScroll:true});
+      index.scrollIntoView({block:'start'});
+    }
+
+    function startRound(list,label,mode = 'practice') {
+      if (!roundSubmitted && (roundAnswered.size || roundPeeked.size) && !window.confirm('本輪尚未交卷，切換後不會保存本輪成績。確定開始新一輪？')) return false;
+      isQuizMode = true;
+      document.body.classList.add('mode-quiz');
+      document.getElementById('modeText').innerText = '顯示全部解答';
+      document.getElementById('modeIcon').innerText = '🎯';
+      document.getElementById('modeBtn').classList.remove('btn-primary');
       currentRound = new Map();
+      roundAnswered = new Set();
+      roundPeeked = new Set();
+      roundSelections = new Map();
+      roundMode = mode;
+      roundSubmitted = false;
+      roundStartedAt = Date.now();
       roundQuestions = list;
       roundLabel = label;
+      document.body.classList.toggle('exam-active', mode === 'exam');
+      document.getElementById('modeBtn').disabled = mode === 'exam';
+      document.getElementById('roundResult').innerHTML = '';
+      document.getElementById('roundNotice').textContent = '';
+      document.getElementById('confirmSubmitBtn').hidden = true;
+      document.getElementById('retryWrongBtn').hidden = true;
+      document.getElementById('retakeRoundBtn').hidden = true;
+      document.getElementById('submitRoundBtn').hidden = false;
+      document.querySelector('.answer-hint').textContent = mode === 'exam' ? '選好答案後可繼續修改，交卷後才顯示對錯。' : '點選選項，立即顯示正確答案。';
       renderQuestions(list);
       refreshProgress();
+      return true;
+    }
+
+    function refreshRoundScore() {
+      const result = TrustPractice.score(roundQuestions, roundSelections, roundPeeked);
+      document.getElementById('scoreHeading').textContent = roundMode === 'exam' ? '模擬考' : '本輪練習';
+      document.getElementById('submitRoundBtn').textContent = roundMode === 'exam' ? '交卷並計分' : '結束練習並計分';
+      document.getElementById('submitRoundBtn').disabled = !result.total;
+      document.getElementById('scoreLive').textContent = roundMode === 'exam' && !roundSubmitted
+        ? `已答 ${roundSelections.size}／${result.total} 題；交卷後顯示分數。`
+        : `本輪${roundSubmitted ? '得分' : '目前得分'} ${result.score}／100 分｜答對 ${result.correct} 題｜答錯 ${result.wrong} 題｜未答 ${result.unanswered} 題｜看後作答 ${result.assisted} 題。首次作答正確率：${result.accuracy === null ? '尚無紀錄' : result.accuracy + '%'}。`;
+    }
+
+    function startMockExam() {
+      const period = document.getElementById('periodSelect').value;
+      if (period === 'all' || currentSubject === 0) {
+        document.getElementById('roundNotice').textContent = '請先在歷屆篩選中選單一期別，並選「信託法規」或「信託實務」。';
+        return;
+      }
+      const list = USABLE_QUESTIONS.filter(q => q.p === Number(period) && q.s === currentSubject);
+      const expected = currentSubject === 1 ? 50 : 80;
+      const complete = list.length === expected && new Set(list.map(q => q.n)).size === expected && list.every(q => q.n >= 1 && q.n <= expected);
+      if (!startRound(list, `第${period}期・${currentSubject === 1 ? '信託法規' : '信託實務'}${complete ? '' : '（部分題目練習）'}`, 'exam')) return;
+      setPracticeView('history');
+      if (!complete) document.getElementById('roundNotice').textContent = `本站本期本科收錄 ${list.length} 題，未收錄的題目不計分，這次屬部分題目練習。`;
+    }
+
+    function refreshScoreHistory() {
+      if (!scoreHistoryState) scoreHistoryState = TrustPractice.loadHistory(progressStorage);
+      document.getElementById('scoreStorageNotice').textContent = scoreHistoryState.message;
+      document.getElementById('scoreHistory').innerHTML = scoreHistoryState.entries.length
+        ? scoreHistoryState.entries.map(e => `<li>${escapeHtml(new Date(e.date).toLocaleString('zh-TW'))}｜${escapeHtml(e.label)}｜${e.mode === 'exam' ? '模擬考' : '練習'} ${e.score}分｜${e.total}題｜用時 ${Math.floor(e.seconds / 60)}分${e.seconds % 60}秒</li>`).join('')
+        : '<li>完成練習並交卷後，會在這裡留下成績。</li>';
+    }
+
+    function submitRound(confirmed = false) {
+      if (roundSubmitted || !roundQuestions.length) return;
+      const result = TrustPractice.score(roundQuestions, roundSelections, roundPeeked);
+      if (result.unanswered && !confirmed) {
+        document.getElementById('roundNotice').textContent = `還有 ${result.unanswered} 題未答，未答不給分。可前往未答題繼續作答，或按「仍要交卷」。`;
+        document.getElementById('confirmSubmitBtn').hidden = false;
+        return;
+      }
+      roundSubmitted = true;
+      const seconds = Math.max(0, Math.floor((Date.now() - roundStartedAt) / 1000));
+      if (roundMode === 'exam') {
+        for (const q of roundQuestions) {
+          const key = TrustPractice.key(q), selected = roundSelections.get(key);
+          if (!selected) continue;
+          currentRound.set(key, TrustPractice.answer(progressStorage, progressState, q, selected));
+        }
+      }
+      document.body.classList.remove('exam-active');
+      renderQuestions(roundQuestions);
+      for (const q of roundQuestions) {
+        const key = TrustPractice.key(q), card = document.getElementById('q-' + key);
+        const selected = roundSelections.get(key);
+        card.querySelectorAll('.opt-chip').forEach((option, i) => {
+          option.disabled = true;
+          if (i + 1 === selected) option.classList.add(TrustPractice.isCorrect(q, selected) ? 'user-selected-correct' : 'user-selected-wrong');
+        });
+        revealSingleAns(card.querySelector('.btn-reveal'));
+      }
+      refreshProgress();
+      document.getElementById('modeBtn').disabled = true;
+      document.getElementById('submitRoundBtn').hidden = true;
+      document.getElementById('confirmSubmitBtn').hidden = true;
+      document.getElementById('roundNotice').textContent = '';
+      document.getElementById('retakeRoundBtn').hidden = false;
+      document.getElementById('retryWrongBtn').hidden = result.correct === result.total;
+      const subjects = result.subjects.map(s => `${s.subject === 1 ? '信託法規' : '信託實務'}：${s.score}分（答對${s.correct}／${s.total}題）`).join('；');
+      const weak = new Map();
+      for (const q of roundQuestions) {
+        const key = TrustPractice.key(q);
+        if (!roundSelections.has(key) || roundPeeked.has(key) || !TrustPractice.isCorrect(q, roundSelections.get(key))) weak.set(q.tp, (weak.get(q.tp) || 0) + 1);
+      }
+      const topics = [...weak].sort((a,b) => b[1] - a[1]).slice(0,3).map(([topic,count]) => `${escapeHtml(topic)}（${count}題）`).join('、');
+      document.getElementById('roundResult').innerHTML = `<p><strong>${escapeHtml(roundLabel)}：${result.score}分</strong>｜用時 ${Math.floor(seconds / 60)}分${seconds % 60}秒</p><p>${subjects}</p>${topics ? `<p>建議加強：${topics}</p>` : '<p>本輪全部答對！</p>'}<p class="nav-help">各科分別計分；本站尚未設定官方及格判定。成績保存在目前瀏覽器，清除瀏覽資料後會消失。</p>`;
+      refreshScoreHistory();
+      TrustPractice.addHistory(progressStorage, scoreHistoryState, {...result, label:roundLabel, mode:roundMode, seconds, date:new Date().toISOString()});
+      refreshScoreHistory();
+      document.getElementById('roundResult').focus({preventScroll:true});
+      document.getElementById('roundResult').scrollIntoView({block:'center'});
+    }
+
+    function retryRoundWrong() {
+      if (!roundSubmitted) return;
+      const wrong = roundQuestions.filter(q => { const id = TrustPractice.key(q); return roundPeeked.has(id) || !TrustPractice.isCorrect(q, roundSelections.get(id)); });
+      startRound(wrong, '本輪錯題與未答題重練');
+    }
+
+    function retakeRound() {
+      if (roundSubmitted) startRound(roundQuestions.slice(), roundLabel, roundMode);
     }
 
     function setPracticeView(view) {
       clearTimeout(searchTimer);
       document.getElementById('historyControls').hidden = view !== 'history';
+      document.getElementById('mockExamControls').hidden = view !== 'history';
       document.getElementById('topicControls').hidden = view !== 'topic';
       document.querySelectorAll('.practice-tabs button').forEach(btn => btn.setAttribute('aria-pressed', String(btn.dataset.view === view)));
     }
 
     function startRandomPractice() {
-      setPracticeView('random');
-      startRound(TrustPractice.sample(USABLE_QUESTIONS), '全題庫隨機 20 題');
+      if (startRound(TrustPractice.sample(USABLE_QUESTIONS), '全題庫隨機 20 題')) setPracticeView('random');
     }
 
     function startTopicPractice() {
-      setPracticeView('topic');
       const topic = document.getElementById('topicSelect').value;
       const pool = USABLE_QUESTIONS.filter(q => q.tp === topic);
-      startRound(TrustPractice.sample(pool), `${topic}｜隨機 ${Math.min(pool.length,20)} 題${pool.length<20?'（本知識點不足20題，全數列出）':''}`);
+      if (startRound(TrustPractice.sample(pool), `${topic}｜隨機 ${Math.min(pool.length,20)} 題${pool.length<20?'（本知識點不足20題，全數列出）':''}`)) setPracticeView('topic');
     }
 
     function showWrongQuestions() {
-      setPracticeView('wrong');
       if (progressState.writable) {
         const latest = TrustPractice.load(progressStorage);
         if (latest.writable) progressState.records = latest.records;
         else { progressState.writable = false; progressState.message = latest.message; }
       }
-      startRound(TrustPractice.stats(progressState.records,USABLE_QUESTIONS).unresolved, '我的錯題集');
+      if (startRound(TrustPractice.stats(progressState.records,USABLE_QUESTIONS).unresolved, '我的錯題集')) setPracticeView('wrong');
     }
 
     function init() {
@@ -766,6 +971,7 @@
 
       try { progressStorage = localStorage; progressState = TrustPractice.load(progressStorage); }
       catch (_) { progressState = {records:{},writable:false,message:'此瀏覽器無法使用永久儲存，本次紀錄只暫存於頁面。'}; }
+      refreshScoreHistory();
       document.getElementById('topicSelect').innerHTML = [...new Set(USABLE_QUESTIONS.map(q => q.tp))].sort((a,b)=>a.localeCompare(b,'zh-Hant')).map(t=>`<option value="${escapeHtml(t)}">${escapeHtml(t)}</option>`).join('');
       toggleMode();
       const urlParams = new URLSearchParams(window.location.search);
@@ -797,6 +1003,7 @@
     }
 
     function toggleMode() {
+      if (roundMode === 'exam' || roundSubmitted) return;
       isQuizMode = !isQuizMode;
       const btn = document.getElementById('modeBtn');
       const text = document.getElementById('modeText');
@@ -808,6 +1015,15 @@
         text.innerText = '顯示全部解答';
         icon.innerText = '🎯';
       } else {
+        for (const q of roundQuestions) {
+          const key = TrustPractice.key(q);
+          if (!roundAnswered.has(key)) {
+            roundPeeked.add(key);
+            const card = document.getElementById('q-' + key);
+            if (card) card.dataset.peeked = 'true';
+          }
+        }
+        refreshQuestionIndex();
         document.body.classList.remove('mode-quiz');
         btn.classList.add('btn-primary');
         text.innerText = '隱藏全部解答';
@@ -836,7 +1052,6 @@
     }
 
     function applyFilters() {
-      setPracticeView('history');
       const periodVal = document.getElementById('periodSelect').value;
       const searchKeyword = document.getElementById('searchInput').value.trim().toLowerCase();
       document.getElementById('filterSummary').textContent = `${periodVal === 'all' ? '全部歷屆' : '第' + periodVal + '期'} · ${['全部科目','信託法規','信託實務'][currentSubject]}${searchKeyword ? ' · 搜尋：' + searchKeyword : ''} · 篩選題目`;
@@ -860,7 +1075,7 @@
         return true;
       });
 
-      startRound(filtered, '歷屆瀏覽');
+      if (startRound(filtered, `${periodVal === 'all' ? '全部歷屆' : '第' + periodVal + '期'}・${['全部科目','信託法規','信託實務'][currentSubject]}${searchKeyword ? '・搜尋練習' : ''}`)) setPracticeView('history');
     }
 
     function renderQuestions(list) {
@@ -878,14 +1093,12 @@
 
       // Render nav chips
       let navHtml = '';
-      const limitChips = Math.min(list.length, 150);
-      for (let i = 0; i < limitChips; i++) {
+      const mixedPapers = new Set(list.map(q => `${q.p}-${q.s}`)).size > 1;
+      for (let i = 0; i < list.length; i++) {
         const item = list[i];
         const cardId = 'q-' + item.p + '-' + item.s + '-' + item.n;
-        navHtml += '<a href="#' + cardId + '" class="nav-chip" title="第' + item.p + '屆 第' + item.n + '題">' + item.n + '</a>';
-      }
-      if (list.length > limitChips) {
-        navHtml += '<span style="font-size:0.8rem; color:var(--text-sub); align-self:center;">...共有 ' + list.length + ' 題</span>';
+        const context = mixedPapers ? `<small>${item.p}期・${item.s === 1 ? '法規' : '實務'}</small>` : '';
+        navHtml += `<a id="nav-${TrustPractice.key(item)}" href="#${cardId}" class="nav-chip" data-state="unanswered" aria-label="第${item.p}期 ${item.s === 1 ? '信託法規' : '信託實務'} 第${item.n}題，未答">${context}<span>${item.n}</span><small class="nav-state">未答</small></a>`;
       }
       navGrid.innerHTML = navHtml;
 
@@ -901,7 +1114,7 @@
         let optionsHtml = '';
         (q.o || []).forEach((opt, idx) => {
           const optNum = idx + 1;
-          const isCorrect = String(optNum) === correctAns || correctAns === '全' || correctAns === '送分' || correctAns.includes(String(optNum));
+          const isCorrect = (roundMode !== 'exam' || roundSubmitted) && (String(optNum) === correctAns || correctAns === '全' || correctAns === '送分' || correctAns.includes(String(optNum)));
           optionsHtml += `
             <button type="button" class="opt-chip ${isCorrect ? 'is-correct' : ''}" onclick="checkOption(this, ${optNum})">
               <span class="opt-num">(${optNum})</span>
@@ -912,7 +1125,7 @@
         });
 
         cardsHtml += `
-          <article class="q-card" id="${cardId}">
+          <article class="q-card" id="${cardId}" tabindex="-1" aria-label="第${q.p}期 ${subjName} 第${q.n}題">
             <div class="q-card-header">
               <div class="q-tags-row">
                 <span class="badge-period">第 ${q.p} 屆</span>
@@ -937,6 +1150,7 @@
 
             ${q.note ? `<div class="q-note-box">⚠️ ${escapeHtml(q.note)}</div>` : ''}
             ${explanation ? `<div class="q-note-box q-note-box--explanation">${explanation}</div>` : ''}
+            <a class="question-index-link" href="#quickNavDetails" onclick="event.preventDefault(); returnToQuestionIndex()">返回題號索引</a>
           </article>
         `;
       });
@@ -945,13 +1159,27 @@
     }
 
     function checkOption(el, selected) {
-      if (!isQuizMode) return;
+      if (!isQuizMode || roundSubmitted) return;
       const card = el.closest('.q-card');
-      if (card.dataset.answered) return;
+      if (card.dataset.answered && roundMode !== 'exam') return;
       const key = card.id.slice(2);
       const q = questionByKey.get(key);
-      const correct = el.classList.contains('is-correct');
+      const correct = TrustPractice.isCorrect(q, selected);
+      roundSelections.set(key, selected);
       card.dataset.answered = 'true';
+      roundAnswered.add(key);
+      document.getElementById('confirmSubmitBtn').hidden = true;
+      document.getElementById('roundNotice').textContent = '';
+      if (roundMode === 'exam') {
+        card.querySelectorAll('.opt-chip').forEach((option, i) => {
+          option.classList.toggle('user-pending', i + 1 === selected);
+          option.setAttribute('aria-pressed', String(i + 1 === selected));
+        });
+        refreshQuestionIndex(key);
+        refreshRoundScore();
+        document.getElementById('practiceSession').textContent = `${roundLabel}｜已答 ${roundAnswered.size}／${roundQuestions.length} 題，交卷後公布答案`;
+        return;
+      }
       el.classList.add(correct ? 'user-selected-correct' : 'user-selected-wrong');
       if (!card.dataset.peeked) {
         TrustPractice.answer(progressStorage,progressState,q,selected);
@@ -959,12 +1187,19 @@
         refreshProgress();
       }
       revealSingleAns(card.querySelector('.btn-reveal'));
+      refreshQuestionIndex(key);
+      refreshRoundScore();
       card.querySelectorAll('.opt-chip').forEach(opt => { opt.disabled = true; });
     }
 
     function revealSingleAns(btn, peeked = false) {
+      if (roundMode === 'exam' && !roundSubmitted) return;
       const card = btn.closest('.q-card');
-      if (peeked) card.dataset.peeked = 'true';
+      if (peeked && !card.dataset.answered) {
+        card.dataset.peeked = 'true';
+        roundPeeked.add(card.id.slice(2));
+        refreshQuestionIndex(card.id.slice(2));
+      }
       card.querySelectorAll('.q-note-box').forEach(note => { note.style.display = 'block'; });
       const ansBadge = card.querySelector('.badge-ans');
       if (ansBadge) {
