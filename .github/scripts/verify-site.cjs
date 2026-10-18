@@ -8,11 +8,11 @@ for (const file of ['index.html', '信託證照教材.html', '信託證照教材
  const html = fs.readFileSync(path.join(root, file), 'utf8');
  assert(html.includes('rel="icon" href="data:image/svg+xml,'));
  assert(html.includes(warning), `${file}: missing warning`);
+ assert.equal((html.match(/<p class="question-warning"/g) || []).length, 1, `${file}: one visible disclosure, not repeated on questions`);
  assert(html.includes('class="answer-search"') && html.includes('https://www.google.com/search?q=${encodeURIComponent('));
  assert(!html.includes('href="無效檔案/'));
  for (const image of new Set(html.match(/教材圖解\/[^\s"'<>\\)]+\.svg/g) || [])) assert(fs.existsSync(path.join(root, image)), image);
  if (file !== '信託歷屆題庫.html') {
-  assert.equal(html.split('<p class="question-warning">').length - 1, 2);
   assert(html.includes('const correctAns = parseInt(q.answer, 10) + 1;'));
   assert(html.includes('enhanceResponsiveTables(markdownOutput);'));
   const course = JSON.parse(html.match(/const courseData = (\{[^\n]+\});/)[1]);
@@ -32,6 +32,25 @@ for (const file of ['index.html', '信託證照教材.html', '信託證照教材
   assert(qs.every(q => q.p !== 47 && (String(q.a).match(/[1-4]/g) || []).length === 1));
   assert.equal(qs.find(q=>q.p===52 && q.s===1 && q.n===2).a, '4');
  }
+}
+const explanations = require('../../題目解析.js');
+const bank = fs.readFileSync(path.join(root, '信託歷屆題庫.html'), 'utf8');
+const bankQuestions = JSON.parse(bank.match(/const RAW_QUESTIONS = (\[[^\n]+\]);/)[1]);
+for (const [key, explanation] of Object.entries(explanations.entries)) {
+ const question = bankQuestions.find(q => `${q.p}-${q.s}-${q.n}` === key);
+ assert(question, `Explanation references missing question ${key}`);
+ assert.equal(explanation.answer, Number(question.a), `Explanation answer mismatch ${key}`);
+ assert(explanation.reason && explanation.pitfall && explanation.sources.length);
+ for (const source of explanation.sources) assert.equal(new URL(source.url).hostname, 'law.moj.gov.tw');
+}
+assert.equal(Object.keys(explanations.entries).length, 10);
+assert.equal(explanations.render('unknown'), '');
+const offline = fs.readFileSync(path.join(root, '信託證照教材_離線版.html'), 'utf8');
+assert(!/<link[^>]+href="https:\/\/fonts\./.test(offline), 'Offline page must use system fonts without remote requests');
+for (const [id, file] of [['offline-progress', '答題紀錄與隨機練習.js'], ['offline-explanations', '題目解析.js']]) {
+ const script = offline.match(new RegExp(`<script id="${id}">([\\s\\S]*?)<\\/script>`));
+ assert(script, `${id} must be embedded for offline use`);
+ assert.equal(script[1].trim().replace(/\r\n/g, '\n'), fs.readFileSync(path.join(root, file), 'utf8').trim().replace(/\r\n/g, '\n'));
 }
 const entry = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 assert.equal(entry, fs.readFileSync(path.join(root, '信託證照教材.html'), 'utf8'));

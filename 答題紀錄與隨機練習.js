@@ -42,6 +42,26 @@
     for(let i=copy.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[copy[i],copy[j]]=[copy[j],copy[i]];}
     return copy.slice(0,20);
   }
-  const api={load,save,key,record,stats,sample};
+  function answer(storage, state, q, selected) {
+    if (state.writable) {
+      const latest = load(storage);
+      if (!latest.writable) {
+        state.writable = false;
+        state.message = latest.message;
+      } else {
+        state.records = latest.records;
+      }
+    }
+    const correct = record(state.records, q, selected);
+    if (state.writable) {
+      const err = save(storage, state.records);
+      if (err) {
+        state.writable = false;
+        state.message = err;
+      }
+    }
+    return correct;
+  }
+  const api={load,save,key,record,answer,stats,sample};
   if(typeof module==='object'&&module.exports)module.exports=api;else root.TrustPractice=api;
 })(typeof window==='undefined'?globalThis:window);
