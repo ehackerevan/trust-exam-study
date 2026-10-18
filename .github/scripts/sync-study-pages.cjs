@@ -10,6 +10,7 @@ assert(parser && parser[0].includes('marked'), 'Existing offline Markdown parser
 const cdn = '<script src="https://cdn.jsdelivr.net/npm/marked@12.0.1/marked.min.js"></script>';
 assert(index.includes(cdn));
 let offline = index.replace(cdn, () => parser[0]);
+offline = offline.replace(/<!-- Cloudflare Web Analytics -->[\s\S]*?<!-- End Cloudflare Web Analytics -->\r?\n?/g, '');
 offline = offline.replace(/^\s*<link[^>]+href="https:\/\/fonts\.(?:googleapis|gstatic)\.com[^>]*>\r?\n/gm, '');
 for (const [id, file] of [['offline-progress', '答題紀錄與隨機練習.js'], ['offline-explanations', '題目解析.js']]) {
   const tag = `<script src="${file}"></script>`;

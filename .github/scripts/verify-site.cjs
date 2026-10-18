@@ -3,6 +3,8 @@ const path = require('node:path');
 const assert = require('node:assert/strict');
 const root = path.resolve(__dirname, '../..');
 const warning = '若覺得答案有怪怪的，請一律查資料，我比較懶，用AI整理、檢查幾次就沒再人工審核了';
+const analyticsSrc = 'https://static.cloudflareinsights.com/beacon.min.js';
+const analyticsToken = '59713a6319a6493194058911d9a9a96d';
 let data;
 for (const file of ['index.html', '信託證照教材.html', '信託證照教材_離線版.html', '信託歷屆題庫.html']) {
  const html = fs.readFileSync(path.join(root, file), 'utf8');
@@ -11,6 +13,9 @@ for (const file of ['index.html', '信託證照教材.html', '信託證照教材
  assert.equal((html.match(/<p class="question-warning"/g) || []).length, 1, `${file}: one visible disclosure, not repeated on questions`);
  assert(html.includes('class="answer-search"') && html.includes('https://www.google.com/search?q=${encodeURIComponent('));
  assert(!html.includes('href="無效檔案/'));
+ const tracksOnlineTraffic = file !== '信託證照教材_離線版.html';
+ assert.equal(html.split(analyticsSrc).length - 1, tracksOnlineTraffic ? 1 : 0, `${file}: analytics script count`);
+ assert.equal(html.split(analyticsToken).length - 1, tracksOnlineTraffic ? 1 : 0, `${file}: analytics token count`);
  for (const image of new Set(html.match(/教材圖解\/[^\s"'<>\\)]+\.svg/g) || [])) assert(fs.existsSync(path.join(root, image)), image);
  if (file !== '信託歷屆題庫.html') {
   assert(html.includes('const correctAns = parseInt(q.answer, 10) + 1;'));
@@ -56,4 +61,15 @@ const entry = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 assert.equal(entry, fs.readFileSync(path.join(root, '信託證照教材.html'), 'utf8'));
 assert(!/http-equiv=["']refresh/i.test(entry));
 assert(fs.readFileSync(path.join(root, '信託歷屆題庫.html'), 'utf8').includes('href="index.html"'));
+
+const combined = fs.readFileSync(path.join(root, '信託教材與題庫_單檔版.html'), 'utf8');
+const embedded = Object.fromEntries([...combined.matchAll(/(study|questions): '([A-Za-z0-9+/=]+)'/g)].map(match => [match[1], Buffer.from(match[2], 'base64').toString('utf8')]));
+assert.deepEqual(Object.keys(embedded).sort(), ['questions', 'study']);
+assert(combined.includes('data-pane="study"') && combined.includes('data-pane="questions"'));
+assert(!combined.includes('cloudflareinsights.com'));
+assert(embedded.study.includes('const courseData = ') && embedded.study.includes('const mobileDiagramData = '));
+assert(embedded.study.includes("type:'trust-study-switch', pane:'questions'"));
+assert(embedded.questions.includes('const RAW_QUESTIONS = ') && embedded.questions.includes('root.TrustPractice=api'));
+assert(embedded.questions.includes("type:'trust-study-switch', pane:'study'"));
+assert(!embedded.questions.includes('src="答題紀錄與隨機練習.js"') && !embedded.questions.includes('cloudflareinsights.com'));
 console.log('PASS: pages, warnings, questions, image references and default entry');
