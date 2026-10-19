@@ -601,6 +601,12 @@
     .practice-tabs { grid-template-columns:repeat(3,minmax(0,1fr)); }
     .practice-tabs .btn { min-height:88px; flex-direction:column; font-size:1rem; gap:6px; }
     .practice-tabs small { font-size:.78rem; font-weight:400; }
+    .practice-tabs [data-view="random"] { --entry-bg:#1d4ed8; --entry-hover:#1e40af; }
+    .practice-tabs [data-view="history"] { --entry-bg:#047857; --entry-hover:#065f46; }
+    .practice-tabs [data-view="wrong"] { --entry-bg:#b45309; --entry-hover:#92400e; }
+    .practice-tabs .btn[data-view] { background:var(--entry-bg); border-color:var(--entry-bg); color:#fff; }
+    .practice-tabs .btn[data-view]:hover { background:var(--entry-hover); border-color:var(--entry-hover); color:#fff; }
+    .practice-tabs .btn small { color:inherit; }
     .bank-home-title { font-size:1.25rem; margin:0 0 8px; }
     .home-extra { margin-top:16px; }
     .records-panel { padding:16px; background:var(--card-bg); border:1px solid var(--border); border-radius:12px; }
